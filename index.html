@@ -385,6 +385,9 @@ footer {
   .thinker-row { grid-template-columns: repeat(2, 1fr); }
   .thinker:nth-child(2n) { border-right: none; }
   footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px; }
+  /* Andrew Ng 4-col grid → 1-col on mobile */
+  [style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr !important; }
+  [style*="border-right:2px solid rgba(255,255,255,.08)"] { border-right: none !important; border-bottom: 2px solid rgba(255,255,255,.08) !important; }
 }
 </style>
 </head>
@@ -547,6 +550,91 @@ footer {
       </div>
     </a>
 
+  </div>
+</div>
+
+<!-- ANDREW NG SECTION -->
+<div style="background:var(--ink); color:var(--paper); border-top:2px solid rgba(255,255,255,.08);">
+  <div class="courses" style="padding-bottom:0;">
+    <div class="courses-label" style="color:#c4b5fd;">Andrew Ng × Community College</div>
+    <p style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; color:rgba(245,240,232,.4); max-width:640px; line-height:1.9; margin-bottom:48px;">
+      Andrew Ng's landmark Coursera courses rebuilt for community college students. Same rigorous concepts. Three entry tracks per course. Problem-first pedagogy. Every project connected to a real community need. No exams. No required textbooks.
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); border:2px solid rgba(255,255,255,.08);">
+
+      <a class="course-card" href="ai-for-everyone.html" style="border-right:2px solid rgba(255,255,255,.08);">
+        <div class="card-top" style="background:#061614;">
+          <div class="card-ghost" style="opacity:.05; color:#00b4a6;">AIE</div>
+          <div class="card-num" style="opacity:.3;">Ng Series</div>
+          <div class="card-course-num" style="font-size:36px; line-height:1.1;">AI For<br><span style="color:#00b4a6;">Everyone</span></div>
+          <div class="card-title" style="color:rgba(200,245,240,.6);">Civic AI Literacy<br>for All</div>
+        </div>
+        <div class="card-body">
+          <p class="card-desc" style="color:var(--dim);">Understanding AI is a civic skill. Three tracks from no-prereq literacy to building with APIs. Community audit projects. Portfolio-based.</p>
+          <div class="card-meta">
+            <div class="meta-row"><span class="meta-label">Tracks</span><span class="meta-value">Civic · Practitioner · Builder</span></div>
+            <div class="meta-row"><span class="meta-label">Prereq</span><span class="meta-value">None (Track I)</span></div>
+            <div class="meta-row"><span class="meta-label">Projects</span><span class="meta-value">4 Major · Exhibition</span></div>
+          </div>
+          <div class="card-cta" style="color:#00b4a6;"><span>Open Course Site</span><span class="cta-arrow">→</span></div>
+        </div>
+      </a>
+
+      <a class="course-card" href="ml-specialization.html" style="border-right:2px solid rgba(255,255,255,.08);">
+        <div class="card-top" style="background:#09081a;">
+          <div class="card-ghost" style="opacity:.05; color:#8b5cf6;">ML</div>
+          <div class="card-num" style="opacity:.3;">Ng Series</div>
+          <div class="card-course-num" style="font-size:36px; line-height:1.1;">Machine<br><span style="color:#8b5cf6;">Learning</span></div>
+          <div class="card-title" style="color:rgba(210,200,255,.6);">Every Algorithm<br>is a Choice</div>
+        </div>
+        <div class="card-body">
+          <p class="card-desc" style="color:var(--dim);">Derive before you compute. Implement before you import. Audit before you deploy. Six projects on real community data including bias audits.</p>
+          <div class="card-meta">
+            <div class="meta-row"><span class="meta-label">Tracks</span><span class="meta-value">Consumer · Practitioner · Engineer</span></div>
+            <div class="meta-row"><span class="meta-label">Prereq</span><span class="meta-value">None → Python → Calculus</span></div>
+            <div class="meta-row"><span class="meta-label">Projects</span><span class="meta-value">6 Major · Bias Audit · Capstone</span></div>
+          </div>
+          <div class="card-cta" style="color:#8b5cf6;"><span>Open Course Site</span><span class="cta-arrow">→</span></div>
+        </div>
+      </a>
+
+      <a class="course-card" href="deep-learning-spec.html" style="border-right:2px solid rgba(255,255,255,.08);">
+        <div class="card-top" style="background:#100e06;">
+          <div class="card-ghost" style="opacity:.05; color:#f59e0b;">DL</div>
+          <div class="card-num" style="opacity:.3;">Ng Series</div>
+          <div class="card-course-num" style="font-size:36px; line-height:1.1;">Deep<br><span style="color:#f59e0b;">Learning</span></div>
+          <div class="card-title" style="color:rgba(253,230,138,.6);">Build What<br>You Can Explain</div>
+        </div>
+        <div class="card-body">
+          <p class="card-desc" style="color:var(--dim);">Six modules from neurons to transformers. Implement backpropagation from scratch. Mandatory bias audit module. Capstone serves a real community need.</p>
+          <div class="card-meta">
+            <div class="meta-row"><span class="meta-label">Tracks</span><span class="meta-value">Conceptual · Applied · Engineer</span></div>
+            <div class="meta-row"><span class="meta-label">Prereq</span><span class="meta-value">Algebra → Python → Calculus</span></div>
+            <div class="meta-row"><span class="meta-label">Projects</span><span class="meta-value">6 Modules · Bias Audit · Capstone</span></div>
+          </div>
+          <div class="card-cta" style="color:#f59e0b;"><span>Open Course Site</span><span class="cta-arrow">→</span></div>
+        </div>
+      </a>
+
+      <a class="course-card" href="gen-ai-for-everyone.html">
+        <div class="card-top" style="background:#12060e;">
+          <div class="card-ghost" style="opacity:.05; color:#c2185b;">GenAI</div>
+          <div class="card-num" style="opacity:.3;">Ng Series</div>
+          <div class="card-course-num" style="font-size:36px; line-height:1.1;">Gen AI For<br><span style="color:#c2185b;">Everyone</span></div>
+          <div class="card-title" style="color:rgba(252,220,235,.6);">Prompts are<br>Arguments</div>
+        </div>
+        <div class="card-body">
+          <p class="card-desc" style="color:var(--dim);">Every image is a choice. Every output reflects training data. Use gen AI critically, build with it skillfully, and audit its biases rigorously.</p>
+          <div class="card-meta">
+            <div class="meta-row"><span class="meta-label">Tracks</span><span class="meta-value">Collaborator · Creator · Critic</span></div>
+            <div class="meta-row"><span class="meta-label">Prereq</span><span class="meta-value">None → Python → ML Background</span></div>
+            <div class="meta-row"><span class="meta-label">Projects</span><span class="meta-value">4 Major · Bias Audit · Exhibition</span></div>
+          </div>
+          <div class="card-cta" style="color:#c2185b;"><span>Open Course Site</span><span class="cta-arrow">→</span></div>
+        </div>
+      </a>
+
+    </div>
   </div>
 </div>
 
