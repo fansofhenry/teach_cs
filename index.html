@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teaching Computing Differently — Foothill / West Valley College CS</title>
+<title>Teaching Computing Differently — Community College CS</title>
 <meta name="description" content="A project-based, equity-centered CS curriculum for community college students. No exams. No required textbooks. Every concept earned through building.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -125,6 +125,34 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .project-card{padding:36px 36px 40px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);}
 .project-card:nth-child(3n){border-right:none;}
 .project-card:nth-last-child(-n+3){border-bottom:none;}
+.project-featured{grid-column:1/-1;border-bottom:2px solid var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;}
+.project-featured .pf-left{padding:36px 36px 40px;border-right:2px solid var(--ink);}
+.project-featured .pf-right{padding:36px 36px 40px;display:flex;flex-direction:column;justify-content:center;}
+.project-featured .project-title{font-size:28px;margin-bottom:16px;}
+.pf-cta{display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);text-decoration:none;margin-top:16px;transition:gap .2s;}
+.pf-cta:hover{gap:16px;}
+.featured-banner{display:block;text-decoration:none;color:inherit;background:var(--ink);border-bottom:3px solid var(--copper);padding:24px 60px;transition:background .2s;}
+.featured-banner:hover{background:#1a1510;}
+.fb-inner{display:flex;align-items:center;gap:20px;flex-wrap:wrap;max-width:1300px;}
+.fb-badge{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);background:rgba(184,115,51,.12);border:1px solid rgba(184,115,51,.3);padding:5px 12px;white-space:nowrap;flex-shrink:0;}
+.fb-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.02em;color:var(--paper);white-space:nowrap;}
+.fb-title span{color:var(--copper);}
+.fb-desc{font-size:13px;color:rgba(245,240,232,.45);flex:1;min-width:200px;}
+.fb-arrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--copper);white-space:nowrap;margin-left:auto;}
+.fb-tags{display:flex;gap:5px;flex-wrap:wrap;}
+.fb-tags span{padding:2px 6px;font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;}
+.fb-phys{background:rgba(37,99,235,.12);color:#2563eb;border:1px solid rgba(37,99,235,.25);}
+.fb-math{background:rgba(124,58,237,.12);color:#7c3aed;border:1px solid rgba(124,58,237,.25);}
+.fb-linalg{background:rgba(8,145,178,.12);color:#0891b2;border:1px solid rgba(8,145,178,.25);}
+.fb-diffeq{background:rgba(220,38,38,.1);color:#dc2626;border:1px solid rgba(220,38,38,.2);}
+.fb-chem{background:rgba(5,150,105,.12);color:#059669;border:1px solid rgba(5,150,105,.25);}
+.pf-stem-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.pf-stem{padding:3px 8px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;}
+.pf-phys{background:rgba(37,99,235,.1);color:#2563eb;border:1px solid rgba(37,99,235,.25);}
+.pf-math{background:rgba(124,58,237,.1);color:#7c3aed;border:1px solid rgba(124,58,237,.25);}
+.pf-chem{background:rgba(5,150,105,.1);color:#059669;border:1px solid rgba(5,150,105,.25);}
+.pf-diffeq{background:rgba(220,38,38,.08);color:#dc2626;border:1px solid rgba(220,38,38,.2);}
+.pf-linalg{background:rgba(8,145,178,.1);color:#0891b2;border:1px solid rgba(8,145,178,.25);}
 .project-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
 .project-title{font-family:'DM Serif Display',serif;font-size:21px;font-style:italic;line-height:1.2;margin-bottom:12px;}
 .project-body{font-size:13px;line-height:1.8;color:var(--dim);margin-bottom:16px;}
@@ -182,6 +210,7 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
   .course-card:last-child{border-bottom:none;}
   .ng-grid{grid-template-columns:1fr!important;}
   .site-nav,.mast-top,.courses,.thinkers,.problem-inner,.philosophy-inner,.tracks-inner,.ng-inner,.projects-inner,.about-inner{padding-left:28px;padding-right:28px;}
+  .featured-banner{padding-left:28px;padding-right:28px;}.fb-inner{gap:12px;}
   .mast-main{padding-left:28px;padding-right:28px;}
   .phil-strip{grid-template-columns:1fr;gap:24px;padding:40px 28px;}
   .phil-stats{flex-direction:row;gap:28px;}
@@ -194,6 +223,7 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
   .track-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}
   .projects-grid{grid-template-columns:1fr;}
   .project-card{border-right:none;}
+  .project-featured{grid-template-columns:1fr;}.project-featured .pf-left{border-right:none;border-bottom:2px solid var(--ink);}
   footer{flex-direction:column;gap:16px;text-align:center;padding:28px;}
   .nav-links{display:none;}
 }
@@ -204,6 +234,7 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
 <nav class="site-nav">
   <a class="nav-brand" href="index.html">Teaching <strong>Computing</strong> Differently</a>
   <ul class="nav-links">
+    <li><a href="build-a-computer.html" style="color:var(--copper);">Build a Computer</a></li>
     <li><a href="#philosophy">Philosophy</a></li>
     <li><a href="#courses">Courses</a></li>
     <li><a href="#tracks">Three Tracks</a></li>
@@ -215,7 +246,7 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
 
 <header class="masthead">
   <div class="mast-top">
-    <span>Foothill &middot; West Valley College</span>
+    <span>Community College CS</span>
     <span>Computer Science Department</span>
     <span>Project-Based &middot; Equity-Centered &middot; Open Access</span>
   </div>
@@ -252,6 +283,16 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
     </div>
   </div>
 </header>
+
+<a class="featured-banner" href="build-a-computer.html">
+  <div class="fb-inner">
+    <span class="fb-badge">Featured Project</span>
+    <span class="fb-title">Build a <span>Computer</span> from Scratch</span>
+    <span class="fb-desc">20 weeks &middot; Team-built 8-bit breadboard computer &middot; Cross-STEM transfer across 5 disciplines</span>
+    <span class="fb-tags"><span class="fb-phys">Physics</span><span class="fb-math">Math</span><span class="fb-linalg">Lin Alg</span><span class="fb-diffeq">Diff Eq</span><span class="fb-chem">Chem</span></span>
+    <span class="fb-arrow">Open Project &rarr;</span>
+  </div>
+</a>
 
 <section class="problem-section">
   <div class="problem-inner">
@@ -346,8 +387,8 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
       </a>
       <a class="course-card c175" href="how-things-work.html">
         <div class="card-top"><div class="card-ghost">HTW</div><div class="card-num">Course 04 of 06</div><div class="card-course-num">CS <span>175</span></div><div class="card-title">How Things<br>Work</div></div>
-        <div class="card-body"><span class="status-badge status-dev">In Development</span><p class="card-desc">PageRank. GPS. The phone in your pocket. Three technologies derived from first principles. You&rsquo;ll understand why they work &mdash; not just that they work. The best entry point for students who want to understand the systems shaping their lives.</p>
-        <div class="card-meta"><div class="meta-row"><span class="meta-label">Units</span><span class="meta-value">3 Systems &middot; First Principles</span></div><div class="meta-row"><span class="meta-label">Prereq</span><span class="meta-value">Basic Math &middot; No Calculus Required</span></div><div class="meta-row"><span class="meta-label">Projects</span><span class="meta-value">Build PageRank &middot; GPS Simulator</span></div></div>
+        <div class="card-body"><span class="status-badge status-dev">In Development</span><p class="card-desc">PageRank. GPS. The phone in your pocket. Three technologies derived from first principles. You&rsquo;ll understand why they work &mdash; not just that they work. Includes the signature project: <strong>Build a Computer from Scratch</strong> &mdash; a 20-week team build of an 8-bit breadboard computer bridging five STEM disciplines.</p>
+        <div class="card-meta"><div class="meta-row"><span class="meta-label">Units</span><span class="meta-value">3 Systems &middot; First Principles</span></div><div class="meta-row"><span class="meta-label">Prereq</span><span class="meta-value">Basic Math &middot; No Calculus Required</span></div><div class="meta-row"><span class="meta-label">Projects</span><span class="meta-value">Build PageRank &middot; GPS Simulator &middot; <a href="build-a-computer.html" style="color:#00d4ff;text-decoration:underline;text-underline-offset:2px;">Build a Computer</a></span></div></div>
         <div class="card-cta"><span>Open Course Site</span><span class="cta-arrow">&rarr;</span></div></div>
       </a>
       <a class="course-card cm2b" href="math2b-linear-algebra.html">
@@ -413,6 +454,24 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
       <p class="projects-intro">These are not homework assignments with a twist. Each signature project is the central learning experience of its unit &mdash; designed so that students encounter the core concept as a genuine problem to solve, not a technique to apply. Every project is public: presented at a semester-end exhibition open to the campus community.</p>
     </div>
     <div class="projects-grid">
+      <a class="project-featured" href="build-a-computer.html" style="text-decoration:none;color:inherit;">
+        <div class="pf-left">
+          <div class="project-tag" style="color:var(--copper);">Featured &middot; CS 175 &middot; 20-Week Signature Project</div>
+          <div class="project-title">Build a Computer from Scratch</div>
+          <p class="project-body">Teams of students build a working, programmable 8-bit computer on breadboards from logic gates &mdash; and in the process encounter the physics, mathematics, linear algebra, differential equations, and chemistry that make it possible. Inspired by Ben Eater. Grounded in seven bodies of learning science research. Designed for cross-STEM transfer: every module includes an explicit &ldquo;STEM Bridge Moment&rdquo; where the instructor names the connection to the student&rsquo;s next math, physics, or chemistry course.</p>
+          <div class="pf-stem-tags">
+            <span class="pf-stem pf-phys">Physics</span>
+            <span class="pf-stem pf-math">Discrete Math</span>
+            <span class="pf-stem pf-linalg">Linear Algebra</span>
+            <span class="pf-stem pf-diffeq">Diff Eq</span>
+            <span class="pf-stem pf-chem">Chemistry</span>
+          </div>
+        </div>
+        <div class="pf-right">
+          <div class="project-learns"><strong>Students Learn Through This Project</strong>How a computer works from first principles &mdash; not as metaphor, but as physical reality &middot; Ohm&rsquo;s Law, RC circuits, Boolean algebra, two&rsquo;s complement, modular arithmetic, state vectors, matrix transformations, recurrence relations, semiconductor chemistry &middot; Collaborative debugging as the primary learning activity &middot; The experience of building something real with your hands that no AI can replicate</div>
+          <div class="pf-cta"><span>Open Full Project Page</span><span style="font-size:18px;">&rarr;</span></div>
+        </div>
+      </a>
       <div class="project-card">
         <div class="project-tag">CS 210 &middot; Data Structures</div>
         <div class="project-title">The Contacts Problem</div>
@@ -499,7 +558,7 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
     </div>
     <div class="thinker-row">
       <div class="thinker"><div class="thinker-name">Amy J. Ko</div><div class="thinker-book">Critically Conscious Computing &middot; UW</div><div class="thinker-desc">Equitable, joyous computing education. Read-before-write sequencing. Student agency and institutional trust as preconditions for learning.</div><div class="thinker-in-practice"><strong>In These Courses</strong>Students trace and read existing implementations before writing their own. Build-before-import is directly drawn from Ko&rsquo;s read-before-write research.</div></div>
-      <div class="thinker"><div class="thinker-name">Jeff Anderson</div><div class="thinker-book">Conquering College &middot; The 2-Minute Rule</div><div class="thinker-desc">Ungrading, deep learning over shallow coverage, metacognitive skill-building. Learning how to learn as a technical outcome, not a soft skill.</div><div class="thinker-in-practice"><strong>In These Courses</strong>Portfolio assessment and student-proposed grading are drawn directly from Anderson. The Abuelita Test is adapted from his communication frameworks.</div></div>
+      <div class="thinker"><div class="thinker-name">Jeff Anderson</div><div class="thinker-book">Antiracist Learning Science &middot; Ungrading &middot; Strategic Deep Learning &middot; Foothill College</div><div class="thinker-desc">Jeff&rsquo;s top-level professional goal: use antiracist learning science to help people thrive. He maps every classroom decision back to research in cognitive science, the psychology of learning, and the scholarship of anti-racism. Creator of the ALAF textbook, the Strategic Deep Learning framework, five anti-racist learner-centered objectives, and a pioneering ungrading practice. His conviction: the top 100% of learners deserve the best teaching in the world.</div><div class="thinker-in-practice"><strong>In These Courses</strong>Portfolio assessment and student-proposed grading are drawn directly from Anderson&rsquo;s ungrading framework. The Abuelita Test is adapted from his communication frameworks. The three-track system honors his principle that learner-centered means the student determines their path. The Build a Computer project&rsquo;s entire assessment structure, reflection design, and cross-STEM bridging philosophy are built on his foundation.</div></div>
       <div class="thinker"><div class="thinker-name">Paulo Freire</div><div class="thinker-book">Pedagogy of the Oppressed &middot; 1968</div><div class="thinker-desc">Students are not empty vessels to fill with content. The banking model of education reproduces passivity. Knowledge is a liberatory act when connected to lived experience.</div><div class="thinker-in-practice"><strong>In These Courses</strong>Every capstone is student-chosen and connected to a real problem in the student&rsquo;s community. Students determine what they build, and for whom.</div></div>
       <div class="thinker"><div class="thinker-name">bell hooks</div><div class="thinker-book">Teaching to Transgress &middot; 1994</div><div class="thinker-desc">The classroom as a site of freedom. Bringing the full self to learning. The instructor&rsquo;s vulnerability and intellectual engagement as pedagogical tools.</div><div class="thinker-in-practice"><strong>In These Courses</strong>Reflective writing is required alongside every project. Students write about struggle, confusion, and discovery &mdash; not just what they built.</div></div>
       <div class="thinker"><div class="thinker-name">Joy Buolamwini</div><div class="thinker-book">Gender Shades &middot; MIT Media Lab</div><div class="thinker-desc">The coded gaze. Facial recognition systems that fail disproportionately on darker-skinned women. Bias is not accidental &mdash; it is the product of who is in the room when systems are built.</div><div class="thinker-in-practice"><strong>In These Courses</strong>The Bias Audit project in CS 180 and CS 185 is directly modeled on the Gender Shades methodology, adapted for undergraduates with no prior research training.</div></div>
@@ -514,11 +573,13 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
   <div class="about-inner">
     <div class="section-label">About This Curriculum</div>
     <div class="about-text">
-      <p>This curriculum is developed by Henry Fan, a CS instructor at Foothill and West Valley College working at the intersection of computer science education, equitable pedagogy, and learning science research. The courses on this site represent a multi-year project to redesign introductory CS at the community college level &mdash; building courses that are technically rigorous, project-driven, and designed from the start to serve students who have historically been pushed out of CS.</p>
+      <p>This curriculum is developed by Henry Fan, a CS instructor at a California community college working at the intersection of computer science education, equitable pedagogy, and learning science research. The courses on this site represent a multi-year project to redesign introductory CS at the community college level &mdash; building courses that are technically rigorous, project-driven, and designed from the start to serve students who have historically been pushed out of CS.</p>
+      <p>The pedagogical foundation of this work is built on the mentorship and teaching philosophy of <strong>Jeff Anderson</strong> (Foothill College), whose commitment to antiracist learning science, ungrading, and the principle that every classroom decision should map back to research in cognitive science has shaped how every course on this site is designed, assessed, and taught. His <a href="https://jeffandersonmath.wordpress.com/2024/10/28/five-anti-racist-research-based-learner-centered-learning-objectives-for-college-students-updated/" class="about-link">five anti-racist, research-based, learner-centered learning objectives</a> are the invisible architecture of this entire curriculum.</p>
       <p>The curriculum is connected to ongoing research into help-seeking behavior in introductory CS courses, curriculum dependency structures, and the experiences of students who leave STEM at community colleges. That work lives at the <a href="https://fansofhenry.github.io/cs-ed-research/" class="about-link">CS Education Research Portfolio &rarr;</a></p>
       <p>All course materials are free and open access. Instructors who want to adapt any of these courses for their own institutions are encouraged to do so. For questions, collaboration, or to share what you build with these materials, reach out directly.</p>
       <div class="about-links">
         <a href="https://fansofhenry.github.io/cs-ed-research/" class="about-link">Research Portfolio</a>
+        <a href="https://jeffandersonmath.wordpress.com/" class="about-link">Jeff Anderson Math</a>
         <a href="mailto:henry@henryfan.org" class="about-link">henry@henryfan.org</a>
         <a href="https://github.com/fansofhenry/teach_cs" class="about-link">GitHub</a>
       </div>
@@ -528,7 +589,7 @@ footer{background:var(--ink);color:var(--paper);padding:40px 60px;display:flex;j
 
 <footer>
   <div class="footer-left">
-    Foothill College &middot; West Valley College &middot; Computer Science Department<br>
+    Community College Computer Science<br>
     All resources free and open-access &middot; No required textbook purchases &middot; <a href="mailto:henry@henryfan.org">henry@henryfan.org</a><br>
     Liberatory Education &middot; Project-Based Learning &middot; Portfolio Assessment
   </div>
