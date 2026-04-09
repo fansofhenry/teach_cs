@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* ============================================================
+   THEME — Tailwind v4 custom design tokens
+   ============================================================ */
+@theme inline {
+  /* Colors */
+  --color-ink: #0d0d0d;
+  --color-paper: #f5f0e8;
+  --color-cream: #ede8d8;
+  --color-red: #c1121f;
+  --color-orange: #e36414;
+  --color-teal: #0a7c6e;
+  --color-gold: #d4a017;
+  --color-dim: #5a5a5a;
+  --color-copper: #b87333;
+
+  /* Fonts */
+  --font-display: var(--font-bebas-neue), "Bebas Neue", sans-serif;
+  --font-serif: var(--font-dm-serif-display), "DM Serif Display", serif;
+  --font-mono: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  --font-body: var(--font-dm-sans), "DM Sans", sans-serif;
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --ink: #0d0d0d;
+  --paper: #f5f0e8;
+  --cream: #ede8d8;
+  --red: #c1121f;
+  --orange: #e36414;
+  --teal: #0a7c6e;
+  --gold: #d4a017;
+  --dim: #5a5a5a;
+  --copper: #b87333;
+}
+
+.dark {
+  --paper: #0d0d0d;
+  --ink: #f5f0e8;
+  --cream: #1a1a1a;
+  --dim: #a0a0a0;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Paper texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.dark body::after {
+  opacity: 0.02;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+/* Section labels with // prefix */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.section-label::before {
+  content: '//';
+  color: var(--ink);
+  opacity: 0.25;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+.animate-fade-up-1 {
+  animation: fadeUp 0.5s ease 0.1s both;
+}
+
+.animate-fade-up-2 {
+  animation: fadeUp 0.6s ease 0.25s both;
+}
+
+.animate-fade-up-3 {
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+
+.animate-fade-up-4 {
+  animation: fadeUp 0.6s ease 0.55s both;
+}
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+.status-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.status-taught {
+  background: rgba(10, 124, 110, 0.12);
+  color: var(--teal);
+  border: 1px solid rgba(10, 124, 110, 0.3);
+}
+
+.status-dev {
+  background: rgba(212, 160, 23, 0.1);
+  color: #8a6500;
+  border: 1px solid rgba(212, 160, 23, 0.3);
+}
+
+.status-proposed {
+  background: rgba(90, 90, 90, 0.08);
+  color: var(--dim);
+  border: 1px solid rgba(90, 90, 90, 0.2);
+}
+
+/* ============================================================
+   PILL TAGS
+   ============================================================ */
+.pill {
+  padding: 5px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.5);
+}
