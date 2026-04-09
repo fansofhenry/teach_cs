@@ -10,6 +10,15 @@ export interface WeeklyModule {
   topics: string[];
   project?: string;
   unit?: string;
+  coreQuestion?: string;
+  quickRecall?: string[];
+  careerConnections?: string[];
+  trackVariations?: {
+    novice?: string;
+    builder?: string;
+    architect?: string;
+  };
+  criticalLens?: string;
 }
 
 export interface TrackInfo {
@@ -20,6 +29,42 @@ export interface TrackInfo {
   prerequisites?: string;
   projects: string[];
   finalProject?: string;
+}
+
+export interface LearningStrategy {
+  name: string;
+  description: string;
+}
+
+export interface Dataset {
+  name: string;
+  source: string;
+  url?: string;
+  useCase: string;
+}
+
+export interface ConceptMapNode {
+  layer: string;
+  concepts: string[];
+}
+
+export interface Badge {
+  name: string;
+  threshold: string;
+  icon: string;
+}
+
+export interface ComplexityEntry {
+  structure: string;
+  access?: string;
+  search?: string;
+  insert?: string;
+  delete?: string;
+  space?: string;
+}
+
+export interface AssessmentModel {
+  components: { name: string; weight: number; description: string }[];
 }
 
 export interface Course {
@@ -40,6 +85,12 @@ export interface Course {
   teachingPhilosophy: string[];
   thinkers: string[];
   isNgAdaptation: boolean;
+  learningStrategies?: LearningStrategy[];
+  datasets?: Dataset[];
+  conceptMap?: ConceptMapNode[];
+  badges?: Badge[];
+  complexityTable?: ComplexityEntry[];
+  assessmentModel?: AssessmentModel;
 }
 
 export interface PhilosophyPrinciple {
@@ -87,4 +138,79 @@ export interface SiteStats {
   requiredTextbooks: number;
   exams: number;
   tracksPerCourse: number;
+}
+
+// ===== Research types (from cs-ed) =====
+
+export interface ResearchProject {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  methodology: string;
+  techStack?: string[];
+  targetVenue?: string;
+  timeline?: string;
+}
+
+export interface TheoreticalConstruct {
+  name: string;
+  definition: string;
+  operationalization: string;
+}
+
+export interface ReadingListEntry {
+  citation: string;
+  section: string;
+  annotation: string;
+  connectsTo?: string[];
+}
+
+export interface ResearchTimeline {
+  phase: string;
+  period: string;
+  milestones: string[];
+}
+
+// ===== Student success types (from conquer-college-app) =====
+
+export interface StudentSuccessLab {
+  number: number;
+  title: string;
+  subtitle: string;
+  objectives: string[];
+  description: string;
+  prompts: { label: string; placeholder: string }[];
+  keyIdeas: string[];
+}
+
+export interface StrategicPhase {
+  number: string;
+  title: string;
+  tagline: string;
+  description: string;
+}
+
+export interface ClassroomRule {
+  number: number;
+  title: string;
+  description: string;
+}
+
+// ===== Peer training types (from peer-educator-training-cards) =====
+
+export interface TrainingCard {
+  id: string;
+  deck: string;
+  title: string;
+  difficulty: "beginner" | "intermediate" | "advanced";
+  content: string;
+  prompts: string[];
+}
+
+export interface WorkshopFormat {
+  name: string;
+  duration: string;
+  description: string;
+  steps: string[];
 }

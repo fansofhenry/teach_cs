@@ -1,4 +1,4 @@
-import type { PhilosophyPrinciple, Thinker, AboutSection, SiteStats } from "./types";
+import type { PhilosophyPrinciple, Thinker, AboutSection, SiteStats, ClassroomRule } from "./types";
 
 export const philosophyPrinciples: PhilosophyPrinciple[] = [
   {
@@ -110,7 +110,86 @@ export const thinkers: Thinker[] = [
     inPractice:
       "CS 210's emphasis on implementing before using, and on understanding the full analysis of even simple structures, is a direct inheritance from Knuth.",
   },
+  {
+    name: "Seymour Papert",
+    work: "Mindstorms · 1980 · Constructionism",
+    description:
+      "Learning happens through building artifacts in the world. The computer is not a teaching machine — it is a material for thinking with. Children (and adults) learn most deeply when they construct something meaningful.",
+    inPractice:
+      "The Build a Computer project is pure constructionism: students learn by physically building. Every project in the curriculum produces a tangible artifact, not a worksheet answer.",
+  },
+  {
+    name: "Guershon Harel",
+    work: "Intellectual Need Principle · DNR Framework",
+    description:
+      "Concepts should be introduced only when students experience the inadequacy of their current tools. Without intellectual need, new concepts are arbitrary facts. With it, they are solutions to problems students own.",
+    inPractice:
+      "The 'Derive Before Compute' principle is a direct implementation of Harel's intellectual need. The Contacts Problem in CS 210 creates the need for hash tables before hash tables are introduced.",
+  },
+  {
+    name: "Manu Kapur",
+    work: "Productive Failure · 2008",
+    description:
+      "Students who struggle with problems before receiving instruction learn more deeply than those who receive instruction first. The struggle is not a bug — it is the mechanism of deep learning.",
+    inPractice:
+      "Every course presents the 'headache' before the 'aspirin.' Students encounter the problem that a data structure solves before the data structure is introduced.",
+  },
+  {
+    name: "Scott Freeman et al.",
+    work: "Active Learning Meta-Analysis · PNAS 2014",
+    description:
+      "Active learning increases performance in STEM by half a standard deviation. Students in traditional lecture courses are 1.5x more likely to fail. The evidence is unambiguous: lecture alone doesn't work.",
+    inPractice:
+      "Every class session includes hands-on building, peer instruction, or structured discussion. There are no pure lecture days in any course.",
+  },
+  {
+    name: "Edward Deci & Richard Ryan",
+    work: "Self-Determination Theory · 2000",
+    description:
+      "Intrinsic motivation requires three conditions: autonomy (choice), competence (growth), and relatedness (belonging). When these are present, students engage deeply. When absent, they comply superficially.",
+    inPractice:
+      "The three-track system provides autonomy. Portfolio assessment provides competence feedback. Community projects provide relatedness. All three conditions are structurally embedded.",
+  },
 ];
+
+export const andersonRules: ClassroomRule[] = [
+  {
+    number: 1,
+    title: "Health Comes First",
+    description:
+      "Your physical, mental, and emotional health always comes before course content. If you must choose between wellbeing and a deadline, choose wellbeing. Come back when you're ready. This is not a platitude — it is the first rule.",
+  },
+  {
+    number: 2,
+    title: "Deep Learning Over Shallow",
+    description:
+      "We don't optimize for grades. We optimize for understanding. A neural net you truly understand is worth infinitely more than one you copied. Find your sweet spot: the edge of productive struggle.",
+  },
+  {
+    number: 3,
+    title: "Show Up, Show Out",
+    description:
+      "Your presence enriches everyone. Peer instruction is the most powerful learning tool we have — Amy Ko's research confirms this. When you teach, you learn deepest. Bring your full self.",
+  },
+  {
+    number: 4,
+    title: "Finish Vegetables First",
+    description:
+      "Complete the core learning before passion projects. Vegetables = foundational concepts. Dessert = building something you care about. Both required. The best final projects come from students who did both.",
+  },
+  {
+    number: 5,
+    title: "Critical Consciousness = Technical Skill",
+    description:
+      "Understanding who built a system, for whom, and what it encodes is not soft — it's the most advanced skill here. You have agency in this room. Use it.",
+  },
+];
+
+export const twoMinuteRule = {
+  title: "The 2-Minute Question Rule",
+  description:
+    "When stuck, give yourself 2 minutes. Then write a precise question: not 'I don't get it' but 'I'm on step 4 of backprop and I understand the chain rule but can't see why we multiply the Jacobian here.' That specificity is expertise in formation.",
+};
 
 export const aboutSection: AboutSection = {
   paragraphs: [

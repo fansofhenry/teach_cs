@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { researchProjects, theoreticalConstructs, researchTimeline } from "@/lib/data/research";
 
 export const metadata: Metadata = {
   title: "Research Interests — Teaching Computing Differently",
@@ -351,6 +352,163 @@ export default function ResearchPage() {
                 <p className="text-[13.5px] leading-[1.85] text-dim">
                   {paper.desc}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======== NAMED RESEARCH PROJECTS ======== */}
+      <section className="border-b-2 border-ink">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
+            <div className="section-label">Research Projects</div>
+            <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
+              Five named projects with defined methodologies, tech stacks, and
+              target venues. These are publication-oriented research designs,
+              each connected to the broader research questions above.
+            </p>
+          </div>
+          <div className="space-y-0 border-2 border-ink">
+            {researchProjects.map((proj, idx) => (
+              <div
+                key={proj.id}
+                className={`p-8 lg:p-10 ${idx < researchProjects.length - 1 ? "border-b-2 border-ink" : ""}`}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-[80px_1fr] gap-6 lg:gap-10">
+                  <div>
+                    <span className="font-display text-[48px] leading-none text-cream">
+                      {proj.id}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-[20px] italic leading-[1.35] mb-1">
+                      {proj.title}
+                    </h3>
+                    <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-red mb-4">
+                      {proj.subtitle}
+                    </p>
+                    <p className="text-[13.5px] leading-[1.85] text-dim mb-4">
+                      {proj.description}
+                    </p>
+                    <div className="border-l-[3px] border-teal bg-teal/5 px-4 py-3 mb-4">
+                      <span className="font-mono text-[9px] tracking-[0.15em] uppercase text-dim block mb-1.5">
+                        Methodology
+                      </span>
+                      <p className="text-[12px] leading-[1.75] text-dim">
+                        {proj.methodology}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-4">
+                      {proj.techStack && (
+                        <div>
+                          <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-dim block mb-1.5">
+                            Tech Stack
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {proj.techStack.map((t) => (
+                              <span
+                                key={t}
+                                className="px-2 py-0.5 bg-ink/5 border border-ink/10 font-mono text-[9px] tracking-[0.08em]"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      {proj.targetVenue && (
+                        <div>
+                          <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-dim block mb-1.5">
+                            Target Venue
+                          </span>
+                          <span className="px-2.5 py-1 bg-red/10 text-red border border-red/30 font-mono text-[9px] tracking-[0.08em] uppercase">
+                            {proj.targetVenue}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======== THEORETICAL CONSTRUCTS ======== */}
+      <section className="bg-ink text-paper border-b-2 border-white/[0.06]">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
+            <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
+              <span className="text-white/20">{"//  "}</span>Theoretical
+              Constructs
+            </div>
+            <p className="text-[15px] leading-[1.85] text-white/55 max-w-[620px]">
+              Named constructs that emerge from this research program — each
+              defined, operationalized, and connected to measurable outcomes.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10">
+            {theoreticalConstructs.map((tc, idx) => (
+              <div
+                key={tc.name}
+                className={`p-8 ${idx < theoreticalConstructs.length - 1 ? "border-b md:border-r border-white/10" : ""} ${idx === theoreticalConstructs.length - 2 ? "md:border-b-0" : ""}`}
+              >
+                <h4 className="font-serif text-[18px] italic text-paper mb-3">
+                  {tc.name}
+                </h4>
+                <p className="text-[13px] leading-[1.8] text-white/45 mb-4">
+                  {tc.definition}
+                </p>
+                <div className="border-t border-white/10 pt-3">
+                  <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-red block mb-1.5">
+                    Operationalization
+                  </span>
+                  <p className="text-[12px] leading-[1.75] text-white/40">
+                    {tc.operationalization}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======== RESEARCH TIMELINE ======== */}
+      <section className="border-b-2 border-ink">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
+            <div className="section-label">Research Timeline</div>
+            <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
+              A phased roadmap from current teaching practice through doctoral
+              research.
+            </p>
+          </div>
+          <div className="space-y-0 border-2 border-ink">
+            {researchTimeline.map((phase, idx) => (
+              <div
+                key={phase.phase}
+                className={`p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-6 ${idx < researchTimeline.length - 1 ? "border-b-2 border-ink" : ""}`}
+              >
+                <div>
+                  <span className="font-display text-[28px] leading-none text-ink block mb-1">
+                    {phase.phase}
+                  </span>
+                  <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-red">
+                    {phase.period}
+                  </span>
+                </div>
+                <ul className="space-y-2">
+                  {phase.milestones.map((m) => (
+                    <li
+                      key={m}
+                      className="text-[13px] leading-[1.7] pl-4 border-l-2 border-teal"
+                    >
+                      {m}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

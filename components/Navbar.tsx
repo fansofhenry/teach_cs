@@ -7,6 +7,9 @@ const navLinks = [
   { label: 'Philosophy', href: '/philosophy' },
   { label: 'Learning Paths', href: '/paths' },
   { label: 'Research', href: '/research' },
+  { label: 'Reading List', href: '/reading-list' },
+  { label: 'Student Success', href: '/student-success' },
+  { label: 'Peer Training', href: '/peer-training' },
   { label: 'About', href: '/about' },
 ];
 
