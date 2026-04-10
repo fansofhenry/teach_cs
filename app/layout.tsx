@@ -33,10 +33,41 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const SITE_URL = "https://fansofhenry.github.io/teach_cs";
+const SITE_TITLE = "Teaching Computing Differently — Community College CS";
+const SITE_DESCRIPTION =
+  "A project-based, equity-centered CS curriculum for community college students. No exams. No required textbooks. Every concept earned through building.";
+
 export const metadata: Metadata = {
-  title: "Teaching Computing Differently — Community College CS",
-  description:
-    "A project-based, equity-centered CS curriculum for community college students. No exams. No required textbooks. Every concept earned through building.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s — Teaching Computing Differently",
+  },
+  description: SITE_DESCRIPTION,
+  authors: [{ name: "Henry Fan" }],
+  keywords: [
+    "computer science education",
+    "community college",
+    "project-based learning",
+    "equity in CS",
+    "ungrading",
+    "AI",
+    "machine learning",
+    "data structures",
+  ],
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    siteName: "Teaching Computing Differently",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

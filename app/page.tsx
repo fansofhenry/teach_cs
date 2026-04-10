@@ -764,9 +764,9 @@ export default function Home() {
               <div
                 key={t.name}
                 className={`py-7 pl-7 pr-4 border-b border-cream ${
-                  (i + 1) % 4 !== 0 ? 'lg:border-r' : ''
-                } ${(i + 1) % 2 !== 0 ? 'sm:border-r lg:border-r-0' : ''} ${
-                  (i + 1) % 4 !== 0 ? 'lg:border-r' : ''
+                  i % 2 === 0 ? 'sm:border-r' : ''
+                } ${
+                  (i + 1) % 4 !== 0 ? 'lg:border-r' : 'lg:border-r-0'
                 } border-cream`}
               >
                 <div className="font-serif text-[16px] mb-0.5">{t.name}</div>
