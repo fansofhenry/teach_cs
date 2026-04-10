@@ -140,6 +140,35 @@ export interface SiteStats {
   tracksPerCourse: number;
 }
 
+// ===== Learning log =====
+
+export type LogKind =
+  | "build" // shipped or working on something concrete
+  | "read" // engaging with a paper, book, article
+  | "research" // research progress note
+  | "teach" // classroom / curriculum note
+  | "meta"; // notes about the site / process itself
+
+export interface LogEntry {
+  /** ISO date string YYYY-MM-DD. Used for sorting and display. */
+  date: string;
+  /** Short headline. */
+  title: string;
+  /** Body. Can include light inline markup but kept as plain strings to stay simple. */
+  body: string;
+  /** Optional kind/category tag. */
+  kind: LogKind;
+  /** Optional free-form tags for filtering. */
+  tags?: string[];
+  /**
+   * Optional outbound link (paper, repo, course, doc).
+   * Use { label, href, internal? } — internal=true uses next/link.
+   */
+  link?: { label: string; href: string; internal?: boolean };
+  /** Optional flag marking this as a starter/example entry that should be replaced. */
+  starter?: boolean;
+}
+
 // ===== Research types (from cs-ed) =====
 
 export interface ResearchProject {

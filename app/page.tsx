@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getLatestLogEntry, getRecentLog } from '@/lib/data/log';
 
 /* ============================================================
    DATA — TODO: Move to @/lib/data/courses when that module exists
@@ -345,19 +346,51 @@ const homeJsonLd = {
   },
 };
 
+function formatNowDate(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-US', {
+    timeZone: 'UTC',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
 export default function Home() {
+  const latest = getLatestLogEntry();
+  const recent = getRecentLog(2);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
+
+      {/* ====== "NOW" STATUS BAR ====== */}
+      {latest && (
+        <Link
+          href="/log"
+          className="block bg-red text-white no-underline hover:bg-red/90 transition-colors"
+        >
+          <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-2.5 flex items-center gap-4 text-[11px] font-mono tracking-[0.06em]">
+            <span className="uppercase tracking-[0.18em] opacity-80 shrink-0">
+              Now &middot; {formatNowDate(latest.date)}
+            </span>
+            <span className="opacity-50 shrink-0">&rarr;</span>
+            <span className="truncate">{latest.title}</span>
+            <span className="ml-auto hidden sm:inline opacity-70 uppercase tracking-[0.14em] shrink-0">
+              View log
+            </span>
+          </div>
+        </Link>
+      )}
+
       {/* ====== MASTHEAD ====== */}
       <header className="bg-ink text-paper border-b-[5px] border-red">
         {/* Top bar */}
         <div className="px-7 lg:px-15 py-3 border-b border-white/10 font-mono text-[10px] tracking-[0.14em] uppercase opacity-50 flex justify-between">
           <span>Community College CS</span>
-          <span className="hidden sm:inline">Computer Science Department</span>
+          <span className="hidden sm:inline">Mentored by Jeff Anderson &middot; Foothill College</span>
           <span className="hidden md:inline">Project-Based &middot; Equity-Centered &middot; Open Access</span>
         </div>
 
@@ -408,6 +441,61 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* ====== THIS WEEK PANEL ====== */}
+      {recent.length > 0 && (
+        <section className="bg-ink text-paper border-b-2 border-white/[0.06]">
+          <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-12 lg:py-14 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 items-start">
+            <div>
+              <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1 mb-3">
+                <span className="text-white/20">{'//'}</span> This Week
+              </div>
+              <p className="font-mono text-[10px] leading-[1.7] text-paper/40 max-w-[240px]">
+                Recent entries from the public learning log. Updated as work
+                ships, papers get read, and ideas land.
+              </p>
+              <Link
+                href="/log"
+                className="inline-block mt-4 font-mono text-[10px] tracking-[0.14em] uppercase text-red border-b border-red/30 pb-0.5 no-underline hover:border-red transition-colors"
+              >
+                Open full log &rarr;
+              </Link>
+            </div>
+            <div className="border border-white/10 divide-y divide-white/[0.06]">
+              {recent.map((entry) => (
+                <Link
+                  key={entry.date + entry.title}
+                  href="/log"
+                  className="block p-6 lg:p-7 no-underline text-inherit hover:bg-white/[0.03] transition-colors group"
+                >
+                  <div className="flex items-center gap-3 mb-2.5 flex-wrap">
+                    <time
+                      dateTime={entry.date}
+                      className="font-mono text-[10px] tracking-[0.08em] text-paper/40"
+                    >
+                      {formatNowDate(entry.date)}
+                    </time>
+                    <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-red">
+                      {entry.kind}
+                    </span>
+                    {entry.starter && (
+                      <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-gold/80">
+                        starter
+                      </span>
+                    )}
+                  </div>
+                  <div className="font-serif text-[19px] italic leading-[1.3] text-paper mb-2 group-hover:text-red transition-colors">
+                    {entry.title}
+                  </div>
+                  <p className="text-[12.5px] leading-[1.75] text-paper/45 line-clamp-2">
+                    {entry.body}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ====== THE PROBLEM ====== */}
       <section className="bg-cream border-b-2 border-ink">
