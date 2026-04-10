@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState, type KeyboardEvent } from 'react';
 import type { Course } from '@/lib/data/courses';
 import WeeklySchedule from '@/components/WeeklySchedule';
 
@@ -15,31 +15,78 @@ const tabs: { id: Tab; label: string }[] = [
 
 export default function CourseDetailTabs({ course }: { course: Course }) {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  const focusTab = (index: number) => {
+    const next = (index + tabs.length) % tabs.length;
+    setActiveTab(tabs[next].id);
+    tabRefs.current[next]?.focus();
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      focusTab(index + 1);
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      focusTab(index - 1);
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      focusTab(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      focusTab(tabs.length - 1);
+    }
+  };
 
   return (
     <div>
       {/* Tab bar */}
-      <div className="flex gap-0 border-2 border-ink mb-10 overflow-x-auto">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`flex-1 min-w-[120px] px-5 py-3.5 font-mono text-[11px] tracking-[0.12em] uppercase border-r border-ink last:border-r-0 transition-colors cursor-pointer whitespace-nowrap ${
-              activeTab === tab.id
-                ? 'bg-ink text-paper'
-                : 'bg-paper text-dim hover:bg-cream'
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
+      <div
+        role="tablist"
+        aria-label="Course detail sections"
+        className="flex gap-0 border-2 border-ink mb-10 overflow-x-auto"
+      >
+        {tabs.map((tab, index) => {
+          const selected = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              ref={(el) => {
+                tabRefs.current[index] = el;
+              }}
+              type="button"
+              role="tab"
+              id={`tab-${tab.id}`}
+              aria-selected={selected}
+              aria-controls={`tabpanel-${tab.id}`}
+              tabIndex={selected ? 0 : -1}
+              onClick={() => setActiveTab(tab.id)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              className={`flex-1 min-w-[120px] px-5 py-3.5 font-mono text-[11px] tracking-[0.12em] uppercase border-r border-ink last:border-r-0 transition-colors cursor-pointer whitespace-nowrap ${
+                selected
+                  ? 'bg-ink text-paper'
+                  : 'bg-paper text-dim hover:bg-cream'
+              }`}
+            >
+              {tab.label}
+            </button>
+          );
+        })}
       </div>
 
       {/* Tab content */}
-      {activeTab === 'overview' && <OverviewTab course={course} />}
-      {activeTab === 'schedule' && <ScheduleTab course={course} />}
-      {activeTab === 'projects' && <ProjectsTab course={course} />}
-      {activeTab === 'resources' && <ResourcesTab course={course} />}
+      <div
+        role="tabpanel"
+        id={`tabpanel-${activeTab}`}
+        aria-labelledby={`tab-${activeTab}`}
+        tabIndex={0}
+      >
+        {activeTab === 'overview' && <OverviewTab course={course} />}
+        {activeTab === 'schedule' && <ScheduleTab course={course} />}
+        {activeTab === 'projects' && <ProjectsTab course={course} />}
+        {activeTab === 'resources' && <ResourcesTab course={course} />}
+      </div>
     </div>
   );
 }

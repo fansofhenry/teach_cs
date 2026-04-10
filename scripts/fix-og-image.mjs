@@ -29,19 +29,25 @@ async function walk(dir) {
 }
 
 async function main() {
-  const oldPath = path.join(OUT_DIR, OLD_NAME);
-  const newPath = path.join(OUT_DIR, NEW_NAME);
+  const allFiles = await walk(OUT_DIR);
 
-  let renamed = false;
-  try {
-    await fs.access(oldPath);
-    await fs.rename(oldPath, newPath);
-    renamed = true;
-  } catch {
-    // File already renamed or never existed; safe to continue.
+  // Rename every extensionless `opengraph-image` file (root + nested
+  // dynamic-route variants like courses/<slug>/opengraph-image).
+  const ogFiles = allFiles.filter(
+    (f) => path.basename(f) === OLD_NAME
+  );
+
+  let renamed = 0;
+  for (const file of ogFiles) {
+    const target = path.join(path.dirname(file), NEW_NAME);
+    try {
+      await fs.rename(file, target);
+      renamed++;
+    } catch {
+      // Already renamed by a previous run.
+    }
   }
 
-  const allFiles = await walk(OUT_DIR);
   const htmlFiles = allFiles.filter((f) => f.endsWith(".html"));
 
   // Match opengraph-image followed by an optional ?hash query string,

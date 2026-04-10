@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!course) return { title: 'Course Not Found' };
 
   const title = `${course.courseNumber} — ${course.title}`;
+  const ogImage = `/courses/${course.slug}/opengraph-image.png`;
   return {
     title,
     description: course.shortDescription,
@@ -25,13 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: course.shortDescription,
       url: `/courses/${course.slug}`,
       type: 'article',
-      images: ['/opengraph-image.png'],
+      images: [ogImage],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: course.shortDescription,
-      images: ['/opengraph-image.png'],
+      images: [ogImage],
     },
   };
 }

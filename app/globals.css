@@ -63,6 +63,36 @@ html {
   scroll-margin-top: 72px;
 }
 
+/* Visible focus ring for keyboard users.
+   Tailwind preflight removes default outlines, leaving everything
+   silently un-focusable to keyboard nav. Restore it via :focus-visible
+   so mouse clicks don't show the ring but Tab navigation does. */
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip-to-main link — visible only when focused */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  z-index: 1000;
+  padding: 10px 18px;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: top 0.15s ease-in-out;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
 body {
   background: var(--paper);
   color: var(--ink);

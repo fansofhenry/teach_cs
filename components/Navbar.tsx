@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { label: 'Courses', href: '/courses' },
@@ -17,6 +18,10 @@ const navLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
 
   useEffect(() => {
     const stored = localStorage.getItem('theme');
@@ -25,6 +30,21 @@ export default function Navbar() {
       document.documentElement.classList.add('dark');
     }
   }, []);
+
+  // Close mobile menu on Escape
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [mobileOpen]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   const toggleDark = () => {
     const next = !dark;
@@ -50,16 +70,22 @@ export default function Navbar() {
 
       {/* Desktop links */}
       <ul className="hidden lg:flex list-none">
-        {navLinks.map((link) => (
-          <li key={link.label}>
-            <Link
-              href={link.href}
-              className="block px-4.5 h-13 leading-[52px] font-mono text-[10px] tracking-[0.14em] uppercase text-paper/40 no-underline transition-colors border-l border-white/[0.05] hover:text-paper"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
+        {navLinks.map((link) => {
+          const active = isActive(link.href);
+          return (
+            <li key={link.label}>
+              <Link
+                href={link.href}
+                aria-current={active ? 'page' : undefined}
+                className={`block px-4.5 h-13 leading-[52px] font-mono text-[10px] tracking-[0.14em] uppercase no-underline transition-colors border-l border-white/[0.05] hover:text-paper ${
+                  active ? 'text-red' : 'text-paper/40'
+                }`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
         <li>
           <a
             href="https://fansofhenry.github.io/cs-ed/"
@@ -116,17 +142,23 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="absolute top-13 left-0 right-0 bg-ink border-b border-white/[0.08] lg:hidden z-50">
           <ul className="list-none py-2">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-7 py-3 font-mono text-[10px] tracking-[0.14em] uppercase text-paper/40 no-underline hover:text-paper transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    aria-current={active ? 'page' : undefined}
+                    className={`block px-7 py-3 font-mono text-[10px] tracking-[0.14em] uppercase no-underline hover:text-paper transition-colors ${
+                      active ? 'text-red' : 'text-paper/40'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
             <li>
               <a
                 href="https://fansofhenry.github.io/cs-ed/"

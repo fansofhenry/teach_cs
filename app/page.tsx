@@ -326,9 +326,32 @@ const thinkers = [
    PAGE
    ============================================================ */
 
+const homeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: 'Teaching Computing Differently',
+  url: 'https://fansofhenry.github.io/teach_cs',
+  description:
+    "A project-based, equity-centered CS curriculum for community college students. No exams. No required textbooks. Every concept earned through building.",
+  sameAs: [
+    'https://github.com/fansofhenry/teach_cs',
+    'https://fansofhenry.github.io/cs-ed/',
+  ],
+  founder: {
+    '@type': 'Person',
+    name: 'Henry Fan',
+    email: 'henry@henryfan.org',
+    url: 'https://github.com/fansofhenry',
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
       {/* ====== MASTHEAD ====== */}
       <header className="bg-ink text-paper border-b-[5px] border-red">
         {/* Top bar */}
