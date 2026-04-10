@@ -358,6 +358,98 @@ export default function ResearchPage() {
         </div>
       </section>
 
+      {/* ======== MODELING BENCH FEATURE ======== */}
+      <section className="bg-ink text-paper border-b-2 border-white/[0.06]">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-12">
+            <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
+              <span className="text-white/20">{"//  "}</span>Active Lab
+            </div>
+            <p className="text-[15px] leading-[1.85] text-white/55 max-w-[680px]">
+              Alongside the broader CS-Ed agenda above, I am running a focused
+              3-paper publication program with my Applied Linear Algebra
+              mentor, Prof. Jeff Anderson at Foothill College. The papers sit
+              at the intersection of applied LA, hands-on lab pedagogy, and
+              CS education in the age of AI.
+            </p>
+          </div>
+
+          <div className="border border-white/10 p-8 lg:p-10 bg-white/[0.02]">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-end mb-8">
+              <div>
+                <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-3">
+                  3-Paper Research Program · v0.1
+                </div>
+                <h3 className="font-display text-[clamp(40px,6vw,72px)] leading-[0.9] tracking-[0.02em] text-paper">
+                  The Modeling
+                  <br />
+                  <span className="text-red">Bench</span>
+                </h3>
+              </div>
+              <Link
+                href="/research/modeling-bench"
+                className="inline-block px-5 py-3 border border-red/60 font-mono text-[10px] tracking-[0.14em] uppercase text-red hover:bg-red/10 transition-colors no-underline shrink-0"
+              >
+                Enter the Lab &rarr;
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 border-t border-white/10">
+              {[
+                {
+                  num: "01",
+                  title: "MER 2.0",
+                  sub: "Open-Hardware Lab Kit for Coupled-Oscillator Modeling",
+                  venue: "PRIMUS",
+                },
+                {
+                  num: "02",
+                  title: "Matrices → Networks",
+                  sub: "Linear-Algebra-First NNs via SVD of Trained Layers",
+                  venue: "PRIMUS",
+                },
+                {
+                  num: "03",
+                  title: "AI Modeling Tutor",
+                  sub: "Anti-Racist Audit Framework for LLM Tutors",
+                  venue: "JCHE",
+                },
+              ].map((p, idx) => (
+                <div
+                  key={p.num}
+                  className={`p-6 ${idx < 2 ? "md:border-r border-white/10" : ""}`}
+                >
+                  <div className="font-display text-[42px] leading-none text-cream/30 mb-2">
+                    {p.num}
+                  </div>
+                  <h4 className="font-serif italic text-[16px] text-paper leading-[1.3] mb-1.5">
+                    {p.title}
+                  </h4>
+                  <p className="text-[12px] leading-[1.7] text-white/45 mb-3">
+                    {p.sub}
+                  </p>
+                  <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-red">
+                    → {p.venue}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-white/35 mt-8">
+              Mentor: Prof. Jeff Anderson · Foothill College &middot; Mirror:{" "}
+              <a
+                href="https://fansofhenry.github.io/research-lab/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red/80 hover:text-red"
+              >
+                fansofhenry.github.io/research-lab
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ======== NAMED RESEARCH PROJECTS ======== */}
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
