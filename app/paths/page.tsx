@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     title: "Learning Paths — Teaching Computing Differently",
     description:
       "Three depth choices per course, chosen week by week. No grade penalty for choosing Track I.",
+    images: ["/opengraph-image.png"],
   },
 };
 

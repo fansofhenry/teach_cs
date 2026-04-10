@@ -50,7 +50,7 @@ export default function CourseCatalogClient() {
             <span className="text-red not-italic font-display tracking-[0.02em]">Differently.</span>
           </h1>
           <p className="text-[15px] leading-[1.85] text-paper/60 max-w-[560px] font-light">
-            Twelve courses spanning AI, systems, mathematics, and engineering.
+            Eleven courses spanning AI, systems, mathematics, and engineering.
             Every course is project-based, equity-centered, and grounded in
             learning science. No exams. No required textbooks. Every concept
             earned through building.
@@ -59,7 +59,7 @@ export default function CourseCatalogClient() {
           {/* Stats row */}
           <div className="flex gap-0 border border-white/15 w-fit mt-8">
             <div className="px-5 py-3 border-r border-white/15 text-center">
-              <span className="block font-display text-[28px] leading-none text-red">12</span>
+              <span className="block font-display text-[28px] leading-none text-red">{courses.length}</span>
               <span className="block font-mono text-[8px] tracking-[0.12em] uppercase text-paper/40 mt-1">Courses</span>
             </div>
             <div className="px-5 py-3 border-r border-white/15 text-center">

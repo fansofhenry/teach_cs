@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     title: "Course Catalog — Teaching Computing Differently",
     description:
       "Twelve project-based, equity-centered CS courses. No exams. No required textbooks. Every concept earned through building.",
+    images: ["/opengraph-image.png"],
   },
 };
 

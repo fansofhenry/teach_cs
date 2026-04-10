@@ -16,9 +16,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const course = getCourseBySlug(slug);
   if (!course) return { title: 'Course Not Found' };
 
+  const title = `${course.courseNumber} — ${course.title}`;
   return {
-    title: `${course.courseNumber} — ${course.title} | Teaching Computing Differently`,
+    title,
     description: course.shortDescription,
+    openGraph: {
+      title,
+      description: course.shortDescription,
+      url: `/courses/${course.slug}`,
+      type: 'article',
+      images: ['/opengraph-image.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: course.shortDescription,
+      images: ['/opengraph-image.png'],
+    },
   };
 }
 
@@ -44,8 +58,34 @@ export default async function CourseDetailPage({
 
   const status = statusConfig[course.status];
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: `${course.courseNumber} — ${course.title}`,
+    description: course.shortDescription,
+    courseCode: course.courseNumber,
+    provider: {
+      '@type': 'Organization',
+      name: 'Teaching Computing Differently',
+      url: 'https://fansofhenry.github.io/teach_cs',
+    },
+    educationalLevel: 'Community College',
+    inLanguage: 'en',
+    teaches: course.learningObjectives,
+    url: `https://fansofhenry.github.io/teach_cs/courses/${course.slug}`,
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'Blended',
+      courseWorkload: `PT${course.weeks}W`,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-paper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── HERO ─────────────────────────────────────────── */}
       <div
         className="relative overflow-hidden border-b-[5px]"
