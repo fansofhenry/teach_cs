@@ -86,7 +86,7 @@ const courses: CourseData[] = [
       { label: 'Projects', value: '9 Major \u00B7 2 Exhibitions' },
       { label: 'Thinkers', value: 'Turing \u00B7 Buolamwini \u00B7 Noble' },
     ],
-    href: '/courses/cs180',
+    href: '/courses/cs180-intro-ai',
     accent: '#c1121f',
     idx: 1,
   },
@@ -105,7 +105,7 @@ const courses: CourseData[] = [
       { label: 'Projects', value: '8 Major \u00B7 Bias Audits' },
       { label: 'Thinkers', value: 'Ko \u00B7 Benjamin \u00B7 Obermeyer' },
     ],
-    href: '/courses/cs185',
+    href: '/courses/cs185-intro-ml',
     accent: '#4dd9f0',
     topBg: '#060b14',
     titleColor: 'rgba(200,235,255,0.7)',
@@ -127,7 +127,7 @@ const courses: CourseData[] = [
       { label: 'Projects', value: '12 Mini Projects \u00B7 Capstone' },
       { label: 'Thinkers', value: 'Knuth \u00B7 Dijkstra \u00B7 Noble \u00B7 Tarjan' },
     ],
-    href: '/courses/cs210',
+    href: '/courses/cs210-dsa',
     accent: '#e36414',
     topBg: '#1a1205',
     titleColor: 'rgba(250,246,240,0.7)',
@@ -148,7 +148,7 @@ const courses: CourseData[] = [
       { label: 'Prereq', value: 'Basic Math \u00B7 No Calculus Required' },
       { label: 'Projects', value: 'Build PageRank \u00B7 GPS Simulator \u00B7 Build a Computer' },
     ],
-    href: '/courses/cs175',
+    href: '/courses/how-things-work',
     accent: '#00d4ff',
     topBg: '#020c14',
     titleColor: 'rgba(210,240,255,0.7)',
@@ -169,7 +169,7 @@ const courses: CourseData[] = [
       { label: 'Prereq', value: 'Pre-calculus or Calculus' },
       { label: 'Textbook', value: 'ALAF \u00B7 appliedlinearalgebra.com' },
     ],
-    href: '/courses/math2b',
+    href: '/courses/math2b-linear-algebra',
     accent: '#8b7cf8',
     topBg: '#0b0b14',
     titleColor: 'rgba(220,218,240,0.7)',
@@ -190,7 +190,7 @@ const courses: CourseData[] = [
       { label: 'Prereq', value: 'No Programming Required' },
       { label: 'Skills', value: 'MATLAB \u00B7 Numerical Analysis \u00B7 IEEE 754' },
     ],
-    href: '/courses/engr11',
+    href: '/courses/engr11-matlab',
     accent: '#a8ff3e',
     topBg: '#060a06',
     titleColor: 'rgba(220,240,210,0.7)',
@@ -634,7 +634,10 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 border-2 border-ink">
             {/* Featured project */}
-            <div className="col-span-full border-b-2 border-ink grid grid-cols-1 lg:grid-cols-2">
+            <Link
+              href="/courses/how-things-work"
+              className="col-span-full border-b-2 border-ink grid grid-cols-1 lg:grid-cols-2 no-underline text-inherit transition-colors hover:bg-cream group"
+            >
               <div className="p-9 lg:border-r-2 border-ink">
                 <div className="font-mono text-[9px] tracking-[0.18em] uppercase text-copper mb-3">
                   Featured &middot; CS 175 &middot; 20-Week Signature Project
@@ -683,12 +686,12 @@ export default function Home() {
                   </strong>
                   How a computer works from first principles &mdash; not as metaphor, but as physical reality &middot; Ohm&rsquo;s Law, RC circuits, Boolean algebra, two&rsquo;s complement, modular arithmetic, state vectors, matrix transformations &middot; Collaborative debugging as the primary learning activity &middot; The experience of building something real with your hands that no AI can replicate
                 </div>
-                <div className="flex items-center gap-2.5 font-mono text-[11px] tracking-[0.12em] uppercase text-red mt-4 hover:gap-4 transition-[gap]">
+                <div className="flex items-center gap-2.5 font-mono text-[11px] tracking-[0.12em] uppercase text-red mt-4 transition-[gap] group-hover:gap-4">
                   <span>Open Full Project Page</span>
                   <span className="text-[18px]">&rarr;</span>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Project cards */}
             {projects.map((project, i) => (
