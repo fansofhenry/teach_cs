@@ -26,62 +26,62 @@ export default function CourseCard({ course }: { course: Course }) {
         </span>
 
         <div className="relative z-10">
-          <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-white/60">
+          <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-white/85">
             {course.category}
           </span>
-          <div className="font-display text-[38px] leading-[0.88] tracking-[0.02em] text-white mt-1">
+          <div className="font-display text-[40px] leading-[0.88] tracking-[0.02em] text-white mt-1">
             {course.courseNumber}
           </div>
         </div>
       </div>
 
       {/* Card body */}
-      <div className="px-6 pt-5 pb-6">
+      <div className="px-6 pt-6 pb-7">
         {/* Status badge */}
         <span className={`status-badge ${status.className}`}>
           {status.label}
         </span>
 
         {/* Title */}
-        <h3 className="font-serif text-[19px] italic leading-snug text-ink mt-2 mb-2 group-hover:text-red transition-colors">
+        <h3 className="font-serif text-[21px] italic leading-snug text-ink mt-2 mb-3 group-hover:text-red transition-colors">
           {course.title}
         </h3>
 
         {/* Description */}
-        <p className="text-[12.5px] leading-[1.75] text-dim line-clamp-3">
+        <p className="text-[15px] leading-[1.7] text-dim line-clamp-3">
           {course.shortDescription}
         </p>
 
         {/* Metadata row */}
-        <div className="flex gap-0 border border-cream mt-4">
-          <div className="flex-1 px-3 py-2 border-r border-cream text-center">
-            <span className="block font-display text-[22px] leading-none" style={{ color: course.accentColor }}>
+        <div className="flex gap-0 border border-cream mt-5">
+          <div className="flex-1 px-3 py-2.5 border-r border-cream text-center">
+            <span className="block font-display text-[24px] leading-none" style={{ color: course.accentColor }}>
               {course.weeks}
             </span>
-            <span className="block font-mono text-[7px] tracking-[0.1em] uppercase text-dim mt-0.5">
+            <span className="block font-mono text-[10px] tracking-[0.08em] uppercase text-dim mt-1">
               Weeks
             </span>
           </div>
-          <div className="flex-1 px-3 py-2 border-r border-cream text-center">
-            <span className="block font-display text-[22px] leading-none" style={{ color: course.accentColor }}>
+          <div className="flex-1 px-3 py-2.5 border-r border-cream text-center">
+            <span className="block font-display text-[24px] leading-none" style={{ color: course.accentColor }}>
               {course.units}
             </span>
-            <span className="block font-mono text-[7px] tracking-[0.1em] uppercase text-dim mt-0.5">
+            <span className="block font-mono text-[10px] tracking-[0.08em] uppercase text-dim mt-1">
               Units
             </span>
           </div>
-          <div className="flex-1 px-3 py-2 text-center">
-            <span className="block font-display text-[22px] leading-none" style={{ color: course.accentColor }}>
+          <div className="flex-1 px-3 py-2.5 text-center">
+            <span className="block font-display text-[24px] leading-none" style={{ color: course.accentColor }}>
               {course.tracks.length}
             </span>
-            <span className="block font-mono text-[7px] tracking-[0.1em] uppercase text-dim mt-0.5">
+            <span className="block font-mono text-[10px] tracking-[0.08em] uppercase text-dim mt-1">
               {course.tracks.length === 1 ? 'Track' : 'Tracks'}
             </span>
           </div>
         </div>
 
         {/* Read more indicator */}
-        <div className="mt-4 font-mono text-[10px] tracking-[0.12em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ color: course.accentColor }}>
+        <div className="mt-5 font-mono text-[12px] tracking-[0.1em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ color: course.accentColor }}>
           View Course Details &rarr;
         </div>
       </div>

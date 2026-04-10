@@ -63,7 +63,7 @@ function groupByMonth(entries: LogEntry[]): { label: string; entries: LogEntry[]
 
 function EntryLink({ link }: { link: NonNullable<LogEntry["link"]> }) {
   const className =
-    "inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.12em] uppercase text-red no-underline border-b border-red/30 pb-0.5 hover:border-red transition-colors";
+    "inline-flex items-center gap-2 font-mono text-[12px] tracking-[0.1em] uppercase text-red no-underline border-b border-red/40 pb-0.5 hover:border-red transition-colors";
   if (link.internal) {
     return (
       <Link href={link.href} className={className}>
@@ -92,12 +92,12 @@ export default function LogPage() {
     <>
       {/* ====== HERO ====== */}
       <header className="bg-ink text-paper border-b-[5px] border-red">
-        <div className="border-b border-white/10 px-7 lg:px-15 py-3 font-mono text-[10px] tracking-[0.14em] uppercase text-white/50 flex justify-between">
+        <div className="border-b border-white/10 px-7 lg:px-15 py-3.5 font-mono text-[11px] tracking-[0.12em] uppercase text-white/75 flex justify-between">
           <span>Learning Log</span>
           <span>{entries.length} {entries.length === 1 ? "entry" : "entries"}</span>
         </div>
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-16 lg:py-20">
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-5 animate-fade-up-1">
+          <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-red mb-5 animate-fade-up-1">
             Public Working Notebook
           </div>
           <h1 className="font-display text-[clamp(48px,8vw,100px)] leading-[0.88] tracking-[0.02em] mb-7 animate-fade-up-2">
@@ -105,7 +105,7 @@ export default function LogPage() {
             <br />
             <span className="text-red">Log</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[640px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.75] text-white/85 font-light max-w-[680px] animate-fade-up-3">
             A dated chronological feed of what I&rsquo;m reading, building, and
             figuring out as I develop this curriculum and pursue a three-paper
             research program with Jeff Anderson. The point is not polish &mdash;
@@ -119,13 +119,13 @@ export default function LogPage() {
       {tags.length > 0 && (
         <div className="bg-cream border-b-2 border-ink">
           <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-5 flex items-center gap-3 flex-wrap">
-            <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-dim">
+            <span className="font-mono text-[11px] tracking-[0.16em] uppercase text-dim">
               Tags
             </span>
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="font-mono text-[10px] tracking-[0.06em] text-ink/70 px-2.5 py-1 border border-ink/15"
+                className="font-mono text-[12px] tracking-[0.02em] text-ink/85 px-2.5 py-1 border border-ink/25"
               >
                 #{tag}
               </span>
@@ -142,7 +142,7 @@ export default function LogPage() {
               {/* Month header */}
               <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-10">
                 <div className="section-label">{month.label}</div>
-                <div className="font-mono text-[11px] tracking-[0.06em] text-dim">
+                <div className="font-mono text-[13px] tracking-[0.02em] text-dim">
                   {month.entries.length} {month.entries.length === 1 ? "entry" : "entries"}
                 </div>
               </div>
@@ -157,9 +157,9 @@ export default function LogPage() {
                     }`}
                   >
                     {/* Top metadata row */}
-                    <div className="flex items-center gap-3 flex-wrap mb-4">
+                    <div className="flex items-center gap-3 flex-wrap mb-5">
                       <span
-                        className="font-mono text-[9px] tracking-[0.18em] uppercase px-2 py-0.5 border"
+                        className="font-mono text-[11px] tracking-[0.14em] uppercase px-2.5 py-1 border"
                         style={{
                           color: KIND_COLOR[entry.kind],
                           borderColor: KIND_COLOR[entry.kind],
@@ -170,35 +170,35 @@ export default function LogPage() {
                       </span>
                       <time
                         dateTime={entry.date}
-                        className="font-mono text-[10px] tracking-[0.08em] text-dim"
+                        className="font-mono text-[12px] tracking-[0.02em] text-dim"
                       >
                         {formatDate(entry.date)}
                       </time>
                       {entry.starter && (
-                        <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-gold border border-gold/40 px-2 py-0.5">
+                        <span className="font-mono text-[11px] tracking-[0.1em] uppercase text-gold border border-gold/50 px-2.5 py-1">
                           Starter — replace
                         </span>
                       )}
                     </div>
 
                     {/* Title */}
-                    <h2 className="font-serif text-[clamp(20px,2.5vw,28px)] italic leading-[1.25] text-ink mb-4">
+                    <h2 className="font-serif text-[clamp(22px,2.5vw,30px)] italic leading-[1.25] text-ink mb-5">
                       {entry.title}
                     </h2>
 
                     {/* Body */}
-                    <p className="text-[14.5px] leading-[1.85] text-dim max-w-[760px] mb-5">
+                    <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[720px] mb-6">
                       {entry.body}
                     </p>
 
                     {/* Tags + link */}
-                    <div className="flex items-center gap-4 flex-wrap">
+                    <div className="flex items-center gap-5 flex-wrap">
                       {entry.tags && entry.tags.length > 0 && (
-                        <div className="flex items-center gap-1.5 flex-wrap">
+                        <div className="flex items-center gap-2 flex-wrap">
                           {entry.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="font-mono text-[9px] tracking-[0.06em] text-dim/70 px-2 py-0.5 border border-cream"
+                              className="font-mono text-[11px] tracking-[0.02em] text-dim px-2 py-1 border border-cream"
                             >
                               #{tag}
                             </span>
@@ -215,17 +215,17 @@ export default function LogPage() {
 
           {/* How to add */}
           <div className="mt-16 border-2 border-ink p-8 lg:p-10 bg-cream">
-            <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-red mb-3">
+            <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-red mb-4">
               How the log works
             </div>
-            <p className="text-[14px] leading-[1.85] text-ink/80 max-w-[720px] mb-3">
-              Entries live in <code className="font-mono text-[12.5px] bg-paper px-1.5 py-0.5 border border-ink/15">lib/data/log.ts</code>.
+            <p className="text-[16.5px] leading-[1.7] text-ink max-w-[720px] mb-4">
+              Entries live in <code className="font-mono text-[14px] bg-paper px-1.5 py-0.5 border border-ink/25">lib/data/log.ts</code>.
               Add a new object at the top of the array, push, and the entry goes
               live. No CMS, no markdown processor, no friction. The format is
               intentionally minimal so the cost of capturing a thought stays
               under ten minutes.
             </p>
-            <p className="text-[13px] leading-[1.8] text-dim max-w-[720px]">
+            <p className="text-[15px] leading-[1.7] text-dim max-w-[720px]">
               Entries marked <em>Starter — replace</em> are placeholder content
               meant to be edited or deleted as real notes accumulate.
             </p>

@@ -63,10 +63,10 @@ export default function CourseDetailTabs({ course }: { course: Course }) {
               tabIndex={selected ? 0 : -1}
               onClick={() => setActiveTab(tab.id)}
               onKeyDown={(e) => handleKeyDown(e, index)}
-              className={`flex-1 min-w-[120px] px-5 py-3.5 font-mono text-[11px] tracking-[0.12em] uppercase border-r border-ink last:border-r-0 transition-colors cursor-pointer whitespace-nowrap ${
+              className={`flex-1 min-w-[120px] px-5 py-4 font-mono text-[13px] tracking-[0.1em] uppercase border-r border-ink last:border-r-0 transition-colors cursor-pointer whitespace-nowrap ${
                 selected
                   ? 'bg-ink text-paper'
-                  : 'bg-paper text-dim hover:bg-cream'
+                  : 'bg-paper text-ink hover:bg-cream'
               }`}
             >
               {tab.label}
@@ -98,14 +98,14 @@ function OverviewTab({ course }: { course: Course }) {
       {/* Description */}
       <div className="mb-12">
         <div className="border-l-4 pl-6 py-2 mb-6" style={{ borderColor: course.accentColor }}>
-          <p className="font-serif text-[clamp(18px,2.5vw,26px)] italic leading-[1.4] text-ink/80">
+          <p className="font-serif text-[clamp(20px,2.5vw,28px)] italic leading-[1.4] text-ink/85">
             {course.title}
           </p>
         </div>
         <div className="section-label mb-4" style={{ color: course.accentColor }}>
           About This Course
         </div>
-        <p className="text-[16px] leading-[1.9] text-dim max-w-2xl">
+        <p className="text-[17px] leading-[1.7] text-ink/85 max-w-2xl">
           {course.shortDescription}
         </p>
       </div>
@@ -124,12 +124,12 @@ function OverviewTab({ course }: { course: Course }) {
               } transition-colors hover:bg-cream/40`}
             >
               <span
-                className="font-display text-[24px] leading-none shrink-0 mt-0.5"
-                style={{ color: `${course.accentColor}30` }}
+                className="font-display text-[26px] leading-none shrink-0 mt-0.5"
+                style={{ color: `${course.accentColor}55` }}
               >
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <p className="text-[13.5px] leading-[1.75] text-ink">{obj}</p>
+              <p className="text-[16px] leading-[1.7] text-ink">{obj}</p>
             </div>
           ))}
         </div>
@@ -149,12 +149,12 @@ function OverviewTab({ course }: { course: Course }) {
               } transition-colors hover:bg-ink hover:text-paper group`}
             >
               <div
-                className="font-display text-[56px] leading-none mb-2 transition-colors"
-                style={{ color: `${course.accentColor}15` }}
+                className="font-display text-[58px] leading-none mb-3 transition-colors"
+                style={{ color: `${course.accentColor}30` }}
               >
                 {String(i + 1).padStart(2, '0')}
               </div>
-              <p className="text-[13.5px] leading-[1.75] text-dim group-hover:text-paper/65 transition-colors">
+              <p className="text-[15.5px] leading-[1.7] text-dim group-hover:text-paper/85 transition-colors">
                 {phil}
               </p>
             </div>
@@ -178,9 +178,9 @@ function ScheduleTab({ course }: { course: Course }) {
           Week by Week
         </em>
       </h2>
-      <p className="text-[16px] leading-[1.9] text-dim max-w-2xl mb-10">
+      <p className="text-[17px] leading-[1.7] text-ink/85 max-w-2xl mb-10">
         Every week opens with a problem you can&apos;t yet solve. By the end of that
-        week, you can -- and you understand why the solution works, not just how
+        week, you can &mdash; and you understand why the solution works, not just how
         to run it.
       </p>
 
@@ -202,7 +202,7 @@ function ProjectsTab({ course }: { course: Course }) {
           Mini Project
         </em>
       </h2>
-      <p className="text-[16px] leading-[1.9] text-dim max-w-2xl mb-10">
+      <p className="text-[17px] leading-[1.7] text-ink/85 max-w-2xl mb-10">
         No exams. No LeetCode grind. Each major concept culminates in a project
         where you build something real, deploy it, and reflect on what you
         learned.
@@ -215,20 +215,20 @@ function ProjectsTab({ course }: { course: Course }) {
             className="px-6 py-6 relative border-b-2 border-ink last:border-b-0 odd:md:border-r-2 transition-colors hover:bg-cream/40"
           >
             <div className="absolute -top-2 left-4 bg-paper px-1.5">
-              <span className="font-mono text-[8px] tracking-[0.2em] uppercase" style={{ color: course.accentColor }}>
+              <span className="font-mono text-[10px] tracking-[0.16em] uppercase" style={{ color: course.accentColor }}>
                 Project
               </span>
             </div>
 
             <div className="flex items-start gap-4 mt-1">
               <span
-                className="font-display text-[32px] leading-none shrink-0"
-                style={{ color: `${course.accentColor}20` }}
+                className="font-display text-[34px] leading-none shrink-0"
+                style={{ color: `${course.accentColor}45` }}
               >
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>
-                <p className="text-[13px] leading-[1.75] text-dim">{project}</p>
+                <p className="text-[15.5px] leading-[1.7] text-ink/85">{project}</p>
               </div>
             </div>
           </div>
@@ -238,25 +238,25 @@ function ProjectsTab({ course }: { course: Course }) {
       {/* Assessment note */}
       <div className="mt-10 border-2 border-ink">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          <div className="bg-ink text-paper px-7 py-7 md:border-r-2 border-b-2 md:border-b-0 border-ink">
-            <h3 className="font-serif text-[22px] italic mb-4" style={{ color: course.accentColor }}>
+          <div className="bg-ink text-paper px-7 py-8 md:border-r-2 border-b-2 md:border-b-0 border-ink">
+            <h3 className="font-serif text-[24px] italic mb-4" style={{ color: course.accentColor }}>
               Portfolio-Based Assessment
             </h3>
-            <p className="text-[13px] leading-[1.75] text-paper/60">
-              A living document of your journey -- not a polished showcase, but a
+            <p className="text-[15.5px] leading-[1.7] text-paper/85">
+              A living document of your journey &mdash; not a polished showcase, but a
               process record. First attempts, failures, revised understanding. All
               of it belongs here.
             </p>
           </div>
-          <div className="px-7 py-7">
-            <h3 className="font-serif text-[22px] italic mb-4" style={{ color: course.accentColor }}>
+          <div className="px-7 py-8">
+            <h3 className="font-serif text-[24px] italic mb-4" style={{ color: course.accentColor }}>
               You Assign Your Grade
             </h3>
-            <p className="text-[13px] leading-[1.75] text-dim">
+            <p className="text-[15.5px] leading-[1.7] text-ink/85">
               Adapted from Jeff Anderson&apos;s ungrading practice. The goal is not
               to perform mastery for a grade. The goal is to build real
-              understanding that serves you in 10 years. Evidence of learning --
-              not test scores -- is the only currency.
+              understanding that serves you in 10 years. Evidence of learning &mdash;
+              not test scores &mdash; is the only currency.
             </p>
           </div>
         </div>
@@ -278,7 +278,7 @@ function ResourcesTab({ course }: { course: Course }) {
           Shoulders of Thinkers
         </em>
       </h2>
-      <p className="text-[16px] leading-[1.9] text-dim max-w-2xl mb-10">
+      <p className="text-[17px] leading-[1.7] text-ink/85 max-w-2xl mb-10">
         Every design choice in this course is grounded in research on how people
         learn. These are the thinkers whose work shapes our classroom.
       </p>
@@ -291,12 +291,12 @@ function ResourcesTab({ course }: { course: Course }) {
             className="px-6 py-6 border-b-2 sm:border-r-2 border-ink last:border-b-0 last:border-r-0 transition-colors hover:bg-cream/40"
           >
             <span
-              className="block font-mono text-[9px] tracking-[0.12em] uppercase mb-1.5"
+              className="block font-mono text-[11px] tracking-[0.12em] uppercase mb-2"
               style={{ color: course.accentColor }}
             >
               Resource
             </span>
-            <p className="font-serif text-[16px] italic">{resource}</p>
+            <p className="font-serif text-[17px] italic">{resource}</p>
           </div>
         ))}
       </div>
@@ -308,10 +308,10 @@ function ResourcesTab({ course }: { course: Course }) {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <span className="block font-mono text-[9px] tracking-[0.15em] uppercase text-paper/30 mb-2">
+            <span className="block font-mono text-[11px] tracking-[0.14em] uppercase text-paper/65 mb-2.5">
               Course Details
             </span>
-            <ul className="list-none space-y-1 text-[12px] text-paper/55 leading-relaxed">
+            <ul className="list-none space-y-1.5 text-[14px] text-paper/85 leading-relaxed">
               <li>{course.units} Units &middot; {course.weeks} Weeks</li>
               <li>{course.tracks.length} Adventure {course.tracks.length === 1 ? 'Track' : 'Tracks'}</li>
               <li>Flipped + Project-Based</li>
@@ -319,17 +319,17 @@ function ResourcesTab({ course }: { course: Course }) {
             </ul>
           </div>
           <div>
-            <span className="block font-mono text-[9px] tracking-[0.15em] uppercase text-paper/30 mb-2">
+            <span className="block font-mono text-[11px] tracking-[0.14em] uppercase text-paper/65 mb-2.5">
               Resources
             </span>
-            <ul className="list-none space-y-1 text-[12px] text-paper/55 leading-relaxed">
+            <ul className="list-none space-y-1.5 text-[14px] text-paper/85 leading-relaxed">
               <li>All resources free and open-access</li>
               <li>No required textbook purchases</li>
               <li>Liberatory education</li>
               <li>
                 <a
                   href="mailto:henry@henryfan.org"
-                  className="underline underline-offset-2 hover:text-paper/80 transition-colors"
+                  className="underline underline-offset-2 hover:text-paper transition-colors"
                   style={{ textDecorationColor: course.accentColor }}
                 >
                   henry@henryfan.org

@@ -41,7 +41,7 @@ export default function CourseCatalogClient() {
       {/* Hero header */}
       <div className="bg-ink text-paper border-b-[5px] border-red">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-16 lg:py-24">
-          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red mb-5 flex items-center gap-3">
+          <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-red mb-5 flex items-center gap-3">
             <span className="w-8 h-px bg-red inline-block" />
             Course Catalog
           </div>
@@ -49,7 +49,7 @@ export default function CourseCatalogClient() {
             Teaching Computing<br />
             <span className="text-red not-italic font-display tracking-[0.02em]">Differently.</span>
           </h1>
-          <p className="text-[15px] leading-[1.85] text-paper/60 max-w-[560px] font-light">
+          <p className="text-[17px] leading-[1.75] text-paper/85 max-w-[600px] font-light">
             Eleven courses spanning AI, systems, mathematics, and engineering.
             Every course is project-based, equity-centered, and grounded in
             learning science. No exams. No required textbooks. Every concept
@@ -57,22 +57,22 @@ export default function CourseCatalogClient() {
           </p>
 
           {/* Stats row */}
-          <div className="flex gap-0 border border-white/15 w-fit mt-8">
-            <div className="px-5 py-3 border-r border-white/15 text-center">
-              <span className="block font-display text-[28px] leading-none text-red">{courses.length}</span>
-              <span className="block font-mono text-[8px] tracking-[0.12em] uppercase text-paper/40 mt-1">Courses</span>
+          <div className="flex gap-0 border border-white/25 w-fit mt-8">
+            <div className="px-5 py-3 border-r border-white/25 text-center">
+              <span className="block font-display text-[30px] leading-none text-red">{courses.length}</span>
+              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Courses</span>
             </div>
-            <div className="px-5 py-3 border-r border-white/15 text-center">
-              <span className="block font-display text-[28px] leading-none text-orange">5</span>
-              <span className="block font-mono text-[8px] tracking-[0.12em] uppercase text-paper/40 mt-1">Categories</span>
+            <div className="px-5 py-3 border-r border-white/25 text-center">
+              <span className="block font-display text-[30px] leading-none text-orange">5</span>
+              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Categories</span>
             </div>
-            <div className="px-5 py-3 border-r border-white/15 text-center">
-              <span className="block font-display text-[28px] leading-none text-gold">3</span>
-              <span className="block font-mono text-[8px] tracking-[0.12em] uppercase text-paper/40 mt-1">Tracks Per Course</span>
+            <div className="px-5 py-3 border-r border-white/25 text-center">
+              <span className="block font-display text-[30px] leading-none text-gold">3</span>
+              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Tracks Per Course</span>
             </div>
             <div className="px-5 py-3 text-center">
-              <span className="block font-display text-[28px] leading-none text-teal">0</span>
-              <span className="block font-mono text-[8px] tracking-[0.12em] uppercase text-paper/40 mt-1">Exams</span>
+              <span className="block font-display text-[30px] leading-none text-teal">0</span>
+              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Exams</span>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function CourseCatalogClient() {
                 aria-label="Search courses by name, number, or topic"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-paper border-2 border-ink px-4 pl-8 py-2.5 font-mono text-[12px] tracking-[0.04em] text-ink placeholder:text-dim/40 focus:outline-none focus:border-red transition-colors"
+                className="w-full bg-paper border-2 border-ink px-4 pl-9 py-3 font-mono text-[14px] tracking-[0.02em] text-ink placeholder:text-dim/60 focus:outline-none focus:border-red transition-colors"
               />
             </div>
 
@@ -101,10 +101,10 @@ export default function CourseCatalogClient() {
             <div className="flex flex-wrap gap-0 border-2 border-ink">
               <button
                 onClick={() => setActiveCategory('all')}
-                className={`px-4 py-2 font-mono text-[10px] tracking-[0.12em] uppercase border-r border-ink transition-colors cursor-pointer ${
+                className={`px-4 py-2.5 font-mono text-[12px] tracking-[0.1em] uppercase border-r border-ink transition-colors cursor-pointer ${
                   activeCategory === 'all'
                     ? 'bg-ink text-paper'
-                    : 'bg-paper text-dim hover:bg-cream'
+                    : 'bg-paper text-ink hover:bg-cream'
                 }`}
               >
                 All
@@ -113,10 +113,10 @@ export default function CourseCatalogClient() {
                 <button
                   key={cat.value}
                   onClick={() => setActiveCategory(cat.value)}
-                  className={`px-4 py-2 font-mono text-[10px] tracking-[0.12em] uppercase border-r border-ink last:border-r-0 transition-colors cursor-pointer ${
+                  className={`px-4 py-2.5 font-mono text-[12px] tracking-[0.1em] uppercase border-r border-ink last:border-r-0 transition-colors cursor-pointer ${
                     activeCategory === cat.value
                       ? 'bg-ink text-paper'
-                      : 'bg-paper text-dim hover:bg-cream'
+                      : 'bg-paper text-ink hover:bg-cream'
                   }`}
                 >
                   {cat.label}
@@ -130,10 +130,10 @@ export default function CourseCatalogClient() {
                 <button
                   key={sf.value}
                   onClick={() => setActiveStatus(sf.value)}
-                  className={`px-3 py-2 font-mono text-[10px] tracking-[0.08em] uppercase border-r border-ink last:border-r-0 transition-colors cursor-pointer ${
+                  className={`px-3 py-2.5 font-mono text-[12px] tracking-[0.06em] uppercase border-r border-ink last:border-r-0 transition-colors cursor-pointer ${
                     activeStatus === sf.value
                       ? 'bg-ink text-paper'
-                      : 'bg-paper text-dim hover:bg-cream'
+                      : 'bg-paper text-ink hover:bg-cream'
                   }`}
                 >
                   {sf.label}
@@ -147,8 +147,8 @@ export default function CourseCatalogClient() {
       {/* Course grid */}
       <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-12 lg:py-16">
         {/* Results count */}
-        <div className="font-mono text-[10px] tracking-[0.15em] uppercase text-dim mb-8 flex items-center gap-3">
-          <span className="opacity-40">//</span>
+        <div className="font-mono text-[12px] tracking-[0.12em] uppercase text-dim mb-8 flex items-center gap-3">
+          <span className="opacity-60">//</span>
           {filtered.length} {filtered.length === 1 ? 'Course' : 'Courses'} Found
         </div>
 
@@ -188,14 +188,14 @@ export default function CourseCatalogClient() {
       <div className="bg-ink text-paper px-7 lg:px-15 py-12 border-t-2 border-ink">
         <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
           <div>
-            <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-red mb-2">
+            <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-red mb-2">
               Teaching Philosophy
             </div>
-            <p className="font-serif text-[clamp(20px,2.5vw,32px)] italic leading-tight text-paper/70 max-w-xl">
+            <p className="font-serif text-[clamp(20px,2.5vw,32px)] italic leading-tight text-paper/85 max-w-xl">
               Every concept is earned through building. Every student is the world&apos;s leading expert on their own learning.
             </p>
           </div>
-          <div className="font-mono text-[10px] tracking-[0.08em] text-paper/25 leading-8 text-right">
+          <div className="font-mono text-[12px] tracking-[0.04em] text-paper/65 leading-7 text-right">
             Community College CS<br />
             All resources free &middot; Open access<br />
             No required textbooks<br />
