@@ -5,7 +5,13 @@ import { researchProjects, theoreticalConstructs, researchTimeline } from "@/lib
 export const metadata: Metadata = {
   title: "Research Interests",
   description:
-    "CS Education research agenda: equity in introductory computing, community college pathways, help-seeking behavior, and curriculum design.",
+    "Four research questions the proposed community-college CS curriculum is designed to investigate: dependency structures, help-seeking behavior under structural constraints, portfolio assessment, and the CS 175 cross-STEM computer build. Henry Fan, mentee of Prof. Jeff Anderson (Foothill College).",
+  openGraph: {
+    title: "Research Interests",
+    description:
+      "The four research questions driving a proposed six-course community-college CS curriculum — grounded in curriculum design practice, not live teaching.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 const researchQuestions = [

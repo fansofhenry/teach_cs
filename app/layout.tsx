@@ -36,7 +36,7 @@ const dmSans = DM_Sans({
 const SITE_URL = "https://fansofhenry.github.io/teach_cs";
 const SITE_TITLE = "Teaching Computing Differently — Community College CS";
 const SITE_DESCRIPTION =
-  "A project-based, equity-centered CS curriculum for community college students. No exams. No required textbooks. Every concept earned through building.";
+  "A proposed six-course community-college CS curriculum by Henry Fan, mentee of Prof. Jeff Anderson (Foothill College). Project-based, equity-centered, portfolio-assessed — a proposal in development, not a currently taught program.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
