@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Henry Fan — CS instructor at a California community college, working at the intersection of computer science education, equitable pedagogy, and learning science research.",
+    "Henry Fan — community college CS education researcher and curriculum designer, mentee of Prof. Jeff Anderson (Foothill College), and Application Support Analyst at CVC-OEI supporting cross-enrollment infrastructure for 115+ California community colleges.",
 };
 
 export default function AboutPage() {
@@ -12,9 +12,9 @@ export default function AboutPage() {
     <>
       {/* ======== HERO ======== */}
       <header className="bg-ink text-paper border-b-[5px] border-red">
-        <div className="border-b border-white/10 px-7 lg:px-[60px] py-3 font-mono text-[10px] tracking-[0.14em] uppercase text-white/50 flex justify-between">
+        <div className="border-b border-white/10 px-7 lg:px-[60px] py-3 font-mono text-[10px] tracking-[0.14em] uppercase text-white/70 flex justify-between">
           <span>About</span>
-          <span>Henry Fan &middot; CS Educator</span>
+          <span>Henry Fan &middot; CS Education Research</span>
         </div>
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-16 lg:py-20">
           <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-5 animate-fade-up-1">
@@ -25,10 +25,11 @@ export default function AboutPage() {
             <br />
             <span className="text-red">Henry Fan</span>
           </h1>
-          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
-            CS instructor at a California community college, working at the
-            intersection of computer science education, equitable pedagogy, and
-            learning science research.
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[680px] animate-fade-up-3">
+            Community college CS education researcher and curriculum designer.
+            Mentee of Prof. Jeff Anderson (Foothill College). Application
+            Support Analyst at CVC-OEI supporting cross-enrollment
+            infrastructure for 115+ California community colleges.
           </p>
         </div>
       </header>
@@ -40,14 +41,18 @@ export default function AboutPage() {
           <div>
             <div className="space-y-[18px]">
               <p className="text-[16.5px] leading-[1.7]">
-                This curriculum is developed by Henry Fan, a CS instructor at a
-                California community college working at the intersection of
-                computer science education, equitable pedagogy, and learning
-                science research. The courses on this site represent a
-                multi-year project to redesign introductory CS at the community
-                college level — building courses that are technically rigorous,
-                project-driven, and designed from the start to serve students
-                who have historically been pushed out of CS.
+                This curriculum is designed by Henry Fan — a community college
+                CS education researcher, curriculum designer, and mentee of
+                Prof. Jeff Anderson (Foothill College). Henry works by day as
+                Application Support Analyst at CVC-OEI / Foothill–De Anza CCD,
+                supporting cross-enrollment infrastructure for 115+ California
+                community colleges. The courses on this site represent a
+                multi-year design project to redesign introductory CS at the
+                community college level — building courses that are
+                technically rigorous, project-driven, and designed from the
+                start to serve students who have historically been pushed out
+                of CS. The framework is a proposal, not a currently taught
+                program: every design decision is open for remix.
               </p>
               <p className="text-[16.5px] leading-[1.7]">
                 The pedagogical foundation of this work is built on the

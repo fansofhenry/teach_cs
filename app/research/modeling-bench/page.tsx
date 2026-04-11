@@ -161,12 +161,13 @@ export default function ModelingBenchPage() {
             <br />
             <span className="text-red">Bench</span>
           </h1>
-          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[700px] animate-fade-up-3">
-            {labMeta.tagline} Henry runs the lab as principal investigator;
-            Prof. Jeff Anderson (Foothill College) is mentor and second author.
-            Every direction below is anchored to a written invitation in
-            Anderson&apos;s published work or the Math 2BL Spring 2026
-            deliverables document.
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[720px] animate-fade-up-3">
+            {labMeta.tagline} Henry is the principal author and driver of all
+            three papers; Prof. Jeff Anderson (Foothill College) is his
+            research mentor and second author on each. This is a mentee-led
+            research program, not a funded academic lab — every direction
+            below is anchored to a written invitation in Anderson&apos;s
+            published work or the Math 2BL Spring 2026 deliverables document.
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-3 mt-9 max-w-[860px] animate-fade-up-4">
             <Field label="Principal author" value={labMeta.principal} />

@@ -124,13 +124,14 @@ export default function ResearchPage() {
             <br />
             <span className="text-red">Interests</span>
           </h1>
-          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
-            My research connects teaching practice to scholarship. Every course
-            I teach is also a site of inquiry — into how community college
-            students learn computing, what structural barriers they face, and
-            how curriculum design can be an equity intervention. I am pursuing a
-            PhD in CS Education, Learning Sciences, or HCI to formalize this
-            work.
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[680px] animate-fade-up-3">
+            My research connects curriculum design to scholarship. Every course
+            in this framework is also a site of inquiry — into how community
+            college students learn computing, what structural barriers they
+            face, and how curriculum design can be an equity intervention. I am
+            pursuing a PhD in CS Education, Learning Sciences, or HCI to
+            formalize this work, under the mentorship of Prof. Jeff Anderson
+            (Foothill College).
           </p>
           <div className="flex flex-wrap gap-2.5 mt-7 animate-fade-up-4">
             {[
