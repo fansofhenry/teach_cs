@@ -370,9 +370,9 @@ export default function Home() {
         </Link>
       )}
 
-      {/* ====== MASTHEAD + DASHBOARD ====== */}
+      {/* ====== UNIFIED HERO ====== */}
       <header className="bg-ink text-paper border-b-[5px] border-red">
-        {/* Top bar */}
+        {/* Top bar — identity strip */}
         <div className="px-7 lg:px-15 py-3.5 border-b border-white/10 font-mono text-[11px] tracking-[0.12em] uppercase opacity-80 flex justify-between gap-4">
           <span className="text-paper/90">
             Henry Fan &middot; Curriculum Designer &amp; Education Researcher
@@ -380,55 +380,42 @@ export default function Home() {
           <span className="hidden sm:inline">Mentee of Jeff Anderson &middot; Foothill College</span>
         </div>
 
-        {/* Main masthead — Henry's single-column hero, preserved */}
-        <div className="px-7 lg:px-15 pt-16 lg:pt-[72px] pb-12 lg:pb-14 max-w-[1300px]">
-          <div className="max-w-[820px]">
+        {/* The hero — title up top, dashboard immediately below */}
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 pt-14 lg:pt-16 pb-14 lg:pb-16">
+          {/* Title block */}
+          <div className="max-w-[820px] mb-12 lg:mb-14">
             <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-red mb-5 animate-fade-up-1">
               A Curriculum Framework for Community College CS
             </div>
-            <h1 className="font-display text-[clamp(60px,9vw,120px)] tracking-[0.02em] leading-[0.88] mb-7 animate-fade-up-2">
+            <h1 className="font-display text-[clamp(56px,8.5vw,108px)] tracking-[0.02em] leading-[0.88] animate-fade-up-2">
               Teaching<br />
               <span className="text-red">Computing</span><br />
               Differently.
             </h1>
-            <p className="text-[19px] leading-[1.6] text-paper/90 max-w-[680px] animate-fade-up-3">
-              Six courses built on one conviction: students learn CS best when they build real things, earn abstractions through struggle, and understand that every algorithm encodes a set of values about the world. No exams. No required textbooks. Every concept earned by building. <em className="font-serif italic text-paper/70">A proposal in development &mdash; not a currently taught program.</em>
-            </p>
-            <div className="flex gap-2.5 flex-wrap mt-8 animate-fade-up-4">
-              <span className="pill">No Required Textbooks</span>
-              <span className="pill">No Exams</span>
-              <span className="pill">3 Entry Tracks per Course</span>
-              <span className="pill">Portfolio Assessment</span>
-              <span className="pill">All Resources Free</span>
-            </div>
           </div>
-        </div>
 
-        {/* ===== DASHBOARD ROW: Currently + 3 status cards + 3 audience doors ===== */}
-        <div className="border-t border-white/10">
-          <div className="max-w-[1300px] mx-auto px-7 lg:px-15 pt-12 lg:pt-14 pb-14 lg:pb-16">
-            {/* Currently focus */}
-            <div className="mb-12 lg:mb-14 max-w-[860px]">
-              <div className="font-mono text-[12px] tracking-[0.18em] uppercase text-red mb-4">
-                Currently
-              </div>
-              <p className="font-serif text-[clamp(22px,2.8vw,34px)] italic leading-[1.25] text-paper">
-                {currentFocus}
-              </p>
-              <p className="font-mono text-[12px] tracking-[0.06em] text-paper/65 mt-4">
-                Last updated{' '}
-                {latest && (
-                  <time dateTime={latest.date}>{formatNowDate(latest.date)}</time>
-                )}{' '}
-                &middot;{' '}
-                <Link
-                  href="/log"
-                  className="text-red border-b border-red/40 hover:border-red no-underline transition-colors"
-                >
-                  See the full log
-                </Link>
-              </p>
+          {/* Currently focus */}
+          <div className="mb-12 lg:mb-14 max-w-[880px] animate-fade-up-3">
+            <div className="font-mono text-[12px] tracking-[0.18em] uppercase text-red mb-4">
+              Currently
             </div>
+            <p className="font-serif text-[clamp(24px,3vw,38px)] italic leading-[1.25] text-paper">
+              {currentFocus}
+            </p>
+            <p className="font-mono text-[12px] tracking-[0.06em] text-paper/65 mt-4">
+              Last updated{' '}
+              {latest && (
+                <time dateTime={latest.date}>{formatNowDate(latest.date)}</time>
+              )}{' '}
+              &middot;{' '}
+              <Link
+                href="/log"
+                className="text-red border-b border-red/40 hover:border-red no-underline transition-colors"
+              >
+                See the full log
+              </Link>
+            </p>
+          </div>
 
             {/* Three status cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/15 mb-12 lg:mb-14">
@@ -561,24 +548,41 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
         </div>
       </header>
 
-      {/* ====== "MORE ABOUT THE CURRICULUM" DIVIDER ====== */}
+      {/* ====== "MORE ABOUT THE CURRICULUM" DIVIDER + LONG-FORM PITCH OPENER ====== */}
       <section
         id="curriculum"
         className="bg-paper border-b-2 border-ink scroll-mt-20"
       >
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 items-end">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-14 lg:py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 items-start">
           <div className="font-mono text-[11px] tracking-[0.16em] uppercase text-red flex items-start gap-2.5">
             <span className="text-ink/30">{'//'}</span> Below the dashboard
           </div>
           <div>
-            <h2 className="font-display text-[clamp(36px,5vw,60px)] tracking-[0.02em] leading-[0.95] text-ink mb-3">
+            <h2 className="font-display text-[clamp(40px,5.5vw,68px)] tracking-[0.02em] leading-[0.92] text-ink mb-5">
               More about the <span className="text-red">curriculum</span>
             </h2>
-            <p className="text-[16.5px] leading-[1.7] text-ink/85 max-w-[680px]">
+            <p className="text-[19px] leading-[1.6] text-ink max-w-[680px] mb-6">
+              Six courses built on one conviction: students learn CS best when
+              they build real things, earn abstractions through struggle, and
+              understand that every algorithm encodes a set of values about the
+              world. No exams. No required textbooks. Every concept earned by
+              building. <em className="font-serif italic text-ink/70">A
+              proposal in development &mdash; not a currently taught program.</em>
+            </p>
+            <div className="flex gap-2.5 flex-wrap mb-5">
+              {['No Required Textbooks','No Exams','3 Entry Tracks per Course','Portfolio Assessment','All Resources Free'].map(p => (
+                <span
+                  key={p}
+                  className="px-3.5 py-1.5 border border-ink/30 font-mono text-[11px] tracking-[0.06em] uppercase text-ink/80"
+                >
+                  {p}
+                </span>
+              ))}
+            </div>
+            <p className="text-[14.5px] leading-[1.7] text-ink/65 max-w-[680px]">
               Everything below is the long-form pitch: the problem the framework
               addresses, the three pedagogical principles, the eleven proposed
               courses, the three entry tracks, the signature projects, and the
