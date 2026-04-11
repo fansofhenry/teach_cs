@@ -1,4 +1,4 @@
-import type { Course, CourseCategory, CourseStatus, LearningStrategy, Dataset, ConceptMapNode, Badge } from "./types";
+import type { Course, CourseCategory, CourseStatus } from "./types";
 
 export type { Course, CourseCategory, CourseStatus };
 
