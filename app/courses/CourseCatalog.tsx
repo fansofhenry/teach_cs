@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { courses, categories } from '@/lib/data/courses';
+import { courses, categories, getCoreCourses, getNgAdaptations } from '@/lib/data/courses';
 import type { CourseCategory, CourseStatus } from '@/lib/data/courses';
 import CourseCard from '@/components/CourseCard';
 
@@ -11,6 +11,10 @@ const statusFilters: { value: CourseStatus | 'all'; label: string }[] = [
   { value: 'in-development', label: 'In Development' },
   { value: 'proposed', label: 'Proposed' },
 ];
+
+const coreCount = getCoreCourses().length;
+const ngCount = getNgAdaptations().length;
+const totalCount = courses.length;
 
 export default function CourseCatalogClient() {
   const [search, setSearch] = useState('');
@@ -49,32 +53,37 @@ export default function CourseCatalogClient() {
             Teaching Computing<br />
             <span className="text-red not-italic font-display tracking-[0.02em]">Differently.</span>
           </h1>
-          <p className="text-[17px] leading-[1.7] text-paper/90 max-w-[600px]">
-            Eleven courses spanning AI, systems, mathematics, and engineering.
-            Every course is project-based, equity-centered, and grounded in
-            learning science. No exams. No required textbooks. Every concept
-            earned through building.
+          <p className="text-[17px] leading-[1.7] text-paper/90 max-w-[620px]">
+            {coreCount} original community-college courses across AI, systems,
+            mathematics, and engineering, plus {ngCount} equity-overlay
+            adaptations of Andrew Ng&rsquo;s Coursera sequence. Every course is
+            project-based, grounded in learning science, and designed to be
+            free of exams and required textbooks. A proposal in development
+            &mdash; not a currently taught program.
           </p>
 
           {/* Stats row */}
           <div className="flex gap-0 border border-white/25 w-fit mt-8">
             <div className="px-5 py-3 border-r border-white/25 text-center">
-              <span className="block font-display text-[30px] leading-none text-red">{courses.length}</span>
-              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Courses</span>
+              <span className="block font-display text-[30px] leading-none text-red">{coreCount}</span>
+              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Original</span>
             </div>
             <div className="px-5 py-3 border-r border-white/25 text-center">
-              <span className="block font-display text-[30px] leading-none text-orange">5</span>
-              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Categories</span>
+              <span className="block font-display text-[30px] leading-none text-orange">{ngCount}</span>
+              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Ng Adapted</span>
             </div>
             <div className="px-5 py-3 border-r border-white/25 text-center">
               <span className="block font-display text-[30px] leading-none text-gold">3</span>
-              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Tracks Per Course</span>
+              <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Tracks / Course</span>
             </div>
             <div className="px-5 py-3 text-center">
               <span className="block font-display text-[30px] leading-none text-teal">0</span>
               <span className="block font-mono text-[10px] tracking-[0.1em] uppercase text-paper/70 mt-1.5">Exams</span>
             </div>
           </div>
+          <p className="font-mono text-[11px] tracking-[0.08em] text-paper/55 mt-3">
+            <span aria-hidden>//</span> {totalCount} catalog entries total &mdash; filter below by status, category, or keyword.
+          </p>
         </div>
       </div>
 
