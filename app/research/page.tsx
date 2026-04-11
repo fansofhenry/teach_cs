@@ -156,7 +156,7 @@ export default function ResearchPage() {
       {/* ======== POSITIONING STATEMENT ======== */}
       <section className="bg-cream border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20">
-          <div className="section-label">Research Positioning</div>
+          <h2 className="section-label">Research Positioning</h2>
           <div className="space-y-5">
             <p className="text-[16px] leading-[1.9]">
               The research questions below emerged from designing this
@@ -197,7 +197,7 @@ export default function ResearchPage() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-16">
-            <div className="section-label">Research Questions</div>
+            <h2 className="section-label">Research Questions</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               Four interconnected questions about equity, structure, and
               learning in community college CS — each grounded in curriculum
@@ -263,7 +263,7 @@ export default function ResearchPage() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span className="text-white/20">{"//  "}</span>Methodology
+              <span aria-hidden className="text-white/20">{"//  "}</span>Methodology
             </div>
             <p className="text-[15px] leading-[1.85] text-white/55 max-w-[620px]">
               My methodological orientation is mixed-methods with a qualitative
@@ -294,7 +294,7 @@ export default function ResearchPage() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <div className="section-label">PhD Program Interests</div>
+            <h2 className="section-label">PhD Program Interests</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               I am looking for doctoral programs where curriculum design and
               research are not separate activities — where the work of
@@ -333,7 +333,7 @@ export default function ResearchPage() {
       <section className="bg-cream border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <div className="section-label">Working Papers</div>
+            <h2 className="section-label">Working Papers</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               Papers in progress that formalize the research questions and the
               design rationale behind this curriculum framework. These represent
@@ -369,7 +369,7 @@ export default function ResearchPage() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-12">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span className="text-white/20">{"//  "}</span>Active Lab
+              <span aria-hidden className="text-white/20">{"//  "}</span>Active Lab
             </div>
             <p className="text-[15px] leading-[1.85] text-white/55 max-w-[680px]">
               Alongside the broader CS-Ed agenda above, I am running a focused
@@ -396,7 +396,7 @@ export default function ResearchPage() {
                 href="/research/modeling-bench"
                 className="inline-block px-5 py-3 border border-red/60 font-mono text-[10px] tracking-[0.14em] uppercase text-red hover:bg-red/10 transition-colors no-underline shrink-0"
               >
-                Enter the Lab &rarr;
+                Enter the Lab <span aria-hidden>&rarr;</span>
               </Link>
             </div>
 
@@ -460,7 +460,7 @@ export default function ResearchPage() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <div className="section-label">Research Projects</div>
+            <h2 className="section-label">Research Projects</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               Five named projects with defined methodologies, tech stacks, and
               target venues. These are publication-oriented research designs,
@@ -539,7 +539,7 @@ export default function ResearchPage() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span className="text-white/20">{"//  "}</span>Theoretical
+              <span aria-hidden className="text-white/20">{"//  "}</span>Theoretical
               Constructs
             </div>
             <p className="text-[15px] leading-[1.85] text-white/55 max-w-[620px]">
@@ -577,7 +577,7 @@ export default function ResearchPage() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <div className="section-label">Research Timeline</div>
+            <h2 className="section-label">Research Timeline</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               A phased roadmap from curriculum design and mentee-led research
               through doctoral study.
@@ -634,13 +634,13 @@ export default function ResearchPage() {
               rel="noopener noreferrer"
               className="inline-block px-5 py-2.5 border border-white/30 font-mono text-[11px] tracking-[0.12em] uppercase text-white hover:bg-white/10 transition-colors no-underline text-center"
             >
-              Research Portfolio &rarr;
+              Research Portfolio <span aria-hidden>&rarr;</span>
             </Link>
             <Link
               href="/philosophy"
               className="inline-block px-5 py-2.5 border border-white/30 font-mono text-[11px] tracking-[0.12em] uppercase text-white hover:bg-white/10 transition-colors no-underline text-center"
             >
-              Teaching Philosophy &rarr;
+              Teaching Philosophy <span aria-hidden>&rarr;</span>
             </Link>
           </div>
         </div>

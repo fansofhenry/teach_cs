@@ -82,7 +82,7 @@ export default function CourseCard({ course }: { course: Course }) {
 
         {/* Read more indicator */}
         <div className="mt-5 font-mono text-[12px] tracking-[0.1em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ color: course.accentColor }}>
-          View Course Details &rarr;
+          View Course Details <span aria-hidden>&rarr;</span>
         </div>
       </div>
     </Link>

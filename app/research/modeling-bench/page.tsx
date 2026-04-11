@@ -773,7 +773,7 @@ function DarkSection({
       <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-12">
           <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-            <span className="text-white/20">{"//  "}</span>
+            <span aria-hidden className="text-white/20">{"//  "}</span>
             <span className="font-mono text-[10px] text-white/30 mr-2">
               {eyebrow}
             </span>

@@ -123,7 +123,7 @@ export default function PeerTrainingPage() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span className="text-white/20">{"//  "}</span>Workshop Formats
+              <span aria-hidden className="text-white/20">{"//  "}</span>Workshop Formats
             </div>
             <p className="text-[15px] leading-[1.85] text-white/55 max-w-[620px]">
               Four tested formats for using these cards in professional

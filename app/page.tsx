@@ -359,7 +359,7 @@ export default function Home() {
             <span className="uppercase tracking-[0.16em] opacity-90 shrink-0 text-[12px]">
               Now &middot; {formatNowDate(latest.date)}
             </span>
-            <span className="opacity-70 shrink-0">&rarr;</span>
+            <span aria-hidden className="opacity-70 shrink-0">&rarr;</span>
             <span className="truncate">{latest.title}</span>
             <span className="ml-auto hidden sm:inline opacity-90 uppercase tracking-[0.14em] shrink-0 text-[11px]">
               View log
@@ -408,7 +408,7 @@ export default function Home() {
         <section className="bg-cream border-b-2 border-ink">
           <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-12 lg:py-14 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-16 items-start">
             <div>
-              <div className="section-label mb-3">This Week</div>
+              <h2 className="section-label mb-3">This Week</h2>
               <p className="font-serif text-[19px] italic leading-[1.4] text-ink mb-3">
                 {currentFocus}
               </p>
@@ -416,7 +416,7 @@ export default function Home() {
                 href="/log"
                 className="inline-block font-mono text-[12px] tracking-[0.12em] uppercase text-red border-b border-red/40 pb-0.5 no-underline hover:border-red transition-colors"
               >
-                Full log &rarr;
+                Full log <span aria-hidden>&rarr;</span>
               </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink border-2 border-ink">
@@ -453,7 +453,7 @@ export default function Home() {
       {/* ====== THE PROBLEM ====== */}
       <section className="bg-cream border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20">
-          <div className="section-label">The Problem This Curriculum Addresses</div>
+          <h2 className="section-label">The Problem This Curriculum Addresses</h2>
           <p className="text-[19px] leading-[1.65] text-ink max-w-[680px]">
             Most introductory CS courses follow the same pattern: explain a concept, demonstrate syntax, assign practice problems, assess on recall. Students who arrive with prior exposure tend to succeed. Students who don&rsquo;t fall behind quickly and conclude they are <em className="font-serif italic text-[20px]">not a CS person.</em> The course then calls this selection, when in fact it is structure. <strong className="font-medium">The difficulty students experience in introductory CS is not uniformly about ability</strong> &mdash; most of it is caused by courses that teach abstractions before problems, syntax before meaning, and efficiency before understanding.
           </p>
@@ -464,7 +464,7 @@ export default function Home() {
       <section id="philosophy" className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-16">
-            <div className="section-label">How These Courses Are Built</div>
+            <h2 className="section-label">How These Courses Are Built</h2>
             <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[640px]">
               Three pedagogical principles run through every course in this curriculum. They are not buzzwords &mdash; each one is a concrete design decision that shows up in how units are sequenced, how projects are scoped, and how student work is assessed. Each principle traces to a specific body of learning science research.
             </p>
@@ -502,9 +502,9 @@ export default function Home() {
       {/* ====== COURSES ====== */}
       <section id="courses">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28">
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-4 flex items-center gap-2.5">
-            <span className="text-cream">{'//'}</span> Six Courses
-          </div>
+          <h2 className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mt-0 mb-4 flex items-center gap-2.5">
+            <span aria-hidden className="text-cream">{'//'}</span> Six Courses
+          </h2>
           <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[680px] mb-12">
             Each course is a complete 18-week experience: a central project arc, three entry tracks for students at different levels, portfolio-based assessment, and a public exhibition at semester end. No exams. No required textbook purchases. All course materials free and open access.
           </p>
@@ -513,16 +513,16 @@ export default function Home() {
           <div className="font-mono text-[13px] leading-[1.8] text-ink/85 mb-3 flex flex-wrap items-center gap-x-2 gap-y-1">
             <span className="text-ink/50 uppercase tracking-[0.12em] text-[11px] mr-2">CS pathway</span>
             <span className="text-ink">CS 175</span>
-            <span className="text-ink/40">&rarr;</span>
+            <span aria-hidden className="text-ink/40">&rarr;</span>
             <span className="text-ink">CS 180</span>
-            <span className="text-ink/40">&rarr;</span>
+            <span aria-hidden className="text-ink/40">&rarr;</span>
             <span className="text-red font-medium">CS 185</span>
-            <span className="text-ink/40">&rarr;</span>
+            <span aria-hidden className="text-ink/40">&rarr;</span>
             <span className="text-ink">CS 210</span>
             <span className="mx-3 text-ink/30">&middot;</span>
             <span className="text-ink/50 uppercase tracking-[0.12em] text-[11px] mr-2">Engineering branch</span>
             <span className="text-teal">Math 2B</span>
-            <span className="text-ink/40">&rarr;</span>
+            <span aria-hidden className="text-ink/40">&rarr;</span>
             <span className="text-teal">ENGR 11</span>
           </div>
           <p className="font-mono text-[12px] text-ink/65 mb-9 leading-[1.7]">
@@ -585,7 +585,7 @@ export default function Home() {
                     style={{ color: course.ctaColor || '#c1121f' }}
                   >
                     <span>Open Course Site</span>
-                    <span className="text-[18px]">&rarr;</span>
+                    <span aria-hidden className="text-[18px]">&rarr;</span>
                   </div>
                 </div>
               </Link>
@@ -597,9 +597,9 @@ export default function Home() {
       {/* ====== THREE TRACKS ====== */}
       <section id="tracks" className="bg-ink text-paper border-y-2 border-white/[0.06]">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 items-start">
-          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-            <span className="text-white/20">{'//'}</span> Three Tracks
-          </div>
+          <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1 my-0">
+            <span aria-hidden className="text-white/20">{'//'}</span> Three Tracks
+          </h2>
           <div>
             <div className="bg-white/[0.04] border border-white/10 p-5 px-6 mb-8 font-serif text-[19px] italic text-paper leading-[1.5]">
               &ldquo;Tracks are chosen weekly, not at semester start. A student can run Track I for ten weeks and switch to Track II for the capstone. There is no grade penalty for choosing Track I.&rdquo;
@@ -647,7 +647,7 @@ export default function Home() {
       <section id="projects" className="border-y-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-16 items-start">
-            <div className="section-label">Signature Projects</div>
+            <h2 className="section-label">Signature Projects</h2>
             <p className="text-[17px] leading-[1.7] text-ink/85">
               These are not homework assignments with a twist. Each signature project is the central learning experience of its unit &mdash; designed so that students encounter the core concept as a genuine problem to solve, not a technique to apply. Every project is public: presented at a semester-end exhibition open to the campus community.
             </p>
@@ -708,7 +708,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2.5 font-mono text-[12px] tracking-[0.12em] uppercase text-red mt-5 transition-[gap] group-hover:gap-4">
                   <span>Open Full Project Page</span>
-                  <span className="text-[18px]">&rarr;</span>
+                  <span aria-hidden className="text-[18px]">&rarr;</span>
                 </div>
               </div>
             </Link>
@@ -746,9 +746,9 @@ export default function Home() {
       <section id="thinkers" className="border-t-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-14 items-start">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink/70 flex items-start gap-2.5 pt-1">
-              <span className="text-cream">{'//'}</span> Research Roots
-            </div>
+            <h2 className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink/70 flex items-start gap-2.5 pt-1 my-0">
+              <span aria-hidden className="text-cream">{'//'}</span> Research Roots
+            </h2>
             <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[640px]">
               These courses are not built on personal teaching preference. Each design decision traces to a body of research or a theoretical framework. The thinkers below are not name-dropped &mdash; their ideas show up in specific assignments, assessment structures, and sequencing decisions across every course in this curriculum.
             </p>
@@ -785,9 +785,9 @@ export default function Home() {
       {/* ====== ABOUT ====== */}
       <section id="about" className="bg-cream border-y-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28 text-center">
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-5">
+          <h2 className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mt-0 mb-5">
             About This Curriculum
-          </div>
+          </h2>
           <p className="text-[19px] leading-[1.6] text-ink max-w-[720px] mx-auto mb-8">
             Designed by Henry Fan &mdash; community college CS education researcher, curriculum designer, and mentee of Prof. Jeff Anderson (Foothill College). The framework is a proposal, not a currently taught program.
           </p>
@@ -795,7 +795,7 @@ export default function Home() {
             href="/about"
             className="inline-block font-mono text-[12px] tracking-[0.1em] uppercase text-red no-underline border-b border-red/40 pb-1 hover:border-red transition-colors"
           >
-            Full About &rarr;
+            Full About <span aria-hidden>&rarr;</span>
           </Link>
         </div>
       </section>

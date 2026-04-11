@@ -157,7 +157,7 @@ export default function CourseCatalogClient() {
       <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-12 lg:py-16">
         {/* Results count */}
         <div className="font-mono text-[12px] tracking-[0.12em] uppercase text-dim mb-8 flex items-center gap-3">
-          <span className="opacity-60">//</span>
+          <span aria-hidden className="opacity-60">//</span>
           {filtered.length} {filtered.length === 1 ? 'Course' : 'Courses'} Found
         </div>
 

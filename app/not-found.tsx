@@ -57,7 +57,7 @@ export default function NotFound() {
                       {link.sub}
                     </span>
                   </span>
-                  <span className="font-mono text-[16px] text-red transition-transform group-hover:translate-x-1">
+                  <span aria-hidden className="font-mono text-[16px] text-red transition-transform group-hover:translate-x-1">
                     &rarr;
                   </span>
                 </Link>

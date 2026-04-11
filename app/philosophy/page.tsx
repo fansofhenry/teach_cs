@@ -133,9 +133,9 @@ export default function PhilosophyPage() {
       {/* ======== THE PROBLEM ======== */}
       <section className="bg-cream border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20">
-          <div className="section-label">
+          <h2 className="section-label">
             The Problem This Curriculum Addresses
-          </div>
+          </h2>
           <div className="space-y-5">
             <p className="text-[16px] leading-[1.9]">
               Most introductory CS courses follow the same pattern: explain a
@@ -177,7 +177,7 @@ export default function PhilosophyPage() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-16">
-            <div className="section-label">Three Core Principles</div>
+            <h2 className="section-label">Three Core Principles</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               Each principle is a concrete design decision that shows up in how
               units are sequenced, how projects are scoped, and how student work
@@ -253,7 +253,7 @@ export default function PhilosophyPage() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-dim flex items-start gap-2.5 pt-1">
-              <span className="text-cream">{"//  "}</span>Research Roots
+              <span aria-hidden className="text-cream">{"//  "}</span>Research Roots
             </div>
             <p className="text-[14px] leading-[1.85] text-dim max-w-[620px]">
               These courses are not built on personal teaching preference. Each
@@ -305,13 +305,13 @@ export default function PhilosophyPage() {
               href="/paths"
               className="inline-block px-6 py-3 border border-white/15 font-mono text-[11px] tracking-[0.12em] uppercase text-white/50 hover:text-paper hover:border-white/30 transition-colors no-underline"
             >
-              Learning Paths &rarr;
+              Learning Paths <span aria-hidden>&rarr;</span>
             </Link>
             <Link
               href="/research"
               className="inline-block px-6 py-3 border border-white/15 font-mono text-[11px] tracking-[0.12em] uppercase text-white/50 hover:text-paper hover:border-white/30 transition-colors no-underline"
             >
-              Research Agenda &rarr;
+              Research Agenda <span aria-hidden>&rarr;</span>
             </Link>
           </div>
         </div>

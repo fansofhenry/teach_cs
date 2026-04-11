@@ -37,7 +37,7 @@ export default function AboutPage() {
       {/* ======== ABOUT SECTION ======== */}
       <section className="bg-cream border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20">
-          <div className="section-label">About This Curriculum</div>
+          <h2 className="section-label">About This Curriculum</h2>
           <div>
             <div className="space-y-[18px]">
               <p className="text-[16.5px] leading-[1.7]">
@@ -84,7 +84,7 @@ export default function AboutPage() {
                   rel="noopener noreferrer"
                   className="text-red no-underline border-b border-red/30 hover:border-red transition-colors"
                 >
-                  CS Education Research Portfolio &rarr;
+                  CS Education Research Portfolio <span aria-hidden>&rarr;</span>
                 </a>
               </p>
               <p className="text-[16.5px] leading-[1.7]">
@@ -138,7 +138,7 @@ export default function AboutPage() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <div className="section-label">Teaching Mission</div>
+            <h2 className="section-label">Teaching Mission</h2>
             <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[620px]">
               A teaching statement grounded in practice, research, and the
               conviction that every student deserves technically rigorous
@@ -220,7 +220,7 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="inline-block mt-4 px-5 py-2.5 border border-white/30 font-mono text-[11px] tracking-[0.12em] uppercase text-white hover:bg-white/10 transition-colors no-underline"
           >
-            Jeff Anderson Math &rarr;
+            Jeff Anderson Math <span aria-hidden>&rarr;</span>
           </a>
         </div>
       </section>
@@ -256,7 +256,7 @@ export default function AboutPage() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span className="text-white/20">{"//  "}</span>Core Convictions
+              <span aria-hidden className="text-white/20">{"//  "}</span>Core Convictions
             </div>
             <p className="text-[17px] leading-[1.7] text-white/85 max-w-[620px]">
               The principles that drive this work, expressed as design decisions
@@ -334,13 +334,13 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 border-2 border-ink text-ink font-mono text-[11px] tracking-[0.12em] uppercase hover:bg-ink hover:text-paper transition-colors no-underline"
             >
-              GitHub &rarr;
+              GitHub <span aria-hidden>&rarr;</span>
             </a>
             <Link
               href="/research"
               className="inline-block px-6 py-3 border-2 border-ink text-ink font-mono text-[11px] tracking-[0.12em] uppercase hover:bg-ink hover:text-paper transition-colors no-underline"
             >
-              Research &rarr;
+              Research <span aria-hidden>&rarr;</span>
             </Link>
           </div>
         </div>

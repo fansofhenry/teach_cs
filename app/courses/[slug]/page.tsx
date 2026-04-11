@@ -197,7 +197,7 @@ export default async function CourseDetailPage({
                   <ul className="list-none space-y-2">
                     {course.prerequisites.map((prereq, i) => (
                       <li key={i} className="text-[14px] leading-[1.6] text-ink/85 pl-5 relative">
-                        <span className="absolute left-0 font-mono text-[12px]" style={{ color: course.accentColor }}>
+                        <span aria-hidden className="absolute left-0 font-mono text-[12px]" style={{ color: course.accentColor }}>
                           &rarr;
                         </span>
                         {prereq}

@@ -44,7 +44,7 @@ export default function StudentSuccessPage() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <div className="section-label">The Four Phases</div>
+            <h2 className="section-label">The Four Phases</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               Strategic Deep Learning is a four-phase roadmap. Each phase builds
               on the last. Phase 1 is where everyone starts.
@@ -79,7 +79,7 @@ export default function StudentSuccessPage() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span className="text-white/20">{"//  "}</span>Jeff&apos;s Five
+              <span aria-hidden className="text-white/20">{"//  "}</span>Jeff&apos;s Five
               Rules
             </div>
             <p className="text-[15px] leading-[1.85] text-white/55 max-w-[620px]">
@@ -130,7 +130,7 @@ export default function StudentSuccessPage() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <div className="section-label">The Four Labs</div>
+            <h2 className="section-label">The Four Labs</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               Four structured labs that build the systems Phase 1 requires.
               Each lab includes objectives, reflective prompts, and key ideas

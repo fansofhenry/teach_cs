@@ -193,7 +193,7 @@ export default function PathsClient() {
       <section className="border-b-2 border-ink bg-paper">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-16">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-10">
-            <div className="section-label">Course Sequence</div>
+            <h2 className="section-label">Course Sequence</h2>
             <p className="text-[14px] leading-[1.75] text-dim max-w-[680px]">
               CS pathway flows left to right. Engineering track branches at Math
               2B / ENGR 11. All courses accessible at Track I with no prior
@@ -238,7 +238,7 @@ export default function PathsClient() {
       <section className="bg-ink text-paper border-b-2 border-white/[0.06]">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 items-start">
           <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-            <span className="text-white/20">{"//  "}</span>Three Tracks
+            <span aria-hidden className="text-white/20">{"//  "}</span>Three Tracks
           </div>
           <div>
             {/* Key insight */}
@@ -313,7 +313,7 @@ export default function PathsClient() {
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-12">
-            <div className="section-label">Six Courses</div>
+            <h2 className="section-label">Six Courses</h2>
             <div>
               <p className="text-[14px] leading-[1.75] text-dim max-w-[680px] mb-6">
                 Filter by track level, or view all courses in the curriculum.
@@ -411,7 +411,7 @@ export default function PathsClient() {
                       style={{ color: course.color }}
                     >
                       <span>View Course</span>
-                      <span className="text-[18px]">&rarr;</span>
+                      <span aria-hidden className="text-[18px]">&rarr;</span>
                     </div>
                   </div>
                 </Link>
@@ -435,13 +435,13 @@ export default function PathsClient() {
               href="/philosophy"
               className="inline-block px-6 py-3 border border-white/15 font-mono text-[11px] tracking-[0.12em] uppercase text-white/50 hover:text-paper hover:border-white/30 transition-colors no-underline"
             >
-              Teaching Philosophy &rarr;
+              Teaching Philosophy <span aria-hidden>&rarr;</span>
             </Link>
             <Link
               href="/research"
               className="inline-block px-6 py-3 border border-white/15 font-mono text-[11px] tracking-[0.12em] uppercase text-white/50 hover:text-paper hover:border-white/30 transition-colors no-underline"
             >
-              Research Agenda &rarr;
+              Research Agenda <span aria-hidden>&rarr;</span>
             </Link>
           </div>
         </div>

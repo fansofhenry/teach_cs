@@ -48,7 +48,7 @@ export default function WeeklySchedule({ weeks, accentHex }: WeeklyScheduleProps
               borderLeft: `3px solid ${accentHex}`,
             }}
           >
-            <span className="opacity-40">//</span>
+            <span aria-hidden className="opacity-40">//</span>
             {unit.name}
           </div>
 
