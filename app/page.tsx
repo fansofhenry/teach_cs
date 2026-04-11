@@ -42,7 +42,7 @@ interface CourseData {
   prefix: string;
   ghost: string;
   title: string;
-  status: 'taught' | 'dev' | 'proposed';
+  status: 'dev' | 'proposed';
   statusLabel: string;
   desc: string;
   meta: { label: string; value: string }[];
@@ -61,8 +61,8 @@ const courses: CourseData[] = [
     num: '180',
     ghost: 'AI',
     title: 'Introduction to\nArtificial Intelligence',
-    status: 'taught',
-    statusLabel: 'Currently Taught',
+    status: 'dev',
+    statusLabel: 'In Development',
     desc: 'AI is not magic \u2014 it is math, history, and human choice. We build from first principles: probability, search, neural networks, language models. Then we ask who built these systems, for whom, and what they\u2019re encoding about the world.',
     meta: [
       { label: 'Units', value: '3 \u00B7 18 Weeks' },
@@ -102,8 +102,8 @@ const courses: CourseData[] = [
     num: '210',
     ghost: 'DS',
     title: 'Data Structures\n& Algorithms',
-    status: 'taught',
-    statusLabel: 'Currently Taught',
+    status: 'dev',
+    statusLabel: 'In Development',
     desc: 'Every data structure is an argument about the world. Every algorithm is a strategy, a tradeoff, a value judgment. We implement every structure before using the library version. No LeetCode grind culture \u2014 deep projects that transfer.',
     meta: [
       { label: 'Units', value: '4 \u00B7 18 Weeks' },
@@ -145,8 +145,8 @@ const courses: CourseData[] = [
     num: '2B',
     ghost: 'LA',
     title: 'Applied Linear\nAlgebra',
-    status: 'taught',
-    statusLabel: 'Currently Taught',
+    status: 'dev',
+    statusLabel: 'In Development',
     desc: 'Six fundamental problems. Twenty-nine lessons. Build circuits, collect data, verify models. Derive before compute \u2014 the ALAF approach. Math made useful the moment it\u2019s introduced.',
     meta: [
       { label: 'Units', value: '3 \u00B7 29 Lessons \u00B7 ELSP Project' },
@@ -166,8 +166,8 @@ const courses: CourseData[] = [
     num: '11',
     ghost: 'M\u2016',
     title: 'Programming &\nProblem Solving',
-    status: 'taught',
-    statusLabel: 'Currently Taught',
+    status: 'dev',
+    statusLabel: 'In Development',
     desc: 'Model real circuits. Understand why 0.1 + 0.2 \u2260 0.3. MATLAB the way engineers use it \u2014 from binary representation up to IEEE 754 floating-point. No prior programming required.',
     meta: [
       { label: 'Units', value: '3 \u00B7 18 Lessons \u00B7 ELSP Project' },
@@ -568,7 +568,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="px-9 py-7 flex-1 flex flex-col">
-                  <span className={`status-badge ${course.status === 'taught' ? 'status-taught' : course.status === 'dev' ? 'status-dev' : 'status-proposed'}`}>
+                  <span className={`status-badge ${course.status === 'dev' ? 'status-dev' : 'status-proposed'}`}>
                     {course.statusLabel}
                   </span>
                   <p className="text-[16.5px] leading-[1.7] text-ink/85 flex-1 mb-6">
@@ -610,7 +610,7 @@ export default function Home() {
               </span>
             </div>
             <p className="text-[17px] leading-[1.7] text-paper/90 mb-8 max-w-[640px]">
-              Every course in this curriculum is taught at three simultaneous depth levels. These are not ability groups, remediation tiers, or ceiling categories &mdash; they are depth choices. The same concept is taught to everyone. What varies is whether a student builds it, proves it, or extends it. Track I is a complete, serious course outcome &mdash; not a consolation.
+              Every course in this curriculum is designed to run at three simultaneous depth levels. These are not ability groups, remediation tiers, or ceiling categories &mdash; they are depth choices. The same concept is offered to everyone. What varies is whether a student builds it, proves it, or extends it. Track I is a complete, serious course outcome &mdash; not a consolation.
             </p>
             <div className="grid grid-cols-1 lg:grid-cols-3 border border-white/10">
               {tracks.map((track, i) => (
@@ -791,7 +791,7 @@ export default function Home() {
             About This Curriculum
           </h2>
           <p className="text-[19px] leading-[1.6] text-ink max-w-[720px] mx-auto mb-8">
-            Designed by Henry Fan &mdash; community college CS education researcher, curriculum designer, and mentee of Prof. Jeff Anderson (Foothill College). The framework is a proposal, not a currently taught program.
+            Designed by Henry Fan &mdash; CVC-OEI Application Support Analyst at FHDA, CS curriculum designer, and mentee of Prof. Jeff Anderson (Foothill College). The framework is a proposal, not a currently taught program.
           </p>
           <Link
             href="/about"

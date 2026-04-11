@@ -40,8 +40,8 @@ export default function ReadingListPage() {
           <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
             Every citation below is annotated with its connection to this
             curriculum. These are not readings assigned to students — they are
-            the research that shaped how every course is designed, taught, and
-            assessed.
+            the research that shaped how every course on this site is
+            designed and assessed.
           </p>
         </div>
       </header>

@@ -37,7 +37,7 @@ export const trackSystemInsight =
   "Tracks are chosen weekly, not at semester start. A student can run Track I for ten weeks and switch to Track II for the capstone. There is no grade penalty for choosing Track I.";
 
 export const trackSystemDescription =
-  "Every course in this curriculum is taught at three simultaneous depth levels. These are not ability groups, remediation tiers, or ceiling categories — they are depth choices. The same concept is taught to everyone. What varies is whether a student builds it, proves it, or extends it. Track I is a complete, serious course outcome — not a consolation.";
+  "Every course in this curriculum is designed to run at three simultaneous depth levels. These are not ability groups, remediation tiers, or ceiling categories — they are depth choices. The same concept is offered to everyone. What varies is whether a student builds it, proves it, or extends it. Track I is a complete, serious course outcome — not a consolation.";
 
 export const trackSystemNote =
   "Track I is a complete, serious outcome — not a consolation. Students completing Track I have built more real software than most students in exam-based courses. Tracks are chosen weekly. A student can run Track I for 10 weeks and switch to Track II for the capstone. There is no grade penalty for choosing Track I. Assessment is portfolio-based across all tracks.";

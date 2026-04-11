@@ -7,7 +7,6 @@ import CourseCard from '@/components/CourseCard';
 
 const statusFilters: { value: CourseStatus | 'all'; label: string }[] = [
   { value: 'all', label: 'All Status' },
-  { value: 'taught', label: 'Taught' },
   { value: 'in-development', label: 'In Development' },
   { value: 'proposed', label: 'Proposed' },
 ];

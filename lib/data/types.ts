@@ -1,6 +1,6 @@
 // TypeScript interfaces for all curriculum data structures
 
-export type CourseStatus = "taught" | "in-development" | "proposed";
+export type CourseStatus = "in-development" | "proposed";
 
 export type CourseCategory = "ai-ml" | "systems" | "math" | "engineering" | "general";
 

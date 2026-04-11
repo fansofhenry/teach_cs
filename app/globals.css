@@ -208,12 +208,6 @@ body::after {
   margin-bottom: 10px;
 }
 
-.status-taught {
-  background: rgba(10, 124, 110, 0.12);
-  color: #064a42;
-  border: 1px solid rgba(10, 124, 110, 0.4);
-}
-
 .status-dev {
   background: rgba(212, 160, 23, 0.14);
   color: #6b4f00;

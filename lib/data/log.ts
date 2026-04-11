@@ -66,15 +66,6 @@ export const log: LogEntry[] = [
     body: "Added /log as a single chronological surface for what I'm reading, building, and figuring out. The goal is twofold: develop a weekly capture habit, and give Jeff Anderson a single URL to bookmark for visible progress. The format is intentionally minimal — a TypeScript file I edit and push. No CMS, no markdown processor, no friction. If a thought is worth ten minutes of writing, it lives here.",
     link: { label: "How the log works", href: "/log", internal: true },
   },
-  {
-    date: "2026-04-10",
-    title: "Three-paper program: scoping HelpMap as the first submission",
-    kind: "research",
-    tags: ["research", "phd", "jeff-anderson", "helpmap"],
-    starter: true,
-    body: "Starter entry — replace with your actual notes. The plan I'm sketching with Jeff Anderson is a three-paper first-author program built around community college CS pedagogy. Paper one (HelpMap) uses LMS interaction logs to identify structural predictors of help-seeking suppression. Paper two (SyllabusAudit) trains an NLP classifier to detect violations of Harel's intellectual need principle in CS syllabi. Paper three (Why They Left) is a qualitative interview study with students who left CS at the community college level. Next concrete step: confirm IRB pathway and feature-extraction scope for HelpMap.",
-    link: { label: "Research interests", href: "/research", internal: true },
-  },
 ];
 
 /** Most recent entries, newest first. */

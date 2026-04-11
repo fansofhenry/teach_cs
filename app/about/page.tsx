@@ -41,18 +41,20 @@ export default function AboutPage() {
           <div>
             <div className="space-y-[18px]">
               <p className="text-[16.5px] leading-[1.7]">
-                This curriculum is designed by Henry Fan — a community college
-                CS education researcher, curriculum designer, and mentee of
-                Prof. Jeff Anderson (Foothill College). Henry works by day as
-                Application Support Analyst at CVC-OEI / Foothill–De Anza CCD,
-                supporting cross-enrollment infrastructure for 115+ California
-                community colleges. The courses on this site represent a
-                multi-year design project to redesign introductory CS at the
-                community college level — building courses that are
-                technically rigorous, project-driven, and designed from the
-                start to serve students who have historically been pushed out
-                of CS. The framework is a proposal, not a currently taught
-                program: every design decision is open for remix.
+                This curriculum is designed by Henry Fan — CVC-OEI Application
+                Support Analyst at Foothill–De Anza CCD, CS curriculum
+                designer, and mentee of Prof. Jeff Anderson (Foothill College).
+                Henry&apos;s day job supports cross-enrollment infrastructure
+                for 115+ California community colleges; this site is the
+                curriculum-design work he is preparing alongside it for a
+                future CS Education / Learning Sciences PhD. The courses on
+                this site represent a multi-year design project to redesign
+                introductory CS at the community college level — building
+                courses that are technically rigorous, project-driven, and
+                designed from the start to serve students who have historically
+                been pushed out of CS. The framework is a proposal in
+                development, not a currently taught program: every design
+                decision is open for remix.
               </p>
               <p className="text-[16.5px] leading-[1.7]">
                 The pedagogical foundation of this work is built on the
@@ -61,7 +63,7 @@ export default function AboutPage() {
                 College), whose commitment to antiracist learning science,
                 ungrading, and the principle that every classroom decision should
                 map back to research in cognitive science has shaped how every
-                course on this site is designed, assessed, and taught. His{" "}
+                course on this site is designed and assessed. His{" "}
                 <a
                   href="https://jeffandersonmath.wordpress.com/2024/10/28/five-anti-racist-research-based-learner-centered-learning-objectives-for-college-students-updated/"
                   target="_blank"
@@ -140,9 +142,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <h2 className="section-label">Teaching Mission</h2>
             <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[620px]">
-              A teaching statement grounded in practice, research, and the
-              conviction that every student deserves technically rigorous
-              education designed for their success.
+              A design statement for courses others may teach — grounded in
+              pedagogical research and the conviction that every student
+              deserves technically rigorous education designed for their
+              success.
             </p>
           </div>
 

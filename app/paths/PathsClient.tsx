@@ -9,7 +9,7 @@ interface Course {
   code: string;
   name: string;
   track: 1 | 2 | 3;
-  status: "taught" | "dev" | "proposed";
+  status: "dev" | "proposed";
   units: string;
   prereq: string;
   desc: string;
@@ -35,7 +35,7 @@ const courses: Course[] = [
     code: "CS 180",
     name: "Introduction to Artificial Intelligence",
     track: 1,
-    status: "taught",
+    status: "dev",
     units: "3 · 18 Weeks",
     prereq: "None (Track I) · Python (Track II+)",
     desc: "AI is not magic — it is math, history, and human choice. We build from first principles: probability, search, neural networks, language models.",
@@ -59,7 +59,7 @@ const courses: Course[] = [
     code: "CS 210",
     name: "Data Structures & Algorithms",
     track: 2,
-    status: "taught",
+    status: "dev",
     units: "4 · 18 Weeks",
     prereq: "Python or Java · OOP",
     desc: "Every data structure is an argument about the world. We implement every structure before using the library version. No LeetCode grind — deep projects that transfer.",
@@ -71,7 +71,7 @@ const courses: Course[] = [
     code: "Math 2B",
     name: "Applied Linear Algebra",
     track: 3,
-    status: "taught",
+    status: "dev",
     units: "3 · 29 Lessons · ELSP Project",
     prereq: "Pre-calculus or Calculus",
     desc: "Six fundamental problems. Twenty-nine lessons. Build circuits, collect data, verify models. Derive before compute — the ALAF approach.",
@@ -83,7 +83,7 @@ const courses: Course[] = [
     code: "ENGR 11",
     name: "Programming & Problem Solving",
     track: 3,
-    status: "taught",
+    status: "dev",
     units: "3 · 18 Lessons · ELSP Project",
     prereq: "No Programming Required",
     desc: "Model real circuits. Understand why 0.1 + 0.2 ≠ 0.3. MATLAB the way engineers use it — from binary representation up to IEEE 754.",
@@ -140,10 +140,6 @@ const pathwayNodes = [
 ];
 
 const statusLabels: Record<string, { text: string; cls: string }> = {
-  taught: {
-    text: "Currently Taught",
-    cls: "bg-teal/[0.12] text-teal border-teal/30",
-  },
   dev: {
     text: "In Development",
     cls: "bg-gold/10 text-[#8a6500] border-gold/30",
@@ -255,12 +251,12 @@ export default function PathsClient() {
             </div>
 
             <p className="text-[15px] leading-[1.85] text-white/55 max-w-[640px] mb-8">
-              Every course in this curriculum is taught at three simultaneous
-              depth levels. These are not ability groups, remediation tiers, or
-              ceiling categories — they are depth choices. The same concept is
-              taught to everyone. What varies is whether a student builds it,
-              proves it, or extends it. Track I is a complete, serious course
-              outcome — not a consolation.
+              Every course in this curriculum is designed to run at three
+              simultaneous depth levels. These are not ability groups,
+              remediation tiers, or ceiling categories — they are depth
+              choices. The same concept is offered to everyone. What varies is
+              whether a student builds it, proves it, or extends it. Track I
+              is a complete, serious course outcome — not a consolation.
             </p>
 
             {/* Track cards */}

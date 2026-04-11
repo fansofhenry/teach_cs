@@ -2,7 +2,6 @@ import Link from 'next/link';
 import type { Course } from '@/lib/data/courses';
 
 const statusConfig = {
-  taught: { label: 'Taught', className: 'status-taught' },
   'in-development': { label: 'In Development', className: 'status-dev' },
   proposed: { label: 'Proposed', className: 'status-proposed' },
 } as const;
