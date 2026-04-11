@@ -56,7 +56,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-100 bg-ink border-b border-white/[0.08] px-7 lg:px-15 flex items-center justify-between h-13">
+    <nav aria-label="Primary navigation" className="sticky top-0 z-100 bg-ink border-b border-white/[0.08] px-7 lg:px-15 flex items-center justify-between h-13">
       {/* Brand */}
       <Link
         href="/"
@@ -90,7 +90,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="block px-4.5 h-13 leading-[52px] font-mono text-[10px] tracking-[0.14em] uppercase text-red no-underline transition-colors border-l border-white/[0.05] hover:text-red/80"
           >
-            Research Portfolio &#x2197;
+            Research Portfolio <span aria-hidden>&#x2197;</span>
           </a>
         </li>
         {/* Dark mode toggle */}
@@ -98,7 +98,8 @@ export default function Navbar() {
           <button
             onClick={toggleDark}
             className="flex items-center justify-center w-13 h-13 border-l border-white/[0.05] text-paper/40 hover:text-paper transition-colors cursor-pointer"
-            aria-label="Toggle dark mode"
+            aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-pressed={dark}
           >
             {dark ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -114,7 +115,8 @@ export default function Navbar() {
         <button
           onClick={toggleDark}
           className="flex items-center justify-center w-10 h-10 text-paper/40 hover:text-paper transition-colors cursor-pointer"
-          aria-label="Toggle dark mode"
+          aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+          aria-pressed={dark}
         >
           {dark ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -125,7 +127,9 @@ export default function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="flex items-center justify-center w-10 h-10 text-paper/60 hover:text-paper transition-colors cursor-pointer"
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
         >
           {mobileOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -137,7 +141,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="absolute top-13 left-0 right-0 bg-ink border-b border-white/[0.08] lg:hidden z-50">
+        <div id="mobile-menu" className="absolute top-13 left-0 right-0 bg-ink border-b border-white/[0.08] lg:hidden z-50">
           <ul className="list-none py-2">
             {navLinks.map((link) => {
               const active = isActive(link.href);
@@ -163,7 +167,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="block px-7 py-3 font-mono text-[10px] tracking-[0.14em] uppercase text-red no-underline"
               >
-                Research Portfolio &#x2197;
+                Research Portfolio <span aria-hidden>&#x2197;</span>
               </a>
             </li>
           </ul>
