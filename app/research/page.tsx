@@ -3,7 +3,7 @@ import Link from "next/link";
 import { researchProjects, theoreticalConstructs, researchTimeline } from "@/lib/data/research";
 
 export const metadata: Metadata = {
-  title: "Research Interests — Teaching Computing Differently",
+  title: "Research Interests",
   description:
     "CS Education research agenda: equity in introductory computing, community college pathways, help-seeking behavior, and curriculum design.",
 };
@@ -124,7 +124,7 @@ export default function ResearchPage() {
             <br />
             <span className="text-red">Interests</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[620px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
             My research connects teaching practice to scholarship. Every course
             I teach is also a site of inquiry — into how community college
             students learn computing, what structural barriers they face, and
@@ -216,7 +216,7 @@ export default function ResearchPage() {
                     <h3 className="font-serif text-[20px] italic leading-[1.35] mb-4">
                       {rq.question}
                     </h3>
-                    <p className="text-[13.5px] leading-[1.85] text-dim mb-5">
+                    <p className="text-[16px] leading-[1.7] text-ink/85 mb-5">
                       {rq.context}
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 md:gap-8">
@@ -275,7 +275,7 @@ export default function ResearchPage() {
                 <h4 className="font-serif text-[17px] italic text-paper mb-2.5">
                   {m.name}
                 </h4>
-                <p className="text-[13px] leading-[1.8] text-white/45">
+                <p className="text-[15.5px] leading-[1.7] text-white/85">
                   {m.desc}
                 </p>
               </div>
@@ -306,7 +306,7 @@ export default function ResearchPage() {
                 <h3 className="font-display text-[36px] leading-none mb-3 text-ink">
                   {prog.area}
                 </h3>
-                <p className="text-[13.5px] leading-[1.85] text-dim mb-4">
+                <p className="text-[16px] leading-[1.7] text-ink/85 mb-4">
                   {prog.focus}
                 </p>
                 <div className="border-t border-cream pt-3">
@@ -349,7 +349,7 @@ export default function ResearchPage() {
                     {paper.status}
                   </span>
                 </div>
-                <p className="text-[13.5px] leading-[1.85] text-dim">
+                <p className="text-[16px] leading-[1.7] text-ink/85">
                   {paper.desc}
                 </p>
               </div>
@@ -425,7 +425,7 @@ export default function ResearchPage() {
                   <h4 className="font-serif italic text-[16px] text-paper leading-[1.3] mb-1.5">
                     {p.title}
                   </h4>
-                  <p className="text-[12px] leading-[1.7] text-white/45 mb-3">
+                  <p className="text-[14px] leading-[1.65] text-white/85 mb-3">
                     {p.sub}
                   </p>
                   <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-red">
@@ -480,7 +480,7 @@ export default function ResearchPage() {
                     <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-red mb-4">
                       {proj.subtitle}
                     </p>
-                    <p className="text-[13.5px] leading-[1.85] text-dim mb-4">
+                    <p className="text-[16px] leading-[1.7] text-ink/85 mb-4">
                       {proj.description}
                     </p>
                     <div className="border-l-[3px] border-teal bg-teal/5 px-4 py-3 mb-4">
@@ -550,7 +550,7 @@ export default function ResearchPage() {
                 <h4 className="font-serif text-[18px] italic text-paper mb-3">
                   {tc.name}
                 </h4>
-                <p className="text-[13px] leading-[1.8] text-white/45 mb-4">
+                <p className="text-[15.5px] leading-[1.7] text-white/85 mb-4">
                   {tc.definition}
                 </p>
                 <div className="border-t border-white/10 pt-3">
@@ -617,7 +617,7 @@ export default function ResearchPage() {
               dependency structures, and the experiences of students who leave
               STEM at community colleges.&rdquo;
             </p>
-            <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/60 mt-3.5">
+            <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/80 mt-3.5">
               Research &middot; Practice Connection
             </p>
           </div>

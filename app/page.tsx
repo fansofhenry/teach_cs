@@ -405,7 +405,7 @@ export default function Home() {
               <span className="text-red">Computing</span><br />
               Differently.
             </h1>
-            <p className="text-[17px] leading-[1.75] text-paper/80 max-w-[560px] font-light animate-fade-up-3">
+            <p className="text-[17px] leading-[1.75] text-paper/90 max-w-[560px] animate-fade-up-3">
               Six courses built on one conviction: students learn CS best when they build real things, earn abstractions through struggle, and understand that every algorithm encodes a set of values about the world. No exams. No required textbooks. Every concept earned by building.
             </p>
             <div className="flex gap-2.5 flex-wrap mt-7 animate-fade-up-4">

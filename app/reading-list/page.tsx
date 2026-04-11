@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { readingList } from "@/lib/data/research";
 
 export const metadata: Metadata = {
-  title: "Annotated Reading List — Teaching Computing Differently",
+  title: "Annotated Reading List",
   description:
     "30+ annotated citations across STEM departure, learning analytics, constructionism, curriculum design, learning science, community college research, CS education methods, and equity frameworks.",
 };
@@ -37,7 +37,7 @@ export default function ReadingListPage() {
             <br />
             <span className="text-red">Reading List</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[620px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
             Every citation below is annotated with its connection to this
             curriculum. These are not readings assigned to students — they are
             the research that shaped how every course is designed, taught, and
@@ -68,7 +68,7 @@ export default function ReadingListPage() {
                     <h3 className="font-serif text-[16px] italic leading-[1.4] mb-4">
                       {entry.citation}
                     </h3>
-                    <p className="text-[13.5px] leading-[1.85] text-dim mb-4">
+                    <p className="text-[16px] leading-[1.7] text-ink/85 mb-4">
                       {entry.annotation}
                     </p>
                     {entry.connectsTo && entry.connectsTo.length > 0 && (

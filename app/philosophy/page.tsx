@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Teaching Philosophy — Teaching Computing Differently",
+  title: "Teaching Philosophy",
   description:
     "Three pedagogical principles grounded in learning science research: Derive Before Compute, Build Before Import, and Equity as Design.",
 };
@@ -120,7 +120,7 @@ export default function PhilosophyPage() {
             <br />
             <span className="text-red">Philosophy</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[620px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
             Three pedagogical principles run through every course in this
             curriculum. They are not buzzwords — each one is a concrete design
             decision that shows up in how units are sequenced, how projects are
@@ -198,7 +198,7 @@ export default function PhilosophyPage() {
                 <h3 className="font-serif text-[24px] italic leading-[1.2] mb-4">
                   {p.title}
                 </h3>
-                <p className="text-[13.5px] leading-[1.85] text-dim mb-5">
+                <p className="text-[16px] leading-[1.7] text-ink/85 mb-5">
                   {p.body}
                 </p>
                 <div className="border-l-[3px] border-red bg-red/5 px-4 py-3.5 mb-3.5">
@@ -226,7 +226,7 @@ export default function PhilosophyPage() {
             understanding who built a system, for whom, and what it encodes
             about the world.&rdquo;
           </p>
-          <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/60 mt-3.5">
+          <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/80 mt-3.5">
             Course Philosophy · Rooted in Freire, hooks, Ko, Anderson
           </p>
         </div>
@@ -274,7 +274,7 @@ export default function PhilosophyPage() {
                 <p className="font-mono text-[9.5px] tracking-[0.06em] text-red italic mb-2.5">
                   {t.book}
                 </p>
-                <p className="text-[11.5px] leading-[1.65] text-dim mb-2.5">
+                <p className="text-[14px] leading-[1.65] text-ink/85 mb-2.5">
                   {t.desc}
                 </p>
                 <div className="border-l-2 border-cream bg-black/[0.02] px-2.5 py-2">

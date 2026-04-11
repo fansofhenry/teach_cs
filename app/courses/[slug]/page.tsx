@@ -127,7 +127,7 @@ export default async function CourseDetailPage({
               {course.title}
             </h1>
 
-            <p className="text-[17px] leading-[1.75] text-white/85 max-w-2xl mt-6 font-light animate-fade-up-3">
+            <p className="text-[17px] leading-[1.7] text-white/90 max-w-2xl mt-6 animate-fade-up-3">
               {course.shortDescription}
             </p>
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Twelve project-based, equity-centered CS courses spanning AI, machine learning, systems, mathematics, and engineering. Filter by category and status.",
   openGraph: {
-    title: "Course Catalog — Teaching Computing Differently",
+    title: "Course Catalog",
     description:
       "Twelve project-based, equity-centered CS courses. No exams. No required textbooks. Every concept earned through building.",
     images: ["/opengraph-image.png"],

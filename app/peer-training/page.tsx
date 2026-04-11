@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/peerTraining";
 
 export const metadata: Metadata = {
-  title: "Peer Educator Training — Teaching Computing Differently",
+  title: "Peer Educator Training",
   description:
     "Training cards, workshop formats, and facilitation guides for peer educators grounded in Jeff Anderson's pedagogy and learning science research.",
 };
@@ -38,7 +38,7 @@ export default function PeerTrainingPage() {
             <br />
             <span className="text-red">Training</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[620px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
             Discussion-based training cards for peer educators. Each card
             presents a concept, scenario, or principle from Jeff Anderson&apos;s
             pedagogy — operationalized for the tutoring center. Draw a card,
@@ -144,7 +144,7 @@ export default function PeerTrainingPage() {
                     {format.duration}
                   </span>
                 </div>
-                <p className="text-[13px] leading-[1.8] text-white/45 mb-4">
+                <p className="text-[15.5px] leading-[1.7] text-white/85 mb-4">
                   {format.description}
                 </p>
                 <ol className="space-y-1.5">

@@ -4,11 +4,11 @@ import { getAllLog, getAllLogTags } from "@/lib/data/log";
 import type { LogEntry, LogKind } from "@/lib/data/types";
 
 export const metadata: Metadata = {
-  title: "Log — Teaching Computing Differently",
+  title: "Log",
   description:
     "A public learning log: what I'm reading, building, and figuring out as I develop this curriculum and pursue research with Jeff Anderson.",
   openGraph: {
-    title: "Learning Log — Teaching Computing Differently",
+    title: "Learning Log",
     description:
       "A dated, chronological feed of what I'm reading, building, and figuring out.",
     images: ["/opengraph-image.png"],
@@ -105,7 +105,7 @@ export default function LogPage() {
             <br />
             <span className="text-red">Log</span>
           </h1>
-          <p className="text-[17px] leading-[1.75] text-white/85 font-light max-w-[680px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[680px] animate-fade-up-3">
             A dated chronological feed of what I&rsquo;m reading, building, and
             figuring out as I develop this curriculum and pursue a three-paper
             research program with Jeff Anderson. The point is not polish &mdash;

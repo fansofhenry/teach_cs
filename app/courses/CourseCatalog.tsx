@@ -49,7 +49,7 @@ export default function CourseCatalogClient() {
             Teaching Computing<br />
             <span className="text-red not-italic font-display tracking-[0.02em]">Differently.</span>
           </h1>
-          <p className="text-[17px] leading-[1.75] text-paper/85 max-w-[600px] font-light">
+          <p className="text-[17px] leading-[1.7] text-paper/90 max-w-[600px]">
             Eleven courses spanning AI, systems, mathematics, and engineering.
             Every course is project-based, equity-centered, and grounded in
             learning science. No exams. No required textbooks. Every concept

@@ -161,7 +161,7 @@ export default function ModelingBenchPage() {
             <br />
             <span className="text-red">Bench</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[680px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[700px] animate-fade-up-3">
             {labMeta.tagline} Henry runs the lab as principal investigator;
             Prof. Jeff Anderson (Foothill College) is mentor and second author.
             Every direction below is anchored to a written invitation in
@@ -267,7 +267,7 @@ export default function ModelingBenchPage() {
                 <div className="font-mono text-[9px] tracking-[0.14em] uppercase text-white/40 mb-1.5">
                   Source
                 </div>
-                <p className="text-[12.5px] leading-[1.8] text-white/55">
+                <p className="text-[15.5px] leading-[1.7] text-white/85">
                   {m.source}
                 </p>
               </div>
@@ -286,7 +286,7 @@ export default function ModelingBenchPage() {
         <h3 className="font-display text-[28px] text-paper mt-14 mb-5 tracking-wide">
           What Jeff cares about
         </h3>
-        <p className="text-[13px] text-white/40 italic mb-6">
+        <p className="text-[15.5px] text-white/85 italic mb-6">
           Read this list before every mentor email.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -298,7 +298,7 @@ export default function ModelingBenchPage() {
               <h4 className="font-serif italic text-[16px] text-paper mb-2">
                 {v.name}
               </h4>
-              <p className="text-[12.5px] leading-[1.8] text-white/50">
+              <p className="text-[15.5px] leading-[1.7] text-white/85">
                 {v.body}
               </p>
             </div>
@@ -324,7 +324,7 @@ export default function ModelingBenchPage() {
           <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-red mb-2">
             Why these three and not others
           </div>
-          <p className="text-[13.5px] leading-[1.85]">
+          <p className="text-[16px] leading-[1.7]">
             A longer list of seven candidates (image morphs/warps, Eigenfaces,
             P-block 2.0, Computer Graphics & 3D Animations, Cubic Splines, GPS
             Least-Squares, an Anderson-curriculum effectiveness study) is
@@ -378,7 +378,7 @@ export default function ModelingBenchPage() {
               <div className="font-mono text-[10px] text-dim mb-3">
                 {d.hours}
               </div>
-              <ul className="space-y-1.5 text-[12px] leading-[1.7] text-dim">
+              <ul className="space-y-2 text-[14.5px] leading-[1.7] text-ink/85">
                 {d.bullets.map((b, i) => (
                   <li key={i}>· {b}</li>
                 ))}
@@ -390,7 +390,7 @@ export default function ModelingBenchPage() {
         <h3 className="font-display text-[28px] text-ink mt-14 mb-3 tracking-wide">
           Mentor Protocol
         </h3>
-        <p className="text-[13px] text-dim italic mb-6">
+        <p className="text-[15.5px] text-ink/85 italic mb-6">
           Keep Jeff&apos;s load under 10 min/week.
         </p>
         <div className="border-2 border-ink bg-paper">
@@ -405,7 +405,7 @@ export default function ModelingBenchPage() {
                 <div className="font-serif italic text-[16px] text-ink">
                   {m.rule}
                 </div>
-                <p className="text-[13px] leading-[1.8] text-dim">{m.body}</p>
+                <p className="text-[15.5px] leading-[1.7] text-ink/85">{m.body}</p>
               </div>
             </div>
           ))}
@@ -519,7 +519,7 @@ export default function ModelingBenchPage() {
                   </span>
                   <p className="text-[14px] leading-[1.7] mt-1">{e.what}</p>
                   {e.notes && (
-                    <p className="text-[12.5px] leading-[1.7] text-dim mt-1.5 whitespace-pre-wrap">
+                    <p className="text-[14.5px] leading-[1.65] text-ink/85 mt-2 whitespace-pre-wrap">
                       {e.notes}
                     </p>
                   )}
@@ -686,7 +686,7 @@ export default function ModelingBenchPage() {
               &ldquo;The first commit before sundown. The lab is real the
               moment it has a git history.&rdquo;
             </p>
-            <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/60 mt-3.5">
+            <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/80 mt-3.5">
               Modeling Bench · Operating Rule
             </p>
           </div>
@@ -819,7 +819,7 @@ function PaperCard({ paper: p }: { paper: (typeof benchPapers)[number] }) {
       </h3>
 
       <Field2 label="Abstract (draft v0)">
-        <p className="text-[13.5px] leading-[1.85] text-ink/85">{p.abstract}</p>
+        <p className="text-[16px] leading-[1.7] text-ink/85">{p.abstract}</p>
       </Field2>
 
       <Field2 label="Research questions">

@@ -7,7 +7,7 @@ import {
 } from "@/lib/data/studentSuccess";
 
 export const metadata: Metadata = {
-  title: "Student Success — Teaching Computing Differently",
+  title: "Student Success",
   description:
     "Jeff Anderson's Strategic Deep Learning framework: four phases, five classroom rules, and four interactive labs for conquering college.",
 };
@@ -30,7 +30,7 @@ export default function StudentSuccessPage() {
             <br />
             <span className="text-red">Success</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[620px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
             Most students don&apos;t fail because of ability — they fail because
             of systems. Jeff Anderson&apos;s Strategic Deep Learning framework
             gives students the tools to build systems that work: scheduling,
@@ -65,7 +65,7 @@ export default function StudentSuccessPage() {
                 <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-red mb-4">
                   {phase.tagline}
                 </p>
-                <p className="text-[13px] leading-[1.8] text-dim">
+                <p className="text-[15.5px] leading-[1.7] text-ink/85">
                   {phase.description}
                 </p>
               </div>
@@ -100,7 +100,7 @@ export default function StudentSuccessPage() {
                   <h3 className="font-serif text-[18px] italic text-paper mb-2">
                     {rule.title}
                   </h3>
-                  <p className="text-[13.5px] leading-[1.85] text-white/50">
+                  <p className="text-[16px] leading-[1.7] text-white/50">
                     {rule.description}
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export default function StudentSuccessPage() {
                   <h3 className="font-serif text-[18px] italic text-paper mb-2">
                     {twoMinuteRule.title}
                   </h3>
-                  <p className="text-[13.5px] leading-[1.85] text-white/50">
+                  <p className="text-[16px] leading-[1.7] text-white/50">
                     {twoMinuteRule.description}
                   </p>
                 </div>

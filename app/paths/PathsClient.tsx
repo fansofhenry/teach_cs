@@ -179,7 +179,7 @@ export default function PathsClient() {
             <br />
             <span className="text-red">Paths</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[620px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
             Each course is a complete 18-week experience: a central project arc,
             three entry tracks for students at different levels, portfolio-based
             assessment, and a public exhibition at semester end. No exams. No
@@ -278,7 +278,7 @@ export default function PathsClient() {
                   <h3 className="font-serif text-[17px] italic text-paper mb-2.5">
                     {track.subtitle}
                   </h3>
-                  <p className="text-[13px] leading-[1.8] text-white/45 mb-4">
+                  <p className="text-[15.5px] leading-[1.7] text-white/85 mb-4">
                     {track.desc}
                   </p>
                   <div className="flex flex-col gap-1.5">
@@ -393,7 +393,7 @@ export default function PathsClient() {
                     >
                       {st.text}
                     </span>
-                    <p className="text-[13.5px] leading-[1.8] text-dim flex-1 mb-6">
+                    <p className="text-[16px] leading-[1.7] text-ink/85 flex-1 mb-6">
                       {course.desc}
                     </p>
                     <div className="flex flex-col gap-2 border-t border-cream pt-5 mb-6">

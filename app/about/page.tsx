@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About — Teaching Computing Differently",
+  title: "About",
   description:
     "Henry Fan — CS instructor at a California community college, working at the intersection of computer science education, equitable pedagogy, and learning science research.",
 };
@@ -25,7 +25,7 @@ export default function AboutPage() {
             <br />
             <span className="text-red">Henry Fan</span>
           </h1>
-          <p className="text-[15px] leading-[1.9] text-white/60 font-light max-w-[620px] animate-fade-up-3">
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[660px] animate-fade-up-3">
             CS instructor at a California community college, working at the
             intersection of computer science education, equitable pedagogy, and
             learning science research.
@@ -39,7 +39,7 @@ export default function AboutPage() {
           <div className="section-label">About This Curriculum</div>
           <div>
             <div className="space-y-[18px]">
-              <p className="text-[15px] leading-[1.9]">
+              <p className="text-[16.5px] leading-[1.7]">
                 This curriculum is developed by Henry Fan, a CS instructor at a
                 California community college working at the intersection of
                 computer science education, equitable pedagogy, and learning
@@ -49,7 +49,7 @@ export default function AboutPage() {
                 project-driven, and designed from the start to serve students
                 who have historically been pushed out of CS.
               </p>
-              <p className="text-[15px] leading-[1.9]">
+              <p className="text-[16.5px] leading-[1.7]">
                 The pedagogical foundation of this work is built on the
                 mentorship and teaching philosophy of{" "}
                 <strong className="font-medium">Jeff Anderson</strong> (Foothill
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 </a>{" "}
                 are the invisible architecture of this entire curriculum.
               </p>
-              <p className="text-[15px] leading-[1.9]">
+              <p className="text-[16.5px] leading-[1.7]">
                 The curriculum is connected to ongoing research into
                 help-seeking behavior in introductory CS courses, curriculum
                 dependency structures, and the experiences of students who leave
@@ -82,7 +82,7 @@ export default function AboutPage() {
                   CS Education Research Portfolio &rarr;
                 </a>
               </p>
-              <p className="text-[15px] leading-[1.9]">
+              <p className="text-[16.5px] leading-[1.7]">
                 All course materials are free and open access. Instructors who
                 want to adapt any of these courses for their own institutions
                 are encouraged to do so. For questions, collaboration, or to
@@ -149,7 +149,7 @@ export default function AboutPage() {
               <h3 className="font-serif text-[22px] italic leading-[1.2] mb-4">
                 Every Student Can Compute
               </h3>
-              <p className="text-[13.5px] leading-[1.85] text-dim">
+              <p className="text-[16px] leading-[1.7] text-ink/85">
                 The difficulty students experience in introductory CS is not
                 uniformly about ability. Most of it is caused by courses that
                 teach abstractions before problems, syntax before meaning, and
@@ -164,7 +164,7 @@ export default function AboutPage() {
               <h3 className="font-serif text-[22px] italic leading-[1.2] mb-4">
                 Building Is Understanding
               </h3>
-              <p className="text-[13.5px] leading-[1.85] text-dim">
+              <p className="text-[16px] leading-[1.7] text-ink/85">
                 Students learn CS best when they build real things, earn
                 abstractions through struggle, and understand that every
                 algorithm encodes a set of values about the world. The capstone
@@ -179,7 +179,7 @@ export default function AboutPage() {
               <h3 className="font-serif text-[22px] italic leading-[1.2] mb-4">
                 Research Informs Practice
               </h3>
-              <p className="text-[13.5px] leading-[1.85] text-dim">
+              <p className="text-[16px] leading-[1.7] text-ink/85">
                 Every classroom decision maps back to research in cognitive
                 science, the psychology of learning, and the scholarship of
                 equity. Teaching is not a solo craft practice — it is a
@@ -198,7 +198,7 @@ export default function AboutPage() {
             &ldquo;The top 100% of learners deserve the best teaching in the
             world.&rdquo;
           </p>
-          <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/60 mt-3.5">
+          <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/80 mt-3.5">
             Jeff Anderson &middot; Foothill College &middot; Mentor &amp;
             Collaborator
           </p>

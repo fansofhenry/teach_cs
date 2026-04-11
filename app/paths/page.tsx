@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Three entry tracks per course — Curious Explorer, Builder, Architect — chosen weekly, not at semester start. No prior CS background required at Track I.",
   openGraph: {
-    title: "Learning Paths — Teaching Computing Differently",
+    title: "Learning Paths",
     description:
       "Three depth choices per course, chosen week by week. No grade penalty for choosing Track I.",
     images: ["/opengraph-image.png"],
