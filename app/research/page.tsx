@@ -27,7 +27,7 @@ const researchQuestions = [
       "Help-seeking research in CS education overwhelmingly studies four-year residential students. Community college students — who are more likely to work full-time, commute, and have caregiving responsibilities — have fundamentally different access to office hours, study groups, and peer networks. Their help-seeking patterns are not deficits; they are rational responses to structural constraints.",
     methods: ["Experience sampling", "Semi-structured interviews", "Thematic analysis", "Ecological momentary assessment"],
     connection:
-      "Every course includes asynchronous help channels, recorded walkthroughs of common stuck points, and project milestones designed so that the most common failure modes are addressable without synchronous faculty contact.",
+      "Every course in the framework is designed with asynchronous help channels, recorded walkthroughs of common stuck points, and project milestones sequenced so that the most common failure modes are addressable without synchronous faculty contact.",
   },
   {
     id: "RQ3",
@@ -37,7 +37,7 @@ const researchQuestions = [
       "Students who do not see themselves as 'CS people' often cite exam culture, competitive grading, and the assumption of prior exposure as the reasons. Portfolio-based assessment removes the high-stakes single-point-of-failure that exams represent. This question asks whether that structural change affects whether students begin to identify as people who do computing.",
     methods: ["Longitudinal interview study", "Identity trajectory mapping", "Portfolio analysis"],
     connection:
-      "The portfolio assessment model, public exhibitions, and student-proposed grading across all six courses are the intervention being studied. The Abuelita Test — requiring students to explain their work to a non-technical family member — is designed specifically to strengthen identity through communication.",
+      "The portfolio assessment model, public exhibitions, and student-proposed grading specified across all six courses are the intervention this research proposes to study. The Abuelita Test — which asks students to explain their work to a non-technical family member — is designed specifically to strengthen identity through communication.",
   },
   {
     id: "RQ4",
@@ -47,7 +47,7 @@ const researchQuestions = [
       "Most research on ethics in CS education studies elite four-year institutions. Community college students bring different lived experiences with algorithmic systems — as subjects of automated hiring tools, predictive policing, and benefits allocation algorithms. Their analysis of bias is not abstract; it is personal. This question investigates how that positionality shapes critical technical practice.",
     methods: ["Design-based research", "Artifact analysis", "Critical discourse analysis"],
     connection:
-      "The Bias Audit project in CS 180 and CS 185, modeled on Buolamwini's Gender Shades methodology, is the primary site for this research. Students choose real deployed systems, design test protocols, measure performance across demographic groups, and write findings reports.",
+      "The Bias Audit project designed for CS 180 and CS 185, modeled on Buolamwini's Gender Shades methodology, is the primary proposed site for this research. In the course design, students choose real deployed systems, design test protocols, measure performance across demographic groups, and write findings reports.",
   },
 ];
 
@@ -126,12 +126,12 @@ export default function ResearchPage() {
           </h1>
           <p className="text-[17px] leading-[1.7] text-white/90 max-w-[680px] animate-fade-up-3">
             My research connects curriculum design to scholarship. Every course
-            in this framework is also a site of inquiry — into how community
-            college students learn computing, what structural barriers they
-            face, and how curriculum design can be an equity intervention. I am
-            pursuing a PhD in CS Education, Learning Sciences, or HCI to
-            formalize this work, under the mentorship of Prof. Jeff Anderson
-            (Foothill College).
+            in this framework is designed to double as a research site — for
+            questions about how community college students learn computing,
+            what structural barriers they face, and how curriculum design can
+            itself be an equity intervention. I am pursuing a PhD in CS
+            Education, Learning Sciences, or HCI to formalize this work, under
+            the mentorship of Prof. Jeff Anderson (Foothill College).
           </p>
           <div className="flex flex-wrap gap-2.5 mt-7 animate-fade-up-4">
             {[
@@ -159,12 +159,14 @@ export default function ResearchPage() {
           <div className="section-label">Research Positioning</div>
           <div className="space-y-5">
             <p className="text-[16px] leading-[1.9]">
-              The research questions below emerge directly from teaching six
-              courses at a California community college. They are not imported
-              from a literature review and applied to a convenient setting —
-              they are the questions that teaching raises when you pay attention
-              to who stays, who leaves, and what the structure of the course
-              makes possible or impossible.
+              The research questions below emerged from designing this
+              six-course community-college CS curriculum and from Henry&rsquo;s
+              day-job at CVC-OEI — the California Community Colleges&rsquo;
+              cross-enrollment infrastructure, serving 115+ colleges. They are
+              not imported from a literature review and applied to a convenient
+              setting — they are the questions that emerge when you spend every
+              working hour on who stays in CS, who leaves, and what the
+              structure of a course makes possible or impossible.
             </p>
             <p className="text-[16px] leading-[1.9]">
               Community colleges serve{" "}
@@ -180,10 +182,12 @@ export default function ResearchPage() {
             </p>
             <p className="text-[16px] leading-[1.9]">
               The curriculum described on this site — project-based,
-              no-exam, three-track, portfolio-assessed — is both a teaching
-              practice and a research intervention. Each semester is a cycle of
-              design-based research, generating data about what works, for whom,
-              and under what conditions.
+              no-exam, three-track, portfolio-assessed — is designed as both a
+              proposed teaching framework and a research intervention. Each
+              course is a research artifact: once piloted, each is scoped to
+              generate data about what works, for whom, and under what
+              conditions. The framework is a proposal, not a currently taught
+              program.
             </p>
           </div>
         </div>
@@ -196,8 +200,9 @@ export default function ResearchPage() {
             <div className="section-label">Research Questions</div>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
               Four interconnected questions about equity, structure, and
-              learning in community college CS — each grounded in teaching
-              practice and connected to a specific curricular intervention.
+              learning in community college CS — each grounded in curriculum
+              design practice and connected to a specific proposed
+              intervention.
             </p>
           </div>
 
@@ -291,10 +296,10 @@ export default function ResearchPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="section-label">PhD Program Interests</div>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
-              I am looking for doctoral programs where teaching practice and
-              research are not separate activities — where the work of designing
-              equitable computing education is itself a form of scholarly
-              inquiry.
+              I am looking for doctoral programs where curriculum design and
+              research are not separate activities — where the work of
+              designing equitable computing education is itself a form of
+              scholarly inquiry.
             </p>
           </div>
 
@@ -330,8 +335,8 @@ export default function ResearchPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="section-label">Working Papers</div>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
-              Papers in progress that formalize the research questions and
-              preliminary findings from teaching this curriculum. These represent
+              Papers in progress that formalize the research questions and the
+              design rationale behind this curriculum framework. These represent
               the foundation of a doctoral research agenda.
             </p>
           </div>
@@ -574,8 +579,8 @@ export default function ResearchPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="section-label">Research Timeline</div>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
-              A phased roadmap from current teaching practice through doctoral
-              research.
+              A phased roadmap from curriculum design and mentee-led research
+              through doctoral study.
             </p>
           </div>
           <div className="space-y-0 border-2 border-ink">
