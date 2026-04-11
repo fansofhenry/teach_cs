@@ -595,25 +595,17 @@ export default function Home() {
 
       {/* ====== THE PROBLEM ====== */}
       <section className="bg-cream border-b-2 border-ink">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20">
           <div className="section-label">The Problem This Curriculum Addresses</div>
-          <div className="space-y-6">
-            <p className="text-[17px] leading-[1.7] text-ink">
-              Most introductory CS courses follow the same pattern: explain a concept, demonstrate syntax, assign practice problems, assess on recall. Students who arrive with prior exposure tend to succeed. Students who don&rsquo;t fall behind quickly and conclude they are <em className="font-serif italic text-[18px]">not a CS person.</em> The course then calls this selection, when in fact it is structure.
-            </p>
-            <p className="text-[17px] leading-[1.7] text-ink">
-              This failure is especially concentrated at community colleges, where students arrive with more diverse prior experience, more financial and time constraints, and less inherited access to the social capital that makes traditional CS culture feel familiar. The typical response &mdash; remediation, prerequisite chains, stricter placement &mdash; treats the wrong variable.
-            </p>
-            <p className="text-[17px] leading-[1.7] text-ink">
-              This curriculum takes a different position: <strong className="font-medium">the difficulty students experience in introductory CS is not uniformly about ability.</strong> Most of it is caused by courses that teach abstractions before problems, syntax before meaning, and efficiency before understanding. The fix is not remediation. It is a different kind of course &mdash; one that begins with a problem the student wants to solve, introduces tools only when they&rsquo;re needed, and assesses understanding through what students build rather than what they recall.
-            </p>
-          </div>
+          <p className="text-[19px] leading-[1.65] text-ink max-w-[680px]">
+            Most introductory CS courses follow the same pattern: explain a concept, demonstrate syntax, assign practice problems, assess on recall. Students who arrive with prior exposure tend to succeed. Students who don&rsquo;t fall behind quickly and conclude they are <em className="font-serif italic text-[20px]">not a CS person.</em> The course then calls this selection, when in fact it is structure. <strong className="font-medium">The difficulty students experience in introductory CS is not uniformly about ability</strong> &mdash; most of it is caused by courses that teach abstractions before problems, syntax before meaning, and efficiency before understanding.
+          </p>
         </div>
       </section>
 
       {/* ====== PHILOSOPHY ====== */}
       <section id="philosophy" className="border-b-2 border-ink">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-16">
             <div className="section-label">How These Courses Are Built</div>
             <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[640px]">
@@ -652,7 +644,7 @@ export default function Home() {
 
       {/* ====== COURSES ====== */}
       <section id="courses">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28">
           <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-4 flex items-center gap-2.5">
             <span className="text-cream">{'//'}</span> Six Courses
           </div>
@@ -747,7 +739,7 @@ export default function Home() {
 
       {/* ====== THREE TRACKS ====== */}
       <section id="tracks" className="bg-ink text-paper border-y-2 border-white/[0.06]">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 items-start">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 items-start">
           <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
             <span className="text-white/20">{'//'}</span> Three Tracks
           </div>
@@ -796,7 +788,7 @@ export default function Home() {
 
       {/* ====== STUDENT PROJECTS ====== */}
       <section id="projects" className="border-y-2 border-ink">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-16 items-start">
             <div className="section-label">Signature Projects</div>
             <p className="text-[17px] leading-[1.7] text-ink/85">
@@ -893,35 +885,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== PHILOSOPHY QUOTE STRIP ====== */}
-      <div className="bg-red text-white px-7 lg:px-15 py-14 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
-        <div>
-          <div className="font-serif text-[clamp(24px,3vw,36px)] italic leading-[1.35] max-w-[800px]">
-            &ldquo;The most advanced technical skill in these courses is understanding who built a system, for whom, and what it encodes about the world.&rdquo;
-          </div>
-          <div className="font-mono text-[12px] tracking-[0.1em] uppercase opacity-80 mt-4">
-            Course Philosophy &middot; Rooted in Freire, hooks, Ko, Anderson
-          </div>
-        </div>
-        <div className="flex flex-row lg:flex-col gap-4 lg:gap-4 shrink-0">
-          {[
-            { num: '0', label: 'Required Textbooks' },
-            { num: '0', label: 'Exams' },
-            { num: '3', label: 'Tracks per Course' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-right">
-              <div className="font-display text-[48px] leading-none">{stat.num}</div>
-              <div className="font-mono text-[10px] tracking-[0.1em] uppercase text-white/50">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ====== RESEARCH ROOTS / THINKERS ====== */}
       <section id="thinkers" className="border-t-2 border-ink">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-14 items-start">
             <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink/70 flex items-start gap-2.5 pt-1">
               <span className="text-cream">{'//'}</span> Research Roots
@@ -961,42 +927,19 @@ export default function Home() {
 
       {/* ====== ABOUT ====== */}
       <section id="about" className="bg-cream border-y-2 border-ink">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20">
-          <div className="section-label">About This Curriculum</div>
-          <div>
-            <div className="space-y-5">
-              <p className="text-[17px] leading-[1.7] text-ink">
-                This curriculum is designed by Henry Fan &mdash; a community college CS education researcher, curriculum designer, and mentee of Prof. Jeff Anderson (Foothill College). Henry works by day as Application Support Analyst at CVC-OEI / Foothill&ndash;De Anza CCD, supporting cross-enrollment infrastructure for 115+ California community colleges. The courses on this site represent a multi-year design project to redesign introductory CS at the community college level &mdash; building courses that are technically rigorous, project-driven, and designed from the start to serve students who have historically been pushed out of CS. The framework is a proposal, not a currently taught program.
-              </p>
-              <p className="text-[17px] leading-[1.7] text-ink">
-                The pedagogical foundation of this work is built on the mentorship and teaching philosophy of <strong className="font-medium">Jeff Anderson</strong> (Foothill College), whose commitment to antiracist learning science, ungrading, and the principle that every classroom decision should map back to research in cognitive science has shaped how every course on this site is designed, assessed, and taught.
-              </p>
-              <p className="text-[17px] leading-[1.7] text-ink">
-                The curriculum is connected to ongoing research into help-seeking behavior in introductory CS courses, curriculum dependency structures, and the experiences of students who leave STEM at community colleges.
-              </p>
-              <p className="text-[17px] leading-[1.7] text-ink">
-                All course materials are free and open access. Instructors who want to adapt any of these courses for their own institutions are encouraged to do so. For questions, collaboration, or to share what you build with these materials, reach out directly.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4 mt-8">
-              {[
-                { label: 'Research Portfolio', href: 'https://fansofhenry.github.io/cs-ed/' },
-                { label: 'Jeff Anderson Math', href: 'https://jeffandersonmath.wordpress.com/' },
-                { label: 'henry@henryfan.org', href: 'mailto:henry@henryfan.org' },
-                { label: 'GitHub', href: 'https://github.com/fansofhenry/teach_cs' },
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith('mailto') ? undefined : '_blank'}
-                  rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                  className="font-mono text-[12px] tracking-[0.08em] uppercase text-red no-underline border-b border-red/40 pb-0.5 hover:border-red transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-28 text-center">
+          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-5">
+            About This Curriculum
           </div>
+          <p className="text-[19px] leading-[1.6] text-ink max-w-[720px] mx-auto mb-8">
+            Designed by Henry Fan &mdash; community college CS education researcher, curriculum designer, and mentee of Prof. Jeff Anderson (Foothill College). The framework is a proposal, not a currently taught program.
+          </p>
+          <Link
+            href="/about"
+            className="inline-block font-mono text-[12px] tracking-[0.1em] uppercase text-red no-underline border-b border-red/40 pb-1 hover:border-red transition-colors"
+          >
+            Full About &rarr;
+          </Link>
         </div>
       </section>
     </>
