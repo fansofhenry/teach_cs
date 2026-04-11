@@ -139,7 +139,7 @@ export default function AboutPage() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="section-label">Teaching Mission</div>
-            <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
+            <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[620px]">
               A teaching statement grounded in practice, research, and the
               conviction that every student deserves technically rigorous
               education designed for their success.
@@ -207,7 +207,7 @@ export default function AboutPage() {
             Jeff Anderson &middot; Foothill College &middot; Mentor &amp;
             Collaborator
           </p>
-          <p className="text-[14px] leading-[1.85] text-white/70 mt-5 max-w-[640px]">
+          <p className="text-[16px] leading-[1.7] text-white/90 mt-5 max-w-[640px]">
             Jeff Anderson&rsquo;s commitment to antiracist learning science,
             ungrading, and the Strategic Deep Learning framework is the
             foundation on which every course on this site is built. His five
@@ -258,7 +258,7 @@ export default function AboutPage() {
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
               <span className="text-white/20">{"//  "}</span>Core Convictions
             </div>
-            <p className="text-[15px] leading-[1.85] text-white/55 max-w-[620px]">
+            <p className="text-[17px] leading-[1.7] text-white/85 max-w-[620px]">
               The principles that drive this work, expressed as design decisions
               that show up in every course.
             </p>
@@ -296,10 +296,10 @@ export default function AboutPage() {
                 key={item.label}
                 className="border-b border-white/[0.08] last:border-b-0 px-6 lg:px-8 py-5 flex flex-col md:flex-row md:items-center gap-3 md:gap-8"
               >
-                <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-red shrink-0 w-48">
+                <span className="font-mono text-[11.5px] tracking-[0.14em] uppercase text-red shrink-0 w-48">
                   {item.label}
                 </span>
-                <p className="text-[13.5px] leading-[1.8] text-white/45">
+                <p className="text-[15.5px] leading-[1.7] text-white/85">
                   {item.detail}
                 </p>
               </div>
@@ -317,7 +317,7 @@ export default function AboutPage() {
           <h2 className="font-display text-[clamp(32px,5vw,48px)] leading-none mb-4">
             Let&rsquo;s Connect
           </h2>
-          <p className="text-[15px] leading-[1.85] text-dim max-w-[520px] mx-auto mb-8">
+          <p className="text-[16.5px] leading-[1.7] text-ink/85 max-w-[520px] mx-auto mb-8">
             For questions, collaboration, or to share what you build with these
             materials, reach out directly.
           </p>

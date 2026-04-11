@@ -406,7 +406,7 @@ export default function Home() {
               <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1 mb-3">
                 <span className="text-white/20">{'//'}</span> This Week
               </div>
-              <p className="font-mono text-[12px] leading-[1.7] text-paper/65 max-w-[260px]">
+              <p className="font-mono text-[12.5px] leading-[1.7] text-paper/85 max-w-[260px]">
                 Recent entries from the public learning log. Updated as work
                 ships, papers get read, and ideas land.
               </p>
@@ -427,7 +427,7 @@ export default function Home() {
                   <div className="flex items-center gap-3 mb-3 flex-wrap">
                     <time
                       dateTime={entry.date}
-                      className="font-mono text-[12px] tracking-[0.04em] text-paper/65"
+                      className="font-mono text-[12px] tracking-[0.04em] text-paper/80"
                     >
                       {formatNowDate(entry.date)}
                     </time>
@@ -443,7 +443,7 @@ export default function Home() {
                   <div className="font-serif text-[21px] italic leading-[1.3] text-paper mb-3 group-hover:text-red transition-colors">
                     {entry.title}
                   </div>
-                  <p className="text-[15px] leading-[1.65] text-paper/75 line-clamp-2">
+                  <p className="text-[16px] leading-[1.65] text-paper/90 line-clamp-2">
                     {entry.body}
                   </p>
                 </Link>
@@ -476,7 +476,7 @@ export default function Home() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-16">
             <div className="section-label">How These Courses Are Built</div>
-            <p className="text-[16.5px] leading-[1.7] text-dim max-w-[640px]">
+            <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[640px]">
               Three pedagogical principles run through every course in this curriculum. They are not buzzwords &mdash; each one is a concrete design decision that shows up in how units are sequenced, how projects are scoped, and how student work is assessed. Each principle traces to a specific body of learning science research.
             </p>
           </div>
@@ -492,16 +492,16 @@ export default function Home() {
                 <div className="font-serif text-[26px] italic mb-4 leading-[1.2]">
                   {card.title}
                 </div>
-                <p className="text-[15.5px] leading-[1.7] text-dim mb-5">
+                <p className="text-[16.5px] leading-[1.7] text-ink/85 mb-5">
                   {card.body}
                 </p>
-                <div className="font-mono text-[12px] leading-[1.7] text-red p-4 border-l-3 border-red bg-red/5">
-                  <span className="text-[10px] tracking-[0.15em] uppercase text-dim block mb-1.5">
+                <div className="font-mono text-[12.5px] leading-[1.7] text-red p-4 border-l-3 border-red bg-red/5">
+                  <span className="text-[10.5px] tracking-[0.15em] uppercase text-ink/70 block mb-1.5">
                     {card.exampleLabel}
                   </span>
                   {card.example}
                 </div>
-                <div className="font-mono text-[11px] text-dim/80 mt-4 leading-[1.6] border-t border-cream pt-3">
+                <div className="font-mono text-[12px] text-ink/70 mt-4 leading-[1.65] border-t border-cream pt-3">
                   {card.citation}
                 </div>
               </div>
@@ -516,7 +516,7 @@ export default function Home() {
           <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-4 flex items-center gap-2.5">
             <span className="text-cream">{'//'}</span> Six Courses
           </div>
-          <p className="text-[16.5px] leading-[1.7] text-dim max-w-[680px] mb-12">
+          <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[680px] mb-12">
             Each course is a complete 18-week experience: a central project arc, three entry tracks for students at different levels, portfolio-based assessment, and a public exhibition at semester end. No exams. No required textbook purchases. All course materials free and open access.
           </p>
 
@@ -580,13 +580,13 @@ export default function Home() {
                   <span className={`status-badge ${course.status === 'taught' ? 'status-taught' : course.status === 'dev' ? 'status-dev' : 'status-proposed'}`}>
                     {course.statusLabel}
                   </span>
-                  <p className="text-[15.5px] leading-[1.7] text-dim flex-1 mb-6">
+                  <p className="text-[16.5px] leading-[1.7] text-ink/85 flex-1 mb-6">
                     {course.desc}
                   </p>
                   <div className="flex flex-col gap-2 border-t border-cream pt-5 mb-6">
                     {course.meta.map((m) => (
-                      <div key={m.label} className="flex justify-between items-center font-mono text-[12px] tracking-[0.04em]">
-                        <span className="text-dim/85">{m.label}</span>
+                      <div key={m.label} className="flex justify-between items-center font-mono text-[12.5px] tracking-[0.04em]">
+                        <span className="text-ink/65">{m.label}</span>
                         <span className="text-ink">{m.value}</span>
                       </div>
                     ))}
@@ -618,7 +618,7 @@ export default function Home() {
                 The Key Design Insight &mdash; Track System
               </span>
             </div>
-            <p className="text-[16.5px] leading-[1.7] text-paper/80 mb-8 max-w-[640px]">
+            <p className="text-[17px] leading-[1.7] text-paper/90 mb-8 max-w-[640px]">
               Every course in this curriculum is taught at three simultaneous depth levels. These are not ability groups, remediation tiers, or ceiling categories &mdash; they are depth choices. The same concept is taught to everyone. What varies is whether a student builds it, proves it, or extends it. Track I is a complete, serious course outcome &mdash; not a consolation.
             </p>
             <div className="grid grid-cols-1 lg:grid-cols-3 border border-white/10">
@@ -633,12 +633,12 @@ export default function Home() {
                   <div className="font-serif text-[19px] italic mb-3 text-paper">
                     {track.name}
                   </div>
-                  <p className="text-[15px] leading-[1.7] text-paper/75">
+                  <p className="text-[16px] leading-[1.7] text-paper/90">
                     {track.body}
                   </p>
                   <div className="mt-5 flex flex-col gap-1.5">
                     {track.examples.map((ex, j) => (
-                      <div key={j} className="font-mono text-[12px] tracking-[0.04em] text-paper/65 py-1.5 px-3 border-l-2 border-white/15">
+                      <div key={j} className="font-mono text-[12.5px] tracking-[0.04em] text-paper/85 py-1.5 px-3 border-l-2 border-white/20">
                         {ex}
                       </div>
                     ))}
@@ -646,7 +646,7 @@ export default function Home() {
                 </div>
               ))}
               {/* Bottom note */}
-              <div className="col-span-full border-t border-white/[0.08] px-8 py-6 font-mono text-[12px] tracking-[0.04em] text-paper/65 leading-[1.7]">
+              <div className="col-span-full border-t border-white/[0.08] px-8 py-6 font-mono text-[12.5px] tracking-[0.04em] text-paper/85 leading-[1.7]">
                 Track I is a complete, serious outcome &mdash; not a consolation. Students completing Track I have built more real software than most students in exam-based courses. &nbsp;&middot;&nbsp; Tracks are chosen weekly. A student can run Track I for 10 weeks and switch to Track II for the capstone. &nbsp;&middot;&nbsp; There is no grade penalty for choosing Track I. Assessment is portfolio-based across all tracks.
               </div>
             </div>
@@ -659,7 +659,7 @@ export default function Home() {
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-16 items-start">
             <div className="section-label">Signature Projects</div>
-            <p className="text-[16.5px] leading-[1.7] text-dim">
+            <p className="text-[17px] leading-[1.7] text-ink/85">
               These are not homework assignments with a twist. Each signature project is the central learning experience of its unit &mdash; designed so that students encounter the core concept as a genuine problem to solve, not a technique to apply. Every project is public: presented at a semester-end exhibition open to the campus community.
             </p>
           </div>
@@ -676,7 +676,7 @@ export default function Home() {
                 <div className="font-serif text-[30px] italic leading-[1.2] mb-4">
                   Build a Computer from Scratch
                 </div>
-                <p className="text-[15.5px] leading-[1.7] text-dim mb-4">
+                <p className="text-[16.5px] leading-[1.7] text-ink/85 mb-4">
                   Teams of students build a working, programmable 8-bit computer on breadboards from logic gates &mdash; and in the process encounter the physics, mathematics, linear algebra, differential equations, and chemistry that make it possible. Inspired by Ben Eater. Grounded in seven bodies of learning science research. Designed for cross-STEM transfer.
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-3">
@@ -711,8 +711,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-9 flex flex-col justify-center">
-                <div className="font-mono text-[12px] tracking-[0.02em] text-dim leading-[1.65] p-3 border-l-2 border-cream bg-black/[0.02]">
-                  <strong className="block text-[10px] tracking-[0.15em] uppercase text-dim mb-1.5 font-medium">
+                <div className="font-mono text-[13px] tracking-[0.02em] text-ink/85 leading-[1.7] p-3 border-l-2 border-cream bg-black/[0.02]">
+                  <strong className="block text-[10.5px] tracking-[0.15em] uppercase text-ink/70 mb-1.5 font-medium">
                     Students Learn Through This Project
                   </strong>
                   How a computer works from first principles &mdash; not as metaphor, but as physical reality &middot; Ohm&rsquo;s Law, RC circuits, Boolean algebra, two&rsquo;s complement, modular arithmetic, state vectors, matrix transformations &middot; Collaborative debugging as the primary learning activity &middot; The experience of building something real with your hands that no AI can replicate
@@ -738,11 +738,11 @@ export default function Home() {
                 <div className="font-serif text-[23px] italic leading-[1.2] mb-3">
                   {project.title}
                 </div>
-                <p className="text-[15.5px] leading-[1.7] text-dim mb-5">
+                <p className="text-[16.5px] leading-[1.7] text-ink/85 mb-5">
                   {project.body}
                 </p>
-                <div className="font-mono text-[12px] tracking-[0.02em] text-dim/90 leading-[1.7]">
-                  <strong className="block text-ink text-[10px] tracking-[0.15em] uppercase mb-1">
+                <div className="font-mono text-[13px] tracking-[0.02em] text-ink/85 leading-[1.7]">
+                  <strong className="block text-ink text-[10.5px] tracking-[0.15em] uppercase mb-1">
                     Students Learn Through This Project
                   </strong>
                   {project.learns}
@@ -783,10 +783,10 @@ export default function Home() {
       <section id="thinkers" className="border-t-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 mb-14 items-start">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-dim flex items-start gap-2.5 pt-1">
+            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink/70 flex items-start gap-2.5 pt-1">
               <span className="text-cream">{'//'}</span> Research Roots
             </div>
-            <p className="text-[16.5px] leading-[1.7] text-dim max-w-[640px]">
+            <p className="text-[17px] leading-[1.7] text-ink/85 max-w-[640px]">
               These courses are not built on personal teaching preference. Each design decision traces to a body of research or a theoretical framework. The thinkers below are not name-dropped &mdash; their ideas show up in specific assignments, assessment structures, and sequencing decisions across every course in this curriculum.
             </p>
           </div>
@@ -800,15 +800,15 @@ export default function Home() {
                   (i + 1) % 4 !== 0 ? 'lg:border-r' : 'lg:border-r-0'
                 } border-cream`}
               >
-                <div className="font-serif text-[18px] mb-1">{t.name}</div>
-                <div className="font-mono text-[11px] tracking-[0.04em] text-red mb-3 italic">
+                <div className="font-serif text-[19px] mb-1">{t.name}</div>
+                <div className="font-mono text-[11.5px] tracking-[0.04em] text-red mb-3 italic">
                   {t.book}
                 </div>
-                <p className="text-[14px] leading-[1.7] text-dim mb-3">
+                <p className="text-[15.5px] leading-[1.65] text-ink/85 mb-3">
                   {t.desc}
                 </p>
-                <div className="font-mono text-[12px] tracking-[0.02em] text-ink leading-[1.65] p-2.5 border-l-2 border-cream bg-black/[0.02]">
-                  <strong className="block text-[10px] tracking-[0.14em] uppercase text-dim mb-1">
+                <div className="font-mono text-[13px] tracking-[0.02em] text-ink/85 leading-[1.7] p-3 border-l-2 border-cream bg-black/[0.02]">
+                  <strong className="block text-[10.5px] tracking-[0.14em] uppercase text-ink/70 mb-1">
                     In These Courses
                   </strong>
                   {t.inPractice}
