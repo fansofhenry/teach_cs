@@ -20,7 +20,7 @@ export default function NotFound() {
             4<span className="text-red">0</span>4
           </div>
           <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-dim mt-2">
-            // Route Not Found
+            <span aria-hidden>{'//'}</span> Route Not Found
           </p>
         </div>
 

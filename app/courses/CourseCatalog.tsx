@@ -82,7 +82,7 @@ export default function CourseCatalogClient() {
             </div>
           </div>
           <p className="font-mono text-[11px] tracking-[0.08em] text-paper/55 mt-3">
-            <span aria-hidden>//</span> {totalCount} catalog entries total &mdash; filter below by status, category, or keyword.
+            <span aria-hidden>{'//'}</span> {totalCount} catalog entries total &mdash; filter below by status, category, or keyword.
           </p>
         </div>
       </div>
@@ -93,8 +93,8 @@ export default function CourseCatalogClient() {
           <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-[10px] text-dim/50 tracking-[0.08em] pointer-events-none">
-                //
+              <span aria-hidden className="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-[10px] text-dim/50 tracking-[0.08em] pointer-events-none">
+                {'//'}
               </span>
               <input
                 type="search"
@@ -157,7 +157,7 @@ export default function CourseCatalogClient() {
       <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-12 lg:py-16">
         {/* Results count */}
         <div className="font-mono text-[12px] tracking-[0.12em] uppercase text-dim mb-8 flex items-center gap-3">
-          <span aria-hidden className="opacity-60">//</span>
+          <span aria-hidden className="opacity-60">{'//'}</span>
           {filtered.length} {filtered.length === 1 ? 'Course' : 'Courses'} Found
         </div>
 
