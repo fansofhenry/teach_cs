@@ -61,6 +61,77 @@ function fmtTs(ts: number) {
 }
 
 // ----------------------------------------------------------------
+// Lab Clock — live elapsed-time state computed client-side from
+// labMeta.startDate. Turns a hardcoded-date snapshot into a page
+// that correctly reports "Day N · Week M of 12" on every visit.
+// ----------------------------------------------------------------
+
+interface LabClock {
+  daysElapsed: number;
+  weekOfProgram: number; // 1-based; 0 if pre-launch
+  dayOfWeekIdx: number; // Monday = 0 … Sunday = 6
+  dayOfWeekName: string;
+  phase: string;
+  isPreLaunch: boolean;
+  isOvershoot: boolean;
+  todayISO: string;
+}
+
+const WEEKDAY_NAMES = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
+function computeLabClock(startISO: string, now: Date): LabClock {
+  const [y, m, d] = startISO.split("-").map(Number);
+  const start = new Date(y, (m ?? 1) - 1, d ?? 1);
+  start.setHours(0, 0, 0, 0);
+  const today = new Date(now);
+  today.setHours(0, 0, 0, 0);
+  const daysElapsed = Math.round(
+    (today.getTime() - start.getTime()) / 86_400_000,
+  );
+  const isPreLaunch = daysElapsed < 0;
+  const weekOfProgram = isPreLaunch ? 0 : Math.floor(daysElapsed / 7) + 1;
+  const isOvershoot = weekOfProgram > 12;
+  // JS getDay(): Sun=0 … Sat=6. Remap so Monday=0.
+  const dayOfWeekIdx = (today.getDay() + 6) % 7;
+  let phase: string;
+  if (isPreLaunch) phase = "Pre-launch";
+  else if (weekOfProgram <= 2) phase = "Foundation";
+  else if (weekOfProgram <= 6) phase = "Build";
+  else if (weekOfProgram <= 9) phase = "Pilot";
+  else if (weekOfProgram <= 12) phase = "Draft & Submit";
+  else phase = "Post-submission";
+  return {
+    daysElapsed,
+    weekOfProgram,
+    dayOfWeekIdx,
+    dayOfWeekName: WEEKDAY_NAMES[dayOfWeekIdx],
+    phase,
+    isPreLaunch,
+    isOvershoot,
+    todayISO: today.toISOString().slice(0, 10),
+  };
+}
+
+// Parse an execution-plan week label ("Wk 1–2", "Wk 7", "Wk 10–11")
+// into an inclusive [startWeek, endWeek] range. Handles both hyphen
+// and en-dash. Returns null if the label doesn't match the pattern.
+function parseWeekRange(label: string): [number, number] | null {
+  const m = label.match(/Wk\s*(\d+)(?:\s*[–-]\s*(\d+))?/);
+  if (!m) return null;
+  const start = parseInt(m[1], 10);
+  const end = m[2] ? parseInt(m[2], 10) : start;
+  return [start, end];
+}
+
+// ----------------------------------------------------------------
 // Page
 // ----------------------------------------------------------------
 
@@ -71,6 +142,11 @@ export default function ModelingBenchPage() {
   const [paper, setPaper] = useState<LogEntry["paper"]>("P1");
   const [what, setWhat] = useState("");
   const [notes, setNotes] = useState("");
+  const [clock, setClock] = useState<LabClock | null>(null);
+
+  useEffect(() => {
+    setClock(computeLabClock(labMeta.startDate, new Date()));
+  }, []);
 
   useEffect(() => {
     try {
@@ -175,6 +251,39 @@ export default function ModelingBenchPage() {
             <Field label="Started" value={labMeta.startDate} />
             <Field label="Target venues" value={labMeta.targetVenues} />
           </div>
+          {clock && (
+            <div
+              className="mt-9 border border-red/40 bg-red/[0.06] px-5 py-4 max-w-[860px] animate-fade-up-4"
+              aria-live="polite"
+            >
+              <div className="font-mono text-[9px] tracking-[0.14em] uppercase text-red/80 mb-2">
+                Lab Clock · live
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-2 font-mono text-[12px] text-white/90">
+                <div>
+                  <span className="text-white/40">Day </span>
+                  {clock.isPreLaunch ? "—" : clock.daysElapsed}
+                </div>
+                <div>
+                  <span className="text-white/40">Week </span>
+                  {clock.isPreLaunch ? "—" : `${clock.weekOfProgram} / 12`}
+                </div>
+                <div>
+                  <span className="text-white/40">Phase </span>
+                  {clock.phase}
+                </div>
+                <div>
+                  <span className="text-white/40">Today </span>
+                  {clock.dayOfWeekName}
+                </div>
+              </div>
+              {clock.isOvershoot && (
+                <div className="mt-2 font-mono text-[10px] text-red">
+                  Past the 12-week program window. Time to ship or replan.
+                </div>
+              )}
+            </div>
+          )}
           <div className="mt-9 flex flex-wrap gap-3 animate-fade-up-4">
             <Link
               href="/research"
@@ -317,7 +426,11 @@ export default function ModelingBenchPage() {
 
         <div className="space-y-12">
           {benchPapers.map((p) => (
-            <PaperCard key={p.id} paper={p} />
+            <PaperCard
+              key={p.id}
+              paper={p}
+              currentWeek={clock?.weekOfProgram ?? null}
+            />
           ))}
         </div>
 
@@ -357,35 +470,46 @@ export default function ModelingBenchPage() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-2 border-ink bg-paper">
-          {weeklyWorkflow.map((d, idx) => (
-            <div
-              key={d.day}
-              className={`p-5 ${
-                idx % 4 !== 3 ? "lg:border-r-2" : ""
-              } ${idx < 4 ? "lg:border-b-2" : ""} ${
-                idx % 2 !== 1 ? "md:border-r-2 lg:border-r-0" : ""
-              } ${
-                idx < weeklyWorkflow.length - 1
-                  ? "border-b-2 md:border-b-2 lg:border-b-2"
-                  : ""
-              } border-ink`}
-            >
-              <div className="font-display text-[22px] text-ink leading-none mb-1 tracking-wide">
-                {d.day}
+          {weeklyWorkflow.map((d, idx) => {
+            const isToday = clock?.dayOfWeekName === d.day;
+            return (
+              <div
+                key={d.day}
+                aria-current={isToday ? "date" : undefined}
+                className={`p-5 ${
+                  idx % 4 !== 3 ? "lg:border-r-2" : ""
+                } ${idx < 4 ? "lg:border-b-2" : ""} ${
+                  idx % 2 !== 1 ? "md:border-r-2 lg:border-r-0" : ""
+                } ${
+                  idx < weeklyWorkflow.length - 1
+                    ? "border-b-2 md:border-b-2 lg:border-b-2"
+                    : ""
+                } border-ink ${isToday ? "bg-red/[0.07]" : ""}`}
+              >
+                <div className="flex items-baseline gap-2 mb-1">
+                  <div className="font-display text-[22px] text-ink leading-none tracking-wide">
+                    {d.day}
+                  </div>
+                  {isToday && (
+                    <span className="font-mono text-[8px] tracking-[0.14em] uppercase text-red border border-red/60 px-1.5 py-[1px]">
+                      Today
+                    </span>
+                  )}
+                </div>
+                <div className="font-mono text-[9px] tracking-[0.12em] uppercase text-red mb-1">
+                  {d.block}
+                </div>
+                <div className="font-mono text-[10px] text-dim mb-3">
+                  {d.hours}
+                </div>
+                <ul className="space-y-2 text-[14.5px] leading-[1.7] text-ink/85">
+                  {d.bullets.map((b, i) => (
+                    <li key={i}>· {b}</li>
+                  ))}
+                </ul>
               </div>
-              <div className="font-mono text-[9px] tracking-[0.12em] uppercase text-red mb-1">
-                {d.block}
-              </div>
-              <div className="font-mono text-[10px] text-dim mb-3">
-                {d.hours}
-              </div>
-              <ul className="space-y-2 text-[14.5px] leading-[1.7] text-ink/85">
-                {d.bullets.map((b, i) => (
-                  <li key={i}>· {b}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <h3 className="font-display text-[28px] text-ink mt-14 mb-3 tracking-wide">
@@ -791,7 +915,13 @@ function DarkSection({
 // Paper card
 // ----------------------------------------------------------------
 
-function PaperCard({ paper: p }: { paper: (typeof benchPapers)[number] }) {
+function PaperCard({
+  paper: p,
+  currentWeek,
+}: {
+  paper: (typeof benchPapers)[number];
+  currentWeek: number | null;
+}) {
   const accent =
     p.id === "P1" ? "border-red" : p.id === "P2" ? "border-teal" : "border-gold";
   return (
@@ -845,16 +975,36 @@ function PaperCard({ paper: p }: { paper: (typeof benchPapers)[number] }) {
       </Field2>
 
       <Field2 label="Step-by-step execution plan">
-        <ol className="space-y-2 list-none p-0">
-          {p.executionPlan.map((step) => (
-            <li
-              key={step.week}
-              className="grid grid-cols-[80px_1fr] gap-3 text-[12.5px] leading-[1.7]"
-            >
-              <span className="font-mono text-red text-[11px]">{step.week}</span>
-              <span className="text-ink/80">{step.body}</span>
-            </li>
-          ))}
+        <ol className="space-y-1 list-none p-0">
+          {p.executionPlan.map((step) => {
+            const range = parseWeekRange(step.week);
+            const isCurrent =
+              currentWeek !== null &&
+              range !== null &&
+              currentWeek >= range[0] &&
+              currentWeek <= range[1];
+            return (
+              <li
+                key={step.week}
+                className={`grid grid-cols-[80px_1fr] gap-3 text-[12.5px] leading-[1.7] px-2 py-1 ${
+                  isCurrent
+                    ? "bg-red/[0.08] border-l-2 border-red -ml-2"
+                    : "border-l-2 border-transparent -ml-2"
+                }`}
+                aria-current={isCurrent ? "step" : undefined}
+              >
+                <span className="font-mono text-red text-[11px]">
+                  {step.week}
+                  {isCurrent && (
+                    <span className="ml-1 text-[8px] tracking-[0.1em] uppercase">
+                      now
+                    </span>
+                  )}
+                </span>
+                <span className="text-ink/80">{step.body}</span>
+              </li>
+            );
+          })}
         </ol>
       </Field2>
 
