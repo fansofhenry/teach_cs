@@ -7,12 +7,8 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { label: 'Log', href: '/log' },
   { label: 'Courses', href: '/courses' },
-  { label: 'Philosophy', href: '/philosophy' },
-  { label: 'Learning Paths', href: '/paths' },
   { label: 'Research', href: '/research' },
-  { label: 'Reading List', href: '/reading-list' },
-  { label: 'Student Success', href: '/student-success' },
-  { label: 'Peer Training', href: '/peer-training' },
+  { label: 'Reading', href: '/reading-list' },
   { label: 'About', href: '/about' },
 ];
 
