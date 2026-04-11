@@ -6,7 +6,7 @@ import {
 } from '@/lib/data/log';
 
 /* ============================================================
-   DATA — TODO: Move to @/lib/data/courses when that module exists
+   DATA
    ============================================================ */
 
 const philosophyCards = [
@@ -312,21 +312,23 @@ const thinkers = [
 
 const homeJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
+  '@type': 'CreativeWork',
   name: 'Teaching Computing Differently',
   url: 'https://fansofhenry.github.io/teach_cs',
   description:
-    "A project-based, equity-centered CS curriculum for community college students. No exams. No required textbooks. Every concept earned through building.",
-  sameAs: [
-    'https://github.com/fansofhenry/teach_cs',
-    'https://fansofhenry.github.io/cs-ed/',
-  ],
-  founder: {
+    "A proposed six-course community-college CS curriculum by Henry Fan, mentee of Prof. Jeff Anderson (Foothill College). Project-based, equity-centered, portfolio-assessed — a proposal in development, not a currently taught program.",
+  genre: 'Curriculum proposal',
+  inLanguage: 'en',
+  creator: {
     '@type': 'Person',
     name: 'Henry Fan',
     email: 'henry@henryfan.org',
     url: 'https://github.com/fansofhenry',
   },
+  sameAs: [
+    'https://github.com/fansofhenry/teach_cs',
+    'https://fansofhenry.github.io/cs-ed/',
+  ],
 };
 
 function formatNowDate(iso: string): string {

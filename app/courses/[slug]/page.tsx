@@ -65,19 +65,20 @@ export default async function CourseDetailPage({
     name: `${course.courseNumber} — ${course.title}`,
     description: course.shortDescription,
     courseCode: course.courseNumber,
-    provider: {
-      '@type': 'Organization',
-      name: 'Teaching Computing Differently',
-      url: 'https://fansofhenry.github.io/teach_cs',
-    },
     educationalLevel: 'Community College',
     inLanguage: 'en',
     teaches: course.learningObjectives,
     url: `https://fansofhenry.github.io/teach_cs/courses/${course.slug}`,
-    hasCourseInstance: {
-      '@type': 'CourseInstance',
-      courseMode: 'Blended',
-      courseWorkload: `PT${course.weeks}W`,
+    author: {
+      '@type': 'Person',
+      name: 'Henry Fan',
+      url: 'https://github.com/fansofhenry',
+    },
+    isPartOf: {
+      '@type': 'CreativeWork',
+      name: 'Teaching Computing Differently',
+      url: 'https://fansofhenry.github.io/teach_cs',
+      genre: 'Curriculum proposal',
     },
   };
 
