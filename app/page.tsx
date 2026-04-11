@@ -1,11 +1,9 @@
 import Link from 'next/link';
 import {
   currentFocus,
-  currentlyReading,
   getLatestLogEntry,
   getRecentLog,
 } from '@/lib/data/log';
-import { researchProjects } from '@/lib/data/research';
 
 /* ============================================================
    DATA — TODO: Move to @/lib/data/courses when that module exists
@@ -370,7 +368,7 @@ export default function Home() {
         </Link>
       )}
 
-      {/* ====== UNIFIED HERO ====== */}
+      {/* ====== MASTHEAD ====== */}
       <header className="bg-ink text-paper border-b-[5px] border-red">
         {/* Top bar — identity strip */}
         <div className="px-7 lg:px-15 py-3.5 border-b border-white/10 font-mono text-[11px] tracking-[0.12em] uppercase opacity-80 flex justify-between gap-4">
@@ -380,218 +378,77 @@ export default function Home() {
           <span className="hidden sm:inline">Mentee of Jeff Anderson &middot; Foothill College</span>
         </div>
 
-        {/* The hero — title up top, dashboard immediately below */}
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 pt-14 lg:pt-16 pb-14 lg:pb-16">
-          {/* Title block */}
-          <div className="max-w-[820px] mb-12 lg:mb-14">
-            <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-red mb-5 animate-fade-up-1">
+        {/* The hero — clean single column, breathing room around the title */}
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 pt-20 lg:pt-28 pb-20 lg:pb-28">
+          <div className="max-w-[820px]">
+            <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-red mb-6 animate-fade-up-1">
               A Curriculum Framework for Community College CS
             </div>
-            <h1 className="font-display text-[clamp(56px,8.5vw,108px)] tracking-[0.02em] leading-[0.88] animate-fade-up-2">
+            <h1 className="font-display text-[clamp(60px,9vw,120px)] tracking-[0.02em] leading-[0.88] mb-8 animate-fade-up-2">
               Teaching<br />
               <span className="text-red">Computing</span><br />
               Differently.
             </h1>
-          </div>
-
-          {/* Currently focus */}
-          <div className="mb-12 lg:mb-14 max-w-[880px] animate-fade-up-3">
-            <div className="font-mono text-[12px] tracking-[0.18em] uppercase text-red mb-4">
-              Currently
-            </div>
-            <p className="font-serif text-[clamp(24px,3vw,38px)] italic leading-[1.25] text-paper">
-              {currentFocus}
+            <p className="text-[19px] leading-[1.6] text-paper/90 max-w-[680px] animate-fade-up-3">
+              Six courses built on one conviction: students learn CS best when they build real things, earn abstractions through struggle, and understand that every algorithm encodes a set of values about the world. No exams. No required textbooks. Every concept earned by building. <em className="font-serif italic text-paper/70">A proposal in development &mdash; not a currently taught program.</em>
             </p>
-            <p className="font-mono text-[12px] tracking-[0.06em] text-paper/65 mt-4">
-              Last updated{' '}
-              {latest && (
-                <time dateTime={latest.date}>{formatNowDate(latest.date)}</time>
-              )}{' '}
-              &middot;{' '}
-              <Link
-                href="/log"
-                className="text-red border-b border-red/40 hover:border-red no-underline transition-colors"
-              >
-                See the full log
-              </Link>
-            </p>
+            <div className="flex gap-2.5 flex-wrap mt-8 animate-fade-up-4">
+              <span className="pill">No Required Textbooks</span>
+              <span className="pill">No Exams</span>
+              <span className="pill">3 Entry Tracks per Course</span>
+              <span className="pill">Portfolio Assessment</span>
+              <span className="pill">All Resources Free</span>
+            </div>
           </div>
-
-            {/* Three status cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/15 mb-12 lg:mb-14">
-              {latest && (
-                <Link
-                  href="/log"
-                  className="block bg-ink p-7 lg:p-8 no-underline text-inherit transition-colors hover:bg-white/[0.04] group"
-                >
-                  <div className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-red mb-3">
-                    Latest from the log
-                  </div>
-                  <h3 className="font-serif text-[20px] italic leading-[1.25] text-paper mb-3 group-hover:text-red transition-colors">
-                    {latest.title}
-                  </h3>
-                  <p className="text-[14.5px] leading-[1.65] text-paper/85 line-clamp-3 mb-4">
-                    {latest.body}
-                  </p>
-                  <div className="font-mono text-[11px] tracking-[0.04em] text-paper/65">
-                    <time dateTime={latest.date}>{formatNowDate(latest.date)}</time>{' '}
-                    &middot; {latest.kind}
-                  </div>
-                </Link>
-              )}
-
-              {currentlyReading.href ? (
-                <a
-                  href={currentlyReading.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-ink p-7 lg:p-8 no-underline text-inherit transition-colors hover:bg-white/[0.04] group"
-                >
-                  <div className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-orange mb-3">
-                    Currently reading
-                  </div>
-                  <h3 className="font-serif text-[20px] italic leading-[1.25] text-paper mb-1 group-hover:text-orange transition-colors">
-                    {currentlyReading.title}
-                  </h3>
-                  <div className="font-mono text-[11px] tracking-[0.04em] text-paper/70 mb-3">
-                    {currentlyReading.author}
-                  </div>
-                  <p className="text-[14.5px] leading-[1.65] text-paper/85 line-clamp-3">
-                    {currentlyReading.why}
-                  </p>
-                </a>
-              ) : (
-                <div className="bg-ink p-7 lg:p-8">
-                  <div className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-orange mb-3">
-                    Currently reading
-                  </div>
-                  <h3 className="font-serif text-[20px] italic leading-[1.25] text-paper mb-1">
-                    {currentlyReading.title}
-                  </h3>
-                  <div className="font-mono text-[11px] tracking-[0.04em] text-paper/70 mb-3">
-                    {currentlyReading.author}
-                  </div>
-                  <p className="text-[14.5px] leading-[1.65] text-paper/85 line-clamp-3">
-                    {currentlyReading.why}
-                  </p>
-                </div>
-              )}
-
-              {researchProjects[0] && (
-                <Link
-                  href="/research"
-                  className="block bg-ink p-7 lg:p-8 no-underline text-inherit transition-colors hover:bg-white/[0.04] group"
-                >
-                  <div className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-teal mb-3">
-                    Active research direction
-                  </div>
-                  <h3 className="font-serif text-[20px] italic leading-[1.25] text-paper mb-1 group-hover:text-teal transition-colors">
-                    {researchProjects[0].title}
-                  </h3>
-                  <div className="font-mono text-[11px] tracking-[0.04em] text-paper/70 mb-3">
-                    {researchProjects[0].subtitle}
-                  </div>
-                  <p className="text-[14.5px] leading-[1.65] text-paper/85 line-clamp-3">
-                    {researchProjects[0].description}
-                  </p>
-                </Link>
-              )}
-            </div>
-
-            {/* Three audience doors */}
-            <div>
-              <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-paper/65 mb-5">
-                Where to start
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/15">
-                <Link
-                  href="/log"
-                  className="group block bg-ink p-7 no-underline text-inherit transition-colors hover:bg-red/15"
-                >
-                  <div className="font-display text-[28px] leading-[0.95] text-paper mb-2 group-hover:text-red transition-colors">
-                    Mentor or grant reader
-                  </div>
-                  <p className="text-[14.5px] leading-[1.6] text-paper/80">
-                    Start at the log. One URL, dated entries, what shipped this week.
-                  </p>
-                  <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-red mt-4 transition-[gap] group-hover:gap-3 flex items-center gap-2">
-                    Open the log <span aria-hidden>&rarr;</span>
-                  </div>
-                </Link>
-                <Link
-                  href="/research"
-                  className="group block bg-ink p-7 no-underline text-inherit transition-colors hover:bg-orange/15"
-                >
-                  <div className="font-display text-[28px] leading-[0.95] text-paper mb-2 group-hover:text-orange transition-colors">
-                    PhD admissions
-                  </div>
-                  <p className="text-[14.5px] leading-[1.6] text-paper/80">
-                    Three-paper program with Jeff Anderson, theoretical framing, methods, target venues.
-                  </p>
-                  <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-orange mt-4 transition-[gap] group-hover:gap-3 flex items-center gap-2">
-                    Open research <span aria-hidden>&rarr;</span>
-                  </div>
-                </Link>
-                <Link
-                  href="/courses"
-                  className="group block bg-ink p-7 no-underline text-inherit transition-colors hover:bg-teal/15"
-                >
-                  <div className="font-display text-[28px] leading-[0.95] text-paper mb-2 group-hover:text-teal transition-colors">
-                    Curious about the curriculum
-                  </div>
-                  <p className="text-[14.5px] leading-[1.6] text-paper/80">
-                    Eleven proposed courses, three entry tracks each. A framework in development, free and open.
-                  </p>
-                  <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-teal mt-4 transition-[gap] group-hover:gap-3 flex items-center gap-2">
-                    Open the catalog <span aria-hidden>&rarr;</span>
-                  </div>
-                </Link>
-              </div>
-            </div>
         </div>
       </header>
 
-      {/* ====== "MORE ABOUT THE CURRICULUM" DIVIDER + LONG-FORM PITCH OPENER ====== */}
-      <section
-        id="curriculum"
-        className="bg-paper border-b-2 border-ink scroll-mt-20"
-      >
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-14 lg:py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-20 items-start">
-          <div className="font-mono text-[11px] tracking-[0.16em] uppercase text-red flex items-start gap-2.5">
-            <span className="text-ink/30">{'//'}</span> Below the dashboard
-          </div>
-          <div>
-            <h2 className="font-display text-[clamp(40px,5.5vw,68px)] tracking-[0.02em] leading-[0.92] text-ink mb-5">
-              More about the <span className="text-red">curriculum</span>
-            </h2>
-            <p className="text-[19px] leading-[1.6] text-ink max-w-[680px] mb-6">
-              Six courses built on one conviction: students learn CS best when
-              they build real things, earn abstractions through struggle, and
-              understand that every algorithm encodes a set of values about the
-              world. No exams. No required textbooks. Every concept earned by
-              building. <em className="font-serif italic text-ink/70">A
-              proposal in development &mdash; not a currently taught program.</em>
-            </p>
-            <div className="flex gap-2.5 flex-wrap mb-5">
-              {['No Required Textbooks','No Exams','3 Entry Tracks per Course','Portfolio Assessment','All Resources Free'].map(p => (
-                <span
-                  key={p}
-                  className="px-3.5 py-1.5 border border-ink/30 font-mono text-[11px] tracking-[0.06em] uppercase text-ink/80"
+      {/* ====== THIS WEEK PANEL — slim recency band, two recent log entries ====== */}
+      {recent.length > 0 && (
+        <section className="bg-cream border-b-2 border-ink">
+          <div className="max-w-[1300px] mx-auto px-7 lg:px-15 py-12 lg:py-14 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-7 lg:gap-16 items-start">
+            <div>
+              <div className="section-label mb-3">This Week</div>
+              <p className="font-serif text-[19px] italic leading-[1.4] text-ink mb-3">
+                {currentFocus}
+              </p>
+              <Link
+                href="/log"
+                className="inline-block font-mono text-[12px] tracking-[0.12em] uppercase text-red border-b border-red/40 pb-0.5 no-underline hover:border-red transition-colors"
+              >
+                Full log &rarr;
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink border-2 border-ink">
+              {recent.map((entry) => (
+                <Link
+                  key={entry.date + entry.title}
+                  href="/log"
+                  className="block bg-paper p-6 lg:p-7 no-underline text-inherit hover:bg-cream transition-colors group"
                 >
-                  {p}
-                </span>
+                  <div className="flex items-center gap-3 mb-3 flex-wrap">
+                    <time
+                      dateTime={entry.date}
+                      className="font-mono text-[12px] tracking-[0.04em] text-dim"
+                    >
+                      {formatNowDate(entry.date)}
+                    </time>
+                    <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-red">
+                      {entry.kind}
+                    </span>
+                  </div>
+                  <div className="font-serif text-[20px] italic leading-[1.3] text-ink mb-2 group-hover:text-red transition-colors">
+                    {entry.title}
+                  </div>
+                  <p className="text-[14px] leading-[1.65] text-ink/75 line-clamp-2">
+                    {entry.body}
+                  </p>
+                </Link>
               ))}
             </div>
-            <p className="text-[14.5px] leading-[1.7] text-ink/65 max-w-[680px]">
-              Everything below is the long-form pitch: the problem the framework
-              addresses, the three pedagogical principles, the eleven proposed
-              courses, the three entry tracks, the signature projects, and the
-              research roots in Jeff Anderson&rsquo;s ungrading and antiracist
-              learning science. Skip it or scroll it &mdash; both are fine.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ====== THE PROBLEM ====== */}
       <section className="bg-cream border-b-2 border-ink">
