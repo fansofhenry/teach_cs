@@ -5,27 +5,6 @@ import { getLatestLogEntry, getRecentLog } from '@/lib/data/log';
    DATA — TODO: Move to @/lib/data/courses when that module exists
    ============================================================ */
 
-const principles = [
-  {
-    num: '01',
-    label: 'Derive Before Compute',
-    title: 'Earn the abstraction.',
-    body: 'Every tool \u2014 a hash table, a gradient descent step, a transformer \u2014 is introduced through a problem that makes it necessary, before the formal concept is named.',
-  },
-  {
-    num: '02',
-    label: 'Build Before Import',
-    title: 'Implement before you use.',
-    body: 'Students implement every major data structure and algorithm from scratch before reaching for a library. You earn the abstraction by understanding its interior.',
-  },
-  {
-    num: '03',
-    label: 'Equity as Design',
-    title: 'Algorithms encode values.',
-    body: 'The social implications of systems are not a module added at the end \u2014 they are part of understanding what the system does. Bias is measurable. So we measure it.',
-  },
-];
-
 const philosophyCards = [
   {
     num: '01',
@@ -395,8 +374,8 @@ export default function Home() {
         </div>
 
         {/* Main masthead */}
-        <div className="px-7 lg:px-15 py-16 lg:py-[64px] grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-15 items-end max-w-[1300px]">
-          <div>
+        <div className="px-7 lg:px-15 py-16 lg:py-[72px] max-w-[1300px]">
+          <div className="max-w-[820px]">
             <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-red mb-5 animate-fade-up-1">
               A Curriculum Framework for Community College CS
             </div>
@@ -405,39 +384,16 @@ export default function Home() {
               <span className="text-red">Computing</span><br />
               Differently.
             </h1>
-            <p className="text-[17px] leading-[1.75] text-paper/90 max-w-[560px] animate-fade-up-3">
+            <p className="text-[19px] leading-[1.6] text-paper/90 max-w-[680px] animate-fade-up-3">
               Six courses built on one conviction: students learn CS best when they build real things, earn abstractions through struggle, and understand that every algorithm encodes a set of values about the world. No exams. No required textbooks. Every concept earned by building.
             </p>
-            <div className="flex gap-2.5 flex-wrap mt-7 animate-fade-up-4">
+            <div className="flex gap-2.5 flex-wrap mt-8 animate-fade-up-4">
               <span className="pill">No Required Textbooks</span>
               <span className="pill">No Exams</span>
               <span className="pill">3 Entry Tracks per Course</span>
               <span className="pill">Portfolio Assessment</span>
               <span className="pill">All Resources Free</span>
             </div>
-          </div>
-
-          {/* Sidebar principles */}
-          <div className="border-t lg:border-t-0 lg:border-l border-white/10 pt-10 lg:pt-0 lg:pl-15 pb-2">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-paper/55 mb-7">
-              Three Core Principles
-            </div>
-            {principles.map((p, i) => (
-              <div
-                key={p.num}
-                className={`mb-7 pb-7 ${i < principles.length - 1 ? 'border-b border-white/[0.06]' : ''}`}
-              >
-                <div className="font-display text-[14px] tracking-[0.12em] text-red mb-2">
-                  {p.num} &mdash; {p.label}
-                </div>
-                <div className="font-serif text-[21px] italic text-paper mb-2">
-                  {p.title}
-                </div>
-                <div className="text-[15px] leading-[1.7] text-paper/75">
-                  {p.body}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </header>
@@ -564,60 +520,24 @@ export default function Home() {
             Each course is a complete 18-week experience: a central project arc, three entry tracks for students at different levels, portfolio-based assessment, and a public exhibition at semester end. No exams. No required textbook purchases. All course materials free and open access.
           </p>
 
-          {/* Pathway visualization */}
-          <div className="flex items-center mb-4 overflow-x-auto pb-1 gap-0">
-            {[
-              { label: 'Any student', dot: 'No\nprereq', style: 'border-2 border-ink bg-paper' },
-              { label: 'How Things Work', dot: 'CS 175', style: 'bg-ink text-paper border-2 border-ink' },
-              { label: 'Intro AI', dot: 'CS 180', style: 'bg-ink text-paper border-2 border-ink' },
-              { label: 'Intro ML', dot: 'CS 185', style: 'bg-red text-white border-2 border-red' },
-              { label: 'Data Structures', dot: 'CS 210', style: 'bg-ink text-paper border-2 border-ink' },
-            ].map((node, i, arr) => (
-              <div key={i} className="flex items-center shrink-0">
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className={`w-11 h-11 rounded-full flex items-center justify-center font-mono text-[8.5px] tracking-[0.03em] text-center leading-[1.2] ${node.style}`}>
-                    {node.dot.split('\n').map((l, j) => (
-                      <span key={j}>{l}<br /></span>
-                    ))}
-                  </div>
-                  <div className="font-mono text-[9px] tracking-[0.1em] uppercase text-dim text-center max-w-[72px] leading-[1.4]">
-                    {node.label}
-                  </div>
-                </div>
-                {i < arr.length - 1 && (
-                  <div className="w-9 h-0.5 bg-cream shrink-0 relative mx-1">
-                    <div className="absolute right-[-1px] top-[-3px] w-0 h-0 border-l-[6px] border-l-cream border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent" />
-                  </div>
-                )}
-              </div>
-            ))}
-            {/* Engineering branch */}
-            <div className="w-14 h-0.5 bg-cream shrink-0 relative mx-1">
-              <div className="absolute right-[-1px] top-[-3px] w-0 h-0 border-l-[6px] border-l-cream border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent" />
-            </div>
-            {[
-              { label: 'Linear Algebra', dot: 'Math 2B', style: 'bg-teal text-white border-2 border-teal' },
-              { label: 'MATLAB & Eng.', dot: 'ENGR 11', style: 'bg-teal text-white border-2 border-teal' },
-            ].map((node, i, arr) => (
-              <div key={i} className="flex items-center shrink-0">
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className={`w-11 h-11 rounded-full flex items-center justify-center font-mono text-[8.5px] tracking-[0.03em] text-center leading-[1.2] ${node.style}`}>
-                    {node.dot}
-                  </div>
-                  <div className="font-mono text-[9px] tracking-[0.1em] uppercase text-dim text-center max-w-[72px] leading-[1.4]">
-                    {node.label}
-                  </div>
-                </div>
-                {i < arr.length - 1 && (
-                  <div className="w-9 h-0.5 bg-cream shrink-0 relative mx-1">
-                    <div className="absolute right-[-1px] top-[-3px] w-0 h-0 border-l-[6px] border-l-cream border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent" />
-                  </div>
-                )}
-              </div>
-            ))}
+          {/* Pathway — one-line text sequence */}
+          <div className="font-mono text-[13px] leading-[1.8] text-ink/85 mb-3 flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="text-ink/50 uppercase tracking-[0.12em] text-[11px] mr-2">CS pathway</span>
+            <span className="text-ink">CS 175</span>
+            <span className="text-ink/40">&rarr;</span>
+            <span className="text-ink">CS 180</span>
+            <span className="text-ink/40">&rarr;</span>
+            <span className="text-red font-medium">CS 185</span>
+            <span className="text-ink/40">&rarr;</span>
+            <span className="text-ink">CS 210</span>
+            <span className="mx-3 text-ink/30">&middot;</span>
+            <span className="text-ink/50 uppercase tracking-[0.12em] text-[11px] mr-2">Engineering branch</span>
+            <span className="text-teal">Math 2B</span>
+            <span className="text-ink/40">&rarr;</span>
+            <span className="text-teal">ENGR 11</span>
           </div>
-          <p className="font-mono text-[10px] text-dim/60 mt-2 mb-9 leading-[1.7]">
-            CS pathway (left to right) &middot; Engineering track branches at Math 2B / ENGR 11 &middot; All courses accessible at Track I with no prior programming
+          <p className="font-mono text-[12px] text-ink/65 mb-9 leading-[1.7]">
+            Every course starts from Track I &mdash; no prior programming required. The engineering branch (Math 2B, ENGR 11) is a parallel track for students taking applied linear algebra alongside the CS sequence.
           </p>
 
           {/* Course grid */}
