@@ -1,6 +1,8 @@
-import type { ResearchProject, TheoreticalConstruct, ReadingListEntry, ResearchTimeline } from "./types";
+import type { ResearchProject, ReadingListEntry } from "./types";
 
-// ===== Five Named Research Projects (from cs-ed portfolio) =====
+// ===== Five proposed project designs for a future PhD =====
+// These are planning artifacts, not studies in progress. Status is "proposed"
+// across the board until data collection begins.
 
 export const researchProjects: ResearchProject[] = [
   {
@@ -12,7 +14,6 @@ export const researchProjects: ResearchProject[] = [
     methodology: "Logistic regression on LMS interaction logs. Feature families: temporal (session timing, spacing), linguistic (forum post complexity, question specificity), engagement (resource access patterns, assignment submission timing). Target: help-seeking events (office hours, tutoring center, forum posts).",
     techStack: ["Python", "scikit-learn", "PSLC DataShop", "LMS API"],
     targetVenue: "ICER (International Computing Education Research)",
-    timeline: "Fall 2026 — LMS feature extraction + model training",
   },
   {
     id: "P2",
@@ -23,7 +24,6 @@ export const researchProjects: ResearchProject[] = [
     methodology: "47-syllabus corpus from California community colleges. Annotation schema with 4 dimensions: necessity (is the concept motivated?), sequence (does prerequisite precede dependent?), equity (are multiple entry points offered?), assessment (is assessment aligned to stated learning goals?). Cohen's kappa target ≥ 0.7.",
     techStack: ["HuggingFace Transformers", "Label Studio", "Python", "spaCy"],
     targetVenue: "Learning@Scale",
-    timeline: "Fall 2026 — Expert annotators + NLP classifier training",
   },
   {
     id: "P3",
@@ -33,8 +33,7 @@ export const researchProjects: ResearchProject[] = [
       "20–30 semi-structured interviews with students who left CS at community colleges. Not 'why did you fail?' but 'what was your experience, and what would have changed it?' Using Seymour & Hunter's taxonomy of STEM departure factors, adapted for community college context.",
     methodology: "Qualitative: semi-structured interviews, 60–90 minutes. IRB protocol. Deductive coding (Seymour & Hunter departure taxonomy) + inductive coding (grounded theory for emergent themes). Member checking with participants.",
     techStack: ["Otter.ai transcription", "Dedoose coding", "Grounded theory"],
-    targetVenue: "ICER 2027",
-    timeline: "Summer 2026 — 20–30 interviews + coding",
+    targetVenue: "ICER",
   },
   {
     id: "P4",
@@ -45,7 +44,6 @@ export const researchProjects: ResearchProject[] = [
     methodology: "Model courses as directed acyclic graphs. Node = concept/skill. Edge = typed dependency. Compute: longest path (curriculum bottleneck), in-degree distribution (prerequisite load), connected components (isolated topics). Pilot with 5–10 instructors for validation.",
     techStack: ["NetworkX", "React", "D3.js", "Python"],
     targetVenue: "SIGCSE",
-    timeline: "Spring 2027 — Pilot with instructors",
   },
   {
     id: "P5",
@@ -56,95 +54,15 @@ export const researchProjects: ResearchProject[] = [
     methodology: "Walton 3-item belonging scale administered pre/post. Coding scheme applied to course materials. Instructor self-audit instrument developed for voluntary use. Correlation between material-level belonging signals and student-reported belonging.",
     techStack: ["Survey instruments", "Qualitative coding", "Statistical analysis"],
     targetVenue: "CSE (Computer Science Education journal)",
-    timeline: "Spring 2027 — Instrument development + pilot",
   },
 ];
 
-// ===== Theoretical Constructs =====
-
-export const theoreticalConstructs: TheoreticalConstruct[] = [
-  {
-    name: "Pedagogical Debt",
-    definition:
-      "Analogous to technical debt: the accumulated cost of introducing abstractions before students experience the problems those abstractions solve. Violations of Harel's intellectual need principle that are measurable from course materials and predictive of student outcomes.",
-    operationalization:
-      "Detectable via NLP classification of syllabi and course materials. A topic introduced without a motivating problem is a unit of pedagogical debt. High-debt courses produce students who can execute procedures but cannot transfer understanding.",
-  },
-  {
-    name: "Help-Seeking Suppression",
-    definition:
-      "A behavioral pattern in which students who need help most are structurally least likely to seek it — not due to individual deficit but due to course design, institutional signaling, and belonging uncertainty. The suppression is structural, not psychological.",
-    operationalization:
-      "Operationalizable in LMS data: students with high engagement (frequent logins, resource access) but low help-seeking events (no forum posts, no office hours) exhibit the pattern. Logistic regression on temporal and linguistic features can predict suppression risk.",
-  },
-  {
-    name: "Curriculum Graph Analysis",
-    definition:
-      "Modeling a curriculum as a directed graph with typed dependencies (conceptual, procedural, motivational, social). Structural properties of the graph — longest path, in-degree distribution, bottleneck nodes — predict student outcomes and identify design weaknesses invisible to sequential syllabus reading.",
-    operationalization:
-      "Computed via NetworkX. Longest path = minimum time to complete. High in-degree nodes = prerequisite bottlenecks. Disconnected components = isolated topics that students can't connect. Motivational edges = intellectual need relationships.",
-  },
-  {
-    name: "Motivational Debt",
-    definition:
-      "A tentative construct extending pedagogical debt: the accumulated motivational cost when course materials fail to connect learning activities to student-valued outcomes. Measurable via NLP sentiment and framing analysis of assignment descriptions.",
-    operationalization:
-      "Detectable by analyzing assignment language for outcome framing (instrumental vs. intrinsic), audience specification (who is this for?), and connection to student experience (abstract vs. situated). High motivational debt correlates with surface learning approaches.",
-  },
-];
-
-// ===== Research Timeline =====
-
-export const researchTimeline: ResearchTimeline[] = [
-  {
-    phase: "Foundation",
-    period: "Spring 2026",
-    milestones: [
-      "IRB application submitted",
-      "Syllabi collection begins (47 California CC CS syllabi)",
-      "Annotation schema development for SyllabusAudit",
-      "PhD program applications",
-    ],
-  },
-  {
-    phase: "Data Collection",
-    period: "Summer 2026",
-    milestones: [
-      "20–30 departure interviews conducted (Why They Left)",
-      "Qualitative coding begins — Seymour & Hunter taxonomy",
-      "Grounded theory for emergent themes",
-    ],
-  },
-  {
-    phase: "Analysis",
-    period: "Fall 2026",
-    milestones: [
-      "Expert annotators trained for SyllabusAudit",
-      "NLP classifier training on annotated syllabi",
-      "LMS feature extraction for HelpMap",
-      "CurriculumGraph prototype development",
-    ],
-  },
-  {
-    phase: "Publication",
-    period: "Spring 2027",
-    milestones: [
-      "Submit P3 (Why They Left) to ICER",
-      "Submit P2 (SyllabusAudit) to Learning@Scale",
-      "Pilot P4 (CurriculumGraph) with 5–10 instructors",
-      "BelongingSignals instrument development",
-    ],
-  },
-  {
-    phase: "PhD Integration",
-    period: "2027+",
-    milestones: [
-      "Integrate P1–P5 into dissertation framework",
-      "Longitudinal tracking of curriculum interventions",
-      "Tool release: CurriculumGraph and SyllabusAudit as open-source",
-    ],
-  },
-];
+// Theoretical constructs and a phased timeline were removed from the public
+// research page — the first overclaimed (coining names for things not yet
+// empirically studied), the second rotted (it promised "Spring 2026: IRB
+// submitted" with no way to update in place). The Modeling Bench page now
+// carries the real, dateable timeline. The five project designs above are
+// the stable proposal artifacts.
 
 // ===== Annotated Reading List =====
 

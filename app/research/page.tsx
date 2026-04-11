@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { researchProjects, theoreticalConstructs, researchTimeline } from "@/lib/data/research";
+import { researchProjects } from "@/lib/data/research";
 
 export const metadata: Metadata = {
-  title: "Research Interests",
+  title: "Research",
   description:
-    "Four research questions the proposed community-college CS curriculum is designed to investigate: dependency structures, help-seeking behavior under structural constraints, portfolio assessment, and the CS 175 cross-STEM computer build. Henry Fan, mentee of Prof. Jeff Anderson (Foothill College).",
+    "Henry Fan's research program. Primary work: three first-author papers in applied linear algebra and CS education, with Prof. Jeff Anderson (Foothill College). Broader agenda: four research questions on community-college CS learning that motivate a future PhD.",
   openGraph: {
-    title: "Research Interests",
+    title: "Research — Henry Fan",
     description:
-      "The four research questions driving a proposed six-course community-college CS curriculum — grounded in curriculum design practice, not live teaching.",
+      "Three first-author papers in flight with Prof. Jeff Anderson, plus the CS-Education research questions that motivate a future PhD.",
     images: ["/opengraph-image.png"],
   },
 };
@@ -23,7 +23,7 @@ const researchQuestions = [
       "Community college CS students face prerequisite chains that were designed for a different population. When a student fails CS1, the structure forces a full-year delay. This question investigates whether the dependency graph itself — not student ability — is the primary attrition mechanism.",
     methods: ["Curriculum network analysis", "Survival analysis", "Institutional ethnography"],
     connection:
-      "The three-track system in every course is a direct intervention: it replaces prerequisite gates with depth choices, allowing students to enter any course at Track I without prior programming experience.",
+      "The three-track system proposed in every course replaces prerequisite gates with depth choices, allowing students to enter any course at Track I without prior programming experience.",
   },
   {
     id: "RQ2",
@@ -33,7 +33,7 @@ const researchQuestions = [
       "Help-seeking research in CS education overwhelmingly studies four-year residential students. Community college students — who are more likely to work full-time, commute, and have caregiving responsibilities — have fundamentally different access to office hours, study groups, and peer networks. Their help-seeking patterns are not deficits; they are rational responses to structural constraints.",
     methods: ["Experience sampling", "Semi-structured interviews", "Thematic analysis", "Ecological momentary assessment"],
     connection:
-      "Every course in the framework is designed with asynchronous help channels, recorded walkthroughs of common stuck points, and project milestones sequenced so that the most common failure modes are addressable without synchronous faculty contact.",
+      "Every course in the proposal is designed with asynchronous help channels, recorded walkthroughs of common stuck points, and project milestones sequenced so that the most common failure modes are addressable without synchronous faculty contact.",
   },
   {
     id: "RQ3",
@@ -43,7 +43,7 @@ const researchQuestions = [
       "Students who do not see themselves as 'CS people' often cite exam culture, competitive grading, and the assumption of prior exposure as the reasons. Portfolio-based assessment removes the high-stakes single-point-of-failure that exams represent. This question asks whether that structural change affects whether students begin to identify as people who do computing.",
     methods: ["Longitudinal interview study", "Identity trajectory mapping", "Portfolio analysis"],
     connection:
-      "The portfolio assessment model, public exhibitions, and student-proposed grading specified across all six courses are the intervention this research proposes to study. The Abuelita Test — which asks students to explain their work to a non-technical family member — is designed specifically to strengthen identity through communication.",
+      "The portfolio assessment model, public exhibitions, and student-proposed grading specified across all six courses are the proposed intervention. The Abuelita Test — which asks students to explain their work to a non-technical family member — is designed specifically to strengthen identity through communication.",
   },
   {
     id: "RQ4",
@@ -53,7 +53,7 @@ const researchQuestions = [
       "Most research on ethics in CS education studies elite four-year institutions. Community college students bring different lived experiences with algorithmic systems — as subjects of automated hiring tools, predictive policing, and benefits allocation algorithms. Their analysis of bias is not abstract; it is personal. This question investigates how that positionality shapes critical technical practice.",
     methods: ["Design-based research", "Artifact analysis", "Critical discourse analysis"],
     connection:
-      "The Bias Audit project designed for CS 180 and CS 185, modeled on Buolamwini's Gender Shades methodology, is the primary proposed site for this research. In the course design, students choose real deployed systems, design test protocols, measure performance across demographic groups, and write findings reports.",
+      "The Bias Audit project designed for CS 180 and CS 185, modeled on Buolamwini's Gender Shades methodology, is the proposed site for this research. In the course design, students choose real deployed systems, design test protocols, measure performance across demographic groups, and write findings reports.",
   },
 ];
 
@@ -72,7 +72,7 @@ const methodologyInterests = [
   },
   {
     name: "Participatory Design",
-    desc: "Students as co-designers of curriculum, not just subjects of study. The three-track system was developed with student input across multiple semesters of iteration.",
+    desc: "Students as co-designers of curriculum, not just subjects of study. Proposed three-track system to be developed with student input across multiple semesters of iteration.",
   },
 ];
 
@@ -94,56 +94,46 @@ const targetPrograms = [
   },
 ];
 
-const workingPapers = [
-  {
-    title: "Help-Seeking Under Constraint: How Community College CS Students Navigate Structural Barriers to Academic Support",
-    status: "In preparation",
-    desc: "A qualitative study of help-seeking behaviors among community college CS students, investigating how work schedules, commute patterns, and family obligations reshape when, how, and whether students seek help — and what this means for course design.",
-  },
-  {
-    title: "Curriculum as Structure: Prerequisite Dependency Analysis and Attrition in Community College CS Pathways",
-    status: "In preparation",
-    desc: "Network analysis of prerequisite structures across California community college CS programs, modeling how dependency chains create structural bottlenecks that disproportionately affect students with interrupted enrollment patterns.",
-  },
-  {
-    title: "Derive Before Compute: A Curriculum Framework for Project-Based CS Education at Community Colleges",
-    status: "In preparation",
-    desc: "A design-based research paper describing the theoretical framework, implementation, and preliminary outcomes of a six-course curriculum built on three principles: derive before compute, build before import, and equity as design.",
-  },
-];
-
 export default function ResearchPage() {
   return (
     <>
       {/* ======== HERO ======== */}
       <header className="bg-ink text-paper border-b-[5px] border-red">
         <div className="border-b border-white/10 px-7 lg:px-[60px] py-3 font-mono text-[10px] tracking-[0.14em] uppercase text-white/50 flex justify-between">
-          <span>Research Interests</span>
-          <span>CS Education &middot; Learning Sciences &middot; HCI</span>
+          <span>Research</span>
+          <span>Applied LA · CS Education · Learning Sciences</span>
         </div>
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-16 lg:py-20">
           <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-5 animate-fade-up-1">
-            CS Education Research Agenda
+            Active Program + PhD Agenda
           </div>
           <h1 className="font-display text-[clamp(48px,8vw,100px)] leading-[0.88] tracking-[0.02em] mb-7 animate-fade-up-2">
             Research
-            <br />
-            <span className="text-red">Interests</span>
           </h1>
-          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[680px] animate-fade-up-3">
-            My research connects curriculum design to scholarship. Every course
-            in this framework is designed to double as a research site — for
-            questions about how community college students learn computing,
-            what structural barriers they face, and how curriculum design can
-            itself be an equity intervention. I am pursuing a PhD in CS
-            Education, Learning Sciences, or HCI to formalize this work, under
-            the mentorship of Prof. Jeff Anderson (Foothill College).
+          <p className="text-[17px] leading-[1.7] text-white/90 max-w-[720px] animate-fade-up-3">
+            My active research program is{" "}
+            <strong className="font-medium text-red">three first-author
+            papers</strong>{" "}
+            in applied linear algebra and CS education, in progress with
+            Prof. Jeff Anderson (Foothill College) &mdash; tracked openly on{" "}
+            <Link
+              href="/research/modeling-bench"
+              className="underline decoration-red/60 underline-offset-4 hover:decoration-red"
+            >
+              the Modeling Bench
+            </Link>
+            . Alongside that work, I am developing a broader research
+            agenda in community-college CS education &mdash; four questions
+            about dependency structure, help-seeking, identity, and
+            algorithmic equity &mdash; that I intend to formalize in a PhD.
+            This page separates the two clearly: what&rsquo;s in flight,
+            and what I want to pursue next.
           </p>
           <div className="flex flex-wrap gap-2.5 mt-7 animate-fade-up-4">
             {[
+              "Applied Linear Algebra",
+              "Hands-on Lab Pedagogy",
               "CS Education",
-              "Broadening Participation",
-              "Community College",
               "Help-Seeking",
               "Curriculum Design",
               "Algorithmic Equity",
@@ -162,227 +152,65 @@ export default function ResearchPage() {
       {/* ======== POSITIONING STATEMENT ======== */}
       <section className="bg-cream border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20">
-          <h2 className="section-label">Research Positioning</h2>
+          <h2 className="section-label">Positioning</h2>
           <div className="space-y-5">
             <p className="text-[16px] leading-[1.9]">
-              The research questions below emerged from designing this
-              six-course community-college CS curriculum and from Henry&rsquo;s
-              day-job at CVC-OEI — the California Community Colleges&rsquo;
-              cross-enrollment infrastructure, serving 115+ colleges. They are
-              not imported from a literature review and applied to a convenient
-              setting — they are the questions that emerge when you spend every
-              working hour on who stays in CS, who leaves, and what the
-              structure of a course makes possible or impossible.
+              Two things are running in parallel. The first is concrete and
+              near-term: a three-paper program anchored to Prof. Jeff
+              Anderson&rsquo;s published work in applied linear algebra and
+              his anti-racist, learner-centered objectives. Those drafts are
+              active, have target venues, and are tracked week by week on
+              the Modeling Bench.
+            </p>
+            <p className="text-[16px] leading-[1.9]">
+              The second is a broader research agenda that emerged from
+              designing the{" "}
+              <Link
+                href="/courses"
+                className="underline decoration-dim/40 underline-offset-3 hover:decoration-ink"
+              >
+                proposed community-college CS curriculum
+              </Link>{" "}
+              on this site and from my day job at CVC-OEI &mdash; the
+              California Community Colleges&rsquo; cross-enrollment
+              infrastructure, serving 115+ colleges. Four research questions
+              about dependency structure, help-seeking, identity formation,
+              and algorithmic equity &mdash; not imported from a literature
+              review but drawn from what I see every working day about who
+              stays in CS and who leaves.
             </p>
             <p className="text-[16px] leading-[1.9]">
               Community colleges serve{" "}
               <strong className="font-medium">
                 nearly half of all undergraduates in the United States
               </strong>
-              , including disproportionate numbers of first-generation college
-              students, students of color, working adults, and students with
-              caregiving responsibilities. Yet the overwhelming majority of CS
-              education research is conducted at four-year residential
-              institutions with very different student populations. My work
-              addresses this gap.
-            </p>
-            <p className="text-[16px] leading-[1.9]">
-              The curriculum described on this site — project-based,
-              no-exam, three-track, portfolio-assessed — is designed as both a
-              proposed teaching framework and a research intervention. Each
-              course is a research artifact: once piloted, each is scoped to
-              generate data about what works, for whom, and under what
-              conditions. The framework is a proposal, not a currently taught
-              program.
+              , yet most CS-education research is conducted at four-year
+              residential institutions with very different student
+              populations. The CS-Education agenda below is the work I want
+              to formalize in a PhD. It is a{" "}
+              <strong className="font-medium">proposed program</strong>
+              &nbsp;of research, not a record of completed studies.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ======== RESEARCH QUESTIONS ======== */}
-      <section className="border-b-2 border-ink">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-16">
-            <h2 className="section-label">Research Questions</h2>
-            <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
-              Four interconnected questions about equity, structure, and
-              learning in community college CS — each grounded in curriculum
-              design practice and connected to a specific proposed
-              intervention.
-            </p>
-          </div>
-
-          <div className="space-y-0 border-2 border-ink">
-            {researchQuestions.map((rq, idx) => (
-              <div
-                key={rq.id}
-                className={`p-8 lg:p-10 ${idx < researchQuestions.length - 1 ? "border-b-2 border-ink" : ""}`}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-[80px_1fr] gap-6 lg:gap-10">
-                  <div>
-                    <span className="font-display text-[48px] leading-none text-cream">
-                      {rq.id}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-[20px] italic leading-[1.35] mb-4">
-                      {rq.question}
-                    </h3>
-                    <p className="text-[16px] leading-[1.7] text-ink/85 mb-5">
-                      {rq.context}
-                    </p>
-                    <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-                      <div className="flex-1">
-                        <span className="font-mono text-[9px] tracking-[0.15em] uppercase text-dim block mb-2">
-                          Methods
-                        </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {rq.methods.map((m) => (
-                            <span
-                              key={m}
-                              className="px-2.5 py-1 bg-teal/10 text-teal border border-teal/30 font-mono text-[9px] tracking-[0.08em] uppercase"
-                            >
-                              {m}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="flex-1 border-l-[3px] border-red bg-red/5 px-4 py-3">
-                        <span className="font-mono text-[9px] tracking-[0.15em] uppercase text-dim block mb-1.5">
-                          Connection to Practice
-                        </span>
-                        <p className="font-mono text-[10.5px] leading-[1.7] text-red">
-                          {rq.connection}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======== METHODOLOGY ======== */}
-      <section className="bg-ink text-paper border-b-2 border-white/[0.06]">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span aria-hidden className="text-white/20">{"//  "}</span>Methodology
-            </div>
-            <p className="text-[15px] leading-[1.85] text-white/55 max-w-[620px]">
-              My methodological orientation is mixed-methods with a qualitative
-              core. The questions I ask require understanding student experience
-              from the inside — not just measuring outcomes at scale.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 border border-white/10">
-            {methodologyInterests.map((m) => (
-              <div
-                key={m.name}
-                className="p-7 border-b md:border-r border-white/10 last:border-r-0 [&:nth-child(2n)]:md:border-r-0 [&:nth-child(2n)]:xl:border-r xl:[&:nth-child(4n)]:border-r-0"
-              >
-                <h4 className="font-serif text-[17px] italic text-paper mb-2.5">
-                  {m.name}
-                </h4>
-                <p className="text-[15.5px] leading-[1.7] text-white/85">
-                  {m.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======== TARGET PROGRAMS ======== */}
-      <section className="border-b-2 border-ink">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <h2 className="section-label">PhD Program Interests</h2>
-            <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
-              I am looking for doctoral programs where curriculum design and
-              research are not separate activities — where the work of
-              designing equitable computing education is itself a form of
-              scholarly inquiry.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 border-2 border-ink">
-            {targetPrograms.map((prog, idx) => (
-              <div
-                key={prog.area}
-                className={`p-8 lg:p-10 ${idx < targetPrograms.length - 1 ? "border-b-2 lg:border-b-0 lg:border-r-2 border-ink" : ""}`}
-              >
-                <h3 className="font-display text-[36px] leading-none mb-3 text-ink">
-                  {prog.area}
-                </h3>
-                <p className="text-[16px] leading-[1.7] text-ink/85 mb-4">
-                  {prog.focus}
-                </p>
-                <div className="border-t border-cream pt-3">
-                  <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-dim block mb-1.5">
-                    Programs of Interest
-                  </span>
-                  <p className="font-mono text-[11px] leading-[1.7] text-ink">
-                    {prog.examples}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======== WORKING PAPERS ======== */}
-      <section className="bg-cream border-b-2 border-ink">
-        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <h2 className="section-label">Working Papers</h2>
-            <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
-              Papers in progress that formalize the research questions and the
-              design rationale behind this curriculum framework. These represent
-              the foundation of a doctoral research agenda.
-            </p>
-          </div>
-
-          <div className="space-y-0 border-2 border-ink bg-paper">
-            {workingPapers.map((paper, idx) => (
-              <div
-                key={paper.title}
-                className={`p-8 lg:p-10 ${idx < workingPapers.length - 1 ? "border-b-2 border-ink" : ""}`}
-              >
-                <div className="flex items-start justify-between gap-4 mb-3">
-                  <h3 className="font-serif text-[18px] italic leading-[1.3]">
-                    {paper.title}
-                  </h3>
-                  <span className="shrink-0 px-2.5 py-1 bg-gold/10 text-[#8a6500] border border-gold/30 font-mono text-[9px] tracking-[0.12em] uppercase">
-                    {paper.status}
-                  </span>
-                </div>
-                <p className="text-[16px] leading-[1.7] text-ink/85">
-                  {paper.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======== MODELING BENCH FEATURE ======== */}
+      {/* ======== MODELING BENCH — LIFTED UP ======== */}
       <section className="bg-ink text-paper border-b-2 border-white/[0.06]">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-12">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span aria-hidden className="text-white/20">{"//  "}</span>Active Lab
+              <span aria-hidden className="text-white/20">{"//  "}</span>Active
+              Program
             </div>
-            <p className="text-[15px] leading-[1.85] text-white/55 max-w-[680px]">
-              Alongside the broader CS-Ed agenda above, I am running a focused
-              3-paper publication program with my Applied Linear Algebra
-              mentor, Prof. Jeff Anderson at Foothill College. The papers sit
-              at the intersection of applied LA, hands-on lab pedagogy, and
-              CS education in the age of AI.
+            <p className="text-[15px] leading-[1.85] text-white/70 max-w-[680px]">
+              Three first-author papers in progress with Prof. Jeff
+              Anderson, my mentor in applied linear algebra at Foothill
+              College. Each paper extends one of Jeff&rsquo;s published
+              projects or fills in one he marked &ldquo;under
+              development&rdquo; in his Math 2BL deliverables. This is the
+              concrete work: draft abstracts, weekly plans, named risks,
+              target venues.
             </p>
           </div>
 
@@ -390,13 +218,13 @@ export default function ResearchPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-end mb-8">
               <div>
                 <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-red mb-3">
-                  3-Paper Research Program · v0.1
+                  3-Paper Program · Mentor: Jeff Anderson
                 </div>
-                <h3 className="font-display text-[clamp(40px,6vw,72px)] leading-[0.9] tracking-[0.02em] text-paper">
+                <h2 className="font-display text-[clamp(40px,6vw,72px)] leading-[0.9] tracking-[0.02em] text-paper m-0">
                   The Modeling
                   <br />
                   <span className="text-red">Bench</span>
-                </h3>
+                </h2>
               </div>
               <Link
                 href="/research/modeling-bench"
@@ -434,20 +262,20 @@ export default function ResearchPage() {
                   <div className="font-display text-[42px] leading-none text-cream/30 mb-2">
                     {p.num}
                   </div>
-                  <h4 className="font-serif italic text-[16px] text-paper leading-[1.3] mb-1.5">
+                  <h3 className="font-serif italic text-[16px] text-paper leading-[1.3] mb-1.5 m-0">
                     {p.title}
-                  </h4>
+                  </h3>
                   <p className="text-[14px] leading-[1.65] text-white/85 mb-3">
                     {p.sub}
                   </p>
                   <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-red">
-                    → {p.venue}
+                    <span aria-hidden>&rarr;</span> {p.venue}
                   </span>
                 </div>
               ))}
             </div>
 
-            <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-white/35 mt-8">
+            <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-white/45 mt-8">
               Mentor: Prof. Jeff Anderson · Foothill College &middot; Mirror:{" "}
               <a
                 href="https://fansofhenry.github.io/research-lab/"
@@ -462,18 +290,96 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      {/* ======== NAMED RESEARCH PROJECTS ======== */}
+      {/* ======== RESEARCH QUESTIONS (PhD agenda) ======== */}
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <h2 className="section-label">Research Projects</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-16">
+            <h2 className="section-label">PhD Research Questions</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
-              Five named projects with defined methodologies, tech stacks, and
-              target venues. These are publication-oriented research designs,
-              each connected to the broader research questions above.
+              Four interconnected questions about equity, structure, and
+              learning in community-college CS &mdash; each grounded in
+              curriculum design practice and connected to a proposed
+              intervention. These are the questions I want to formalize in
+              a doctoral program, not studies I have already run.
             </p>
           </div>
+
           <div className="space-y-0 border-2 border-ink">
+            {researchQuestions.map((rq, idx) => (
+              <div
+                key={rq.id}
+                className={`p-8 lg:p-10 ${idx < researchQuestions.length - 1 ? "border-b-2 border-ink" : ""}`}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-[80px_1fr] gap-6 lg:gap-10">
+                  <div>
+                    <span className="font-display text-[48px] leading-none text-cream">
+                      {rq.id}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-[20px] italic leading-[1.35] mb-4">
+                      {rq.question}
+                    </h3>
+                    <p className="text-[16px] leading-[1.7] text-ink/85 mb-5">
+                      {rq.context}
+                    </p>
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                      <div className="flex-1">
+                        <span className="font-mono text-[9px] tracking-[0.15em] uppercase text-dim block mb-2">
+                          Proposed Methods
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {rq.methods.map((m) => (
+                            <span
+                              key={m}
+                              className="px-2.5 py-1 bg-teal/10 text-teal border border-teal/30 font-mono text-[9px] tracking-[0.08em] uppercase"
+                            >
+                              {m}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="flex-1 border-l-[3px] border-red bg-red/5 px-4 py-3">
+                        <span className="font-mono text-[9px] tracking-[0.15em] uppercase text-dim block mb-1.5">
+                          Connection to Curriculum
+                        </span>
+                        <p className="font-mono text-[10.5px] leading-[1.7] text-red">
+                          {rq.connection}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======== PROPOSED PROJECTS (merged) ======== */}
+      <section className="border-b-2 border-ink bg-cream">
+        <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
+            <h2 className="section-label">Proposed Project Designs</h2>
+            <div className="max-w-[640px] space-y-4">
+              <p className="text-[15px] leading-[1.85] text-dim">
+                Five study designs I would bring to a doctoral program,
+                each tied to one of the research questions above. These
+                are{" "}
+                <strong className="font-medium text-ink">
+                  proposed research designs
+                </strong>
+                &nbsp;&mdash; methodology, data, venue, and expected
+                contribution &mdash; not data collection that has already
+                happened.
+              </p>
+              <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-red/80">
+                <span aria-hidden>{"// "}</span>All five are pre-IRB, pre-data.
+                Status is planning, not in-flight.
+              </p>
+            </div>
+          </div>
+          <div className="space-y-0 border-2 border-ink bg-paper">
             {researchProjects.map((proj, idx) => (
               <div
                 key={proj.id}
@@ -486,9 +392,14 @@ export default function ResearchPage() {
                     </span>
                   </div>
                   <div>
-                    <h3 className="font-serif text-[20px] italic leading-[1.35] mb-1">
-                      {proj.title}
-                    </h3>
+                    <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-1">
+                      <h3 className="font-serif text-[20px] italic leading-[1.35] m-0">
+                        {proj.title}
+                      </h3>
+                      <span className="px-2 py-0.5 bg-gold/15 text-[#6b4f00] border border-gold/40 font-mono text-[8.5px] tracking-[0.12em] uppercase">
+                        Proposed
+                      </span>
+                    </div>
                     <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-red mb-4">
                       {proj.subtitle}
                     </p>
@@ -497,7 +408,7 @@ export default function ResearchPage() {
                     </p>
                     <div className="border-l-[3px] border-teal bg-teal/5 px-4 py-3 mb-4">
                       <span className="font-mono text-[9px] tracking-[0.15em] uppercase text-dim block mb-1.5">
-                        Methodology
+                        Proposed Methodology
                       </span>
                       <p className="text-[12px] leading-[1.75] text-dim">
                         {proj.methodology}
@@ -540,79 +451,72 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      {/* ======== THEORETICAL CONSTRUCTS ======== */}
+      {/* ======== METHODOLOGY ======== */}
       <section className="bg-ink text-paper border-b-2 border-white/[0.06]">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-red flex items-start gap-2.5 pt-1">
-              <span aria-hidden className="text-white/20">{"//  "}</span>Theoretical
-              Constructs
+              <span aria-hidden className="text-white/20">{"//  "}</span>Methodology
             </div>
-            <p className="text-[15px] leading-[1.85] text-white/55 max-w-[620px]">
-              Named constructs that emerge from this research program — each
-              defined, operationalized, and connected to measurable outcomes.
+            <p className="text-[15px] leading-[1.85] text-white/70 max-w-[620px]">
+              My methodological orientation is mixed-methods with a
+              qualitative core. The questions I ask require understanding
+              student experience from the inside &mdash; not just measuring
+              outcomes at scale.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10">
-            {theoreticalConstructs.map((tc, idx) => (
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 border border-white/10">
+            {methodologyInterests.map((m) => (
               <div
-                key={tc.name}
-                className={`p-8 ${idx < theoreticalConstructs.length - 1 ? "border-b md:border-r border-white/10" : ""} ${idx === theoreticalConstructs.length - 2 ? "md:border-b-0" : ""}`}
+                key={m.name}
+                className="p-7 border-b md:border-r border-white/10 last:border-r-0 [&:nth-child(2n)]:md:border-r-0 [&:nth-child(2n)]:xl:border-r xl:[&:nth-child(4n)]:border-r-0"
               >
-                <h4 className="font-serif text-[18px] italic text-paper mb-3">
-                  {tc.name}
-                </h4>
-                <p className="text-[15.5px] leading-[1.7] text-white/85 mb-4">
-                  {tc.definition}
+                <h3 className="font-serif text-[17px] italic text-paper mb-2.5 m-0">
+                  {m.name}
+                </h3>
+                <p className="text-[15.5px] leading-[1.7] text-white/85">
+                  {m.desc}
                 </p>
-                <div className="border-t border-white/10 pt-3">
-                  <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-red block mb-1.5">
-                    Operationalization
-                  </span>
-                  <p className="text-[12px] leading-[1.75] text-white/40">
-                    {tc.operationalization}
-                  </p>
-                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ======== RESEARCH TIMELINE ======== */}
+      {/* ======== TARGET PROGRAMS ======== */}
       <section className="border-b-2 border-ink">
         <div className="max-w-[1300px] mx-auto px-7 lg:px-[60px] py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-20 mb-14">
-            <h2 className="section-label">Research Timeline</h2>
+            <h2 className="section-label">PhD Program Interests</h2>
             <p className="text-[15px] leading-[1.85] text-dim max-w-[620px]">
-              A phased roadmap from curriculum design and mentee-led research
-              through doctoral study.
+              I am looking for doctoral programs where curriculum design
+              and research are not separate activities &mdash; where the
+              work of designing equitable computing education is itself a
+              form of scholarly inquiry.
             </p>
           </div>
-          <div className="space-y-0 border-2 border-ink">
-            {researchTimeline.map((phase, idx) => (
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 border-2 border-ink">
+            {targetPrograms.map((prog, idx) => (
               <div
-                key={phase.phase}
-                className={`p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-6 ${idx < researchTimeline.length - 1 ? "border-b-2 border-ink" : ""}`}
+                key={prog.area}
+                className={`p-8 lg:p-10 ${idx < targetPrograms.length - 1 ? "border-b-2 lg:border-b-0 lg:border-r-2 border-ink" : ""}`}
               >
-                <div>
-                  <span className="font-display text-[28px] leading-none text-ink block mb-1">
-                    {phase.phase}
+                <h3 className="font-display text-[36px] leading-none mb-3 text-ink m-0">
+                  {prog.area}
+                </h3>
+                <p className="text-[16px] leading-[1.7] text-ink/85 mb-4">
+                  {prog.focus}
+                </p>
+                <div className="border-t border-cream pt-3">
+                  <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-dim block mb-1.5">
+                    Programs of Interest
                   </span>
-                  <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-red">
-                    {phase.period}
-                  </span>
+                  <p className="font-mono text-[11px] leading-[1.7] text-ink">
+                    {prog.examples}
+                  </p>
                 </div>
-                <ul className="space-y-2">
-                  {phase.milestones.map((m) => (
-                    <li
-                      key={m}
-                      className="text-[13px] leading-[1.7] pl-4 border-l-2 border-teal"
-                    >
-                      {m}
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
@@ -624,10 +528,9 @@ export default function ResearchPage() {
         <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
           <div>
             <p className="font-serif text-[clamp(20px,2.5vw,30px)] italic leading-[1.4] max-w-[700px]">
-              &ldquo;The curriculum is connected to ongoing research into
-              help-seeking behavior in introductory CS courses, curriculum
-              dependency structures, and the experiences of students who leave
-              STEM at community colleges.&rdquo;
+              &ldquo;The curriculum is the proposal. The Modeling Bench is
+              the proof that the proposal is being built in the open, with
+              a mentor, on a clock.&rdquo;
             </p>
             <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/80 mt-3.5">
               Research &middot; Practice Connection
@@ -635,12 +538,10 @@ export default function ResearchPage() {
           </div>
           <div className="flex flex-col gap-3 shrink-0">
             <Link
-              href="https://fansofhenry.github.io/cs-ed/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/research/modeling-bench"
               className="inline-block px-5 py-2.5 border border-white/30 font-mono text-[11px] tracking-[0.12em] uppercase text-white hover:bg-white/10 transition-colors no-underline text-center"
             >
-              Research Portfolio <span aria-hidden>&rarr;</span>
+              Modeling Bench <span aria-hidden>&rarr;</span>
             </Link>
             <Link
               href="/philosophy"

@@ -179,13 +179,6 @@ export interface ResearchProject {
   methodology: string;
   techStack?: string[];
   targetVenue?: string;
-  timeline?: string;
-}
-
-export interface TheoreticalConstruct {
-  name: string;
-  definition: string;
-  operationalization: string;
 }
 
 export interface ReadingListEntry {
@@ -193,12 +186,6 @@ export interface ReadingListEntry {
   section: string;
   annotation: string;
   connectsTo?: string[];
-}
-
-export interface ResearchTimeline {
-  phase: string;
-  period: string;
-  milestones: string[];
 }
 
 // ===== Student success types (from conquer-college-app) =====
